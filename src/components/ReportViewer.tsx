@@ -1,16 +1,7 @@
 // components/ReportViewer.tsx
 'use client';
 import { reportData } from '@/data/report';
-import {
-  BarChart2,
-  BookOpen,
-  ChevronRight,
-  FlaskConical,
-  GraduationCap,
-  Handshake,
-  HeartHandshake,
-  Lightbulb
-} from 'lucide-react';
+
 import { useEffect, useState } from 'react';
 import CoverPage from './CoverPage';
 import TableOfContents from './TableOfContents';
@@ -48,18 +39,15 @@ const ReportViewer = () => {
 
   // Generate TOC items
   const tocItems = [
-    { id: 'message', title: reportData.message.title, icon: <BookOpen size={16} /> },
-    { id: 'impact', title: "Our Impact at a Glance", icon: <BarChart2 size={16} /> },
-    { id: 'vision', title: "Our Strategic Vision", icon: <Lightbulb size={16} /> },
+    { id: 'message', title: reportData.message.title },
+    { id: 'impact', title: 'Our Impact at a Glance' },
+    { id: 'vision', title: 'Our Strategic Vision' },
     ...reportData.sections.map((section, i) => ({
-      id: `section-${i+1}`,
-      title: `${i+1}. ${section.title}`,
-      icon: i === 0 ? <GraduationCap size={16} /> : 
-             i === 1 ? <FlaskConical size={16} /> : 
-             <Handshake size={16} />
+      id: `section-${i + 1}`,
+      title: section.title
     })),
-    { id: 'future', title: "Looking Ahead", icon: <ChevronRight size={16} /> },
-    { id: 'thankyou', title: "Thank You", icon: <HeartHandshake size={16} /> }
+    { id: 'future', title: 'Looking Ahead' },
+    { id: 'thankyou', title: 'Thank You' }
   ];
 
   return (
