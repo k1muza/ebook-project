@@ -39,6 +39,10 @@ body {
   .print\:break-before {
     page-break-before: always;
   }
+
+  .print\:break-after {
+    page-break-after: always;
+  }
   
   .print\:break-inside-avoid {
     page-break-inside: avoid;
