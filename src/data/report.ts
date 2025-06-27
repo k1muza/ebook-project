@@ -16,7 +16,7 @@ export const reportData: ReportData = {
         type: "image", 
         src: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d", 
         alt: "Community gathering",
-        caption: "Community members and TTI staff celebrating progress in education initiatives",
+          caption: "Figure 1: Community members and TTI staff celebrating progress in education initiatives",
         layout: "full"
       }
     ]
@@ -90,7 +90,7 @@ export const reportData: ReportData = {
           type: "image", 
           src: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc", 
           alt: "Students receiving scholarships",
-          caption: "Scholarship recipients at the January 2025 orientation",
+          caption: "Figure 2: Scholarship recipients at the January 2025 orientation",
           layout: "split"
         },
         { type: "subheading", text: "Scholarship Orientation: Building a Community of Leaders" },
@@ -100,7 +100,7 @@ export const reportData: ReportData = {
           type: "image", 
           src: "https://images.unsplash.com/photo-1584697964358-3e14ca57658b", 
           alt: "School supplies donation",
-          caption: "Distribution of exercise books to students in need",
+          caption: "Figure 3: Distribution of exercise books to students in need",
           layout: "full"
         },
         { type: "subheading", text: "Gender Equity: Addressing Critical Needs" },
@@ -117,7 +117,7 @@ export const reportData: ReportData = {
           type: "image", 
           src: "https://images.unsplash.com/photo-1600267165477-6d4cc741b379", 
           alt: "Women sewing uniforms",
-          caption: "Women from the vocational training program producing school uniforms",
+          caption: "Figure 4: Women from the vocational training program producing school uniforms",
           layout: "split"
         },
         { type: "paragraph", text: "This community-led enterprise addresses multiple needs at once. By producing affordable, locally-made uniforms, we are easing the financial burden on families and improving school attendance. More importantly, we are providing graduates of our training program with immediate, meaningful employment. The income generated not only strengthens household resilience but is also channeled back into our scholarship fund, creating a virtuous, sustainable cycle." },
@@ -127,7 +127,7 @@ export const reportData: ReportData = {
           type: "image", 
           src: "https://images.unsplash.com/photo-1581093458799-ef0d0c87f3d0", 
           alt: "Science laboratory",
-          caption: "New science lab at Zvimhonja Secondary School",
+          caption: "Figure 5: New science lab at Zvimhonja Secondary School",
           layout: "full"
         },
         { type: "paragraph", text: "A science lab levels the playing field, giving rural students the same opportunities as their urban peers. It ignites dreams of becoming doctors, engineers, and innovators. The impact was immediate: Chivakanenyama Secondary has been upgraded to a High School and is now offering Advanced Level science classes. A donation of a microscope and other lab equipment from visiting OSU students has already enabled the first practical science lessons, marking a new era of education in Matau." },
@@ -137,7 +137,7 @@ export const reportData: ReportData = {
           type: "image", 
           src: "https://images.unsplash.com/photo-1560785496-3c9d27877182", 
           alt: "Solar-powered irrigation",
-          caption: "Solar-powered garden at Denderedzi Primary School",
+          caption: "Figure 6: Solar-powered garden at Denderedzi Primary School",
           layout: "split"
         },
         { type: "paragraph", text: "Building on this, we established two one-hectare, solar-powered, drip-irrigated garden plots at Zvimhonja and Denderedzi Primary Schools. In the first quarter of 2025, a total of 7,512 tomato plants were planted, with the first harvest in June expected to generate over $6,000 USD. These business models, along with other crop projects, are creating a vital income stream for the schools, fostering entrepreneurship, and ensuring the long-term sustainability of our projects." }
@@ -151,7 +151,7 @@ export const reportData: ReportData = {
           type: "image", 
           src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4", 
           alt: "Leadership tour",
-          caption: "OSU students visiting TTI projects in Zimbabwe",
+          caption: "Figure 7: OSU students visiting TTI projects in Zimbabwe",
           layout: "split"
         },
         { type: "paragraph", text: "Partnerships are the lifeblood of our work. This reporting period, we were honored to host 20 students from Oklahoma State University, in partnership with Awakened Woman. These tours are invaluable. They allow our sponsors to see their impact firsthand, deepen their emotional connection to our mission, and witness the real-life stories of transformation. The visit fostered incredible learning on both sides and left our team and community feeling inspired and hopeful for future collaborations." },
@@ -172,6 +172,6 @@ export const reportData: ReportData = {
   closingImage: {
     src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c",
     alt: "TTI team and partners",
-    caption: "TTI team members with community partners and donors"
+    caption: "Figure 8: TTI team members with community partners and donors"
   }
 };
