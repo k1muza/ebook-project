@@ -125,7 +125,7 @@ export const reportData: ReportData = {
         { type: "paragraph", text: "In the past, over 88% of students in the Matau cluster graduated with an Arts focus, largely due to a lack of science facilities. This year, we shattered that barrier by introducing and completing two modern science laboratories at Chivakanenyama and Zvimhonja Secondary Schools." },
         { 
           type: "image", 
-          src: "https://images.unsplash.com/photo-1581093458799-ef0d0c87f3d0", 
+          src: "https://images.unsplash.com/photo-1532094349884-543bc11b234d",
           alt: "Science laboratory",
           caption: "New science lab at Zvimhonja Secondary School",
           layout: "full"
