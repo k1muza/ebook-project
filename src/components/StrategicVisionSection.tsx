@@ -2,9 +2,13 @@
 import { reportData } from '@/data/report'
 import { GraduationCap, Handshake } from 'lucide-react'
 
-const StrategicVisionSection = () => (
+interface Props { number: number }
+
+const StrategicVisionSection = ({ number }: Props) => (
   <div id="vision" className="mb-20 scroll-mt-20">
-    <h2 className="text-3xl font-bold text-slate-800 mb-6">Our Strategic Vision: A Blueprint for a Brighter Future</h2>
+    <h2 className="text-3xl font-bold text-slate-800 mb-6">
+      {number}. Our Strategic Vision: A Blueprint for a Brighter Future
+    </h2>
     <p className="text-lg mb-8">{reportData.strategicVision.intro}</p>
 
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

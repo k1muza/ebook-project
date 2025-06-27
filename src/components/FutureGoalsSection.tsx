@@ -2,11 +2,13 @@
 import { reportData } from '@/data/report'
 import { ChevronRight } from 'lucide-react'
 
-const FutureGoalsSection = () => (
+interface Props { number: number }
+
+const FutureGoalsSection = ({ number }: Props) => (
   <div id="future" className="mb-20 scroll-mt-20">
     <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-center">
       <ChevronRight className="mr-3 text-emerald-600" size={32} />
-      Looking Ahead: Our Goals for H2 2025
+      {number}. Looking Ahead: Our Goals for H2 2025
     </h2>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {reportData.futureGoals.map((goal, index) => (
