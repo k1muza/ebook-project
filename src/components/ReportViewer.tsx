@@ -50,6 +50,11 @@ const ReportViewer = () => {
     { id: 'thankyou', title: 'Thank You' }
   ];
 
+  const sectionNumbers = tocItems.reduce<Record<string, number>>((acc, item, idx) => {
+    acc[item.id] = idx + 1;
+    return acc;
+  }, {});
+
   return (
     <div className="max-w-5xl mx-auto bg-white font-serif text-gray-700 relative">
       <CoverPage />
@@ -60,12 +65,12 @@ const ReportViewer = () => {
           setActive={setActiveSection}
         />
         <GuidingMission />
-        <MessageSection />
-        <ImpactSection />
-        <StrategicVisionSection />
-        <Sections />
-        <FutureGoalsSection />
-        <ClosingSection />
+        <MessageSection number={sectionNumbers['message']} />
+        <ImpactSection number={sectionNumbers['impact']} />
+        <StrategicVisionSection number={sectionNumbers['vision']} />
+        <Sections startNumber={sectionNumbers['section-1']} />
+        <FutureGoalsSection number={sectionNumbers['future']} />
+        <ClosingSection number={sectionNumbers['thankyou']} />
       </div>
     </div>
   );
