@@ -9,7 +9,14 @@ export type ContentItem =
   | { type: 'quote'; text: string; author: string }
   | { type: 'list'; items: string[] }
   | { type: 'subheading'; text: string }
-  | { type: 'bold'; text: string };
+  | { type: 'bold'; text: string }
+  | { 
+      type: 'image'; 
+      src: string; 
+      alt: string; 
+      layout?: 'full' | 'split'; 
+      caption: string 
+    };
 
 export interface Milestone {
   title: string;
@@ -29,7 +36,7 @@ export interface ReportData {
   mission: string;
   message: {
     title: string;
-    content: string[];
+    content: (string | ContentItem)[]; // Allow mixed content types
   };
   milestones: Milestone[];
   strategicVision: {
@@ -40,4 +47,9 @@ export interface ReportData {
   sections: Section[];
   futureGoals: string[];
   closing: string;
+  closingImage?: { // Optional closing image
+    src: string;
+    alt: string;
+    caption: string;
+  };
 }

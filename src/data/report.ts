@@ -11,7 +11,14 @@ export const reportData: ReportData = {
     title: "A Message of Gratitude and Progress",
     content: [
       "The first half of 2025 has been a period of incredible growth and transformative impact for the Tererai Trent International (TTI) Foundation. With the unwavering support of our partners, donors, and community members, we have made significant strides in our core focus areas of educational support, sustainable agriculture, and community empowerment.",
-      "This report celebrates the milestones we have achieved together. It tells the story of how three key initiatives—our scholarship program, an income-generating sewing project, and school-based irrigation systems—are not just changing lives but are building a foundation for a self-sustaining future. We are thrilled to share our progress, acknowledge the challenges we've faced, and look ahead with renewed purpose to the work that still needs to be done."
+      "This report celebrates the milestones we have achieved together. It tells the story of how three key initiatives—our scholarship program, an income-generating sewing project, and school-based irrigation systems—are not just changing lives but are building a foundation for a self-sustaining future. We are thrilled to share our progress, acknowledge the challenges we've faced, and look ahead with renewed purpose to the work that still needs to be done.",
+      { 
+        type: "image", 
+        src: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d", 
+        alt: "Community gathering",
+        caption: "Community members and TTI staff celebrating progress in education initiatives",
+        layout: "full"
+      }
     ]
   },
   milestones: [
@@ -79,9 +86,23 @@ export const reportData: ReportData = {
         { type: "paragraph", text: "Our scholarship program remains the cornerstone of our commitment to educational access. This half-year, we proudly supported 28 tertiary students and 3 Advanced Level high school students, covering their tuition, accommodation, and food. Strategic follow-ups ensured that our support was aligned with both their academic performance and individual needs." },
         { type: "paragraph", text: "We are thrilled to announce that we welcomed 10 more brilliant young women into the program. Empowering a girl is one of the most profound investments we can make. When girls are educated in safe, encouraging environments, they are more likely to stay in school, avoid early marriage, and make informed choices about their futures. They become leaders who uplift their families and communities, breaking the cycle of poverty for generations to come." },
         { type: "paragraph", text: "A landmark achievement this period was celebrating Tryness Nyauvanga and Christabel Dura, the first TTI-supported students to pursue a degree in Software Engineering. Their courage in entering a male-dominated field is a powerful testament to our efforts in promoting STEM education for girls. To support their journey, TTI provided each with a new laptop, removing a critical barrier to their success." },
+        { 
+          type: "image", 
+          src: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc", 
+          alt: "Students receiving scholarships",
+          caption: "Scholarship recipients at the January 2025 orientation",
+          layout: "split"
+        },
         { type: "subheading", text: "Scholarship Orientation: Building a Community of Leaders" },
         { type: "paragraph", text: "In January 2025, thanks to our generous donors, we held our first-ever orientation for 27 scholarship beneficiaries. This session was more than an introduction; it was a community-building experience. Students learned practical skills like time management and goal setting, connected with peers and mentors, and aligned their personal journeys with TTI's mission to uplift and empower." },
         { type: "quote", text: "Before the orientation, I was nervous and unsure about what to expect. But after hearing stories and guidance, I felt confident and ready to focus on my goals. I now understand that this scholarship is not just about school fees; it's about shaping my future.", author: "Christabel Dura" },
+        { 
+          type: "image", 
+          src: "https://images.unsplash.com/photo-1584697964358-3e14ca57658b", 
+          alt: "School supplies donation",
+          caption: "Distribution of exercise books to students in need",
+          layout: "full"
+        },
         { type: "subheading", text: "Gender Equity: Addressing Critical Needs" },
         { type: "paragraph", text: "A needs assessment in our 6 partner secondary schools revealed a dire situation: over half the children lacked basic stationery, and approximately 100 were not attending school due to financial hardship. In response, we secured a donation of 2,500 exercise books and 4,000 counter books from Rank Zimbabwe. The first distribution reached 461 students who had no supplies, with a second planned for August. Our hope is to secure further support to cover tuition fees and ensure no child is left behind." }
       ]
@@ -92,12 +113,33 @@ export const reportData: ReportData = {
         { type: "paragraph", text: "Beyond direct scholarships, our strategy focuses on building systems that foster independence and create lasting change." },
         { type: "subheading", text: "Vocational Training: From Skills to Enterprise" },
         { type: "paragraph", text: "The Skills and Business Center, established in late 2024, is already bearing fruit. This reporting period, we successfully integrated 80% of the women trained in fashion and tailoring into a new school uniform production initiative." },
+        { 
+          type: "image", 
+          src: "https://images.unsplash.com/photo-1600267165477-6d4cc741b379", 
+          alt: "Women sewing uniforms",
+          caption: "Women from the vocational training program producing school uniforms",
+          layout: "split"
+        },
         { type: "paragraph", text: "This community-led enterprise addresses multiple needs at once. By producing affordable, locally-made uniforms, we are easing the financial burden on families and improving school attendance. More importantly, we are providing graduates of our training program with immediate, meaningful employment. The income generated not only strengthens household resilience but is also channeled back into our scholarship fund, creating a virtuous, sustainable cycle." },
         { type: "subheading", text: "Science Labs: Opening a World of Possibility" },
         { type: "paragraph", text: "In the past, over 88% of students in the Matau cluster graduated with an Arts focus, largely due to a lack of science facilities. This year, we shattered that barrier by introducing and completing two modern science laboratories at Chivakanenyama and Zvimhonja Secondary Schools." },
+        { 
+          type: "image", 
+          src: "https://images.unsplash.com/photo-1581093458799-ef0d0c87f3d0", 
+          alt: "Science laboratory",
+          caption: "New science lab at Zvimhonja Secondary School",
+          layout: "full"
+        },
         { type: "paragraph", text: "A science lab levels the playing field, giving rural students the same opportunities as their urban peers. It ignites dreams of becoming doctors, engineers, and innovators. The impact was immediate: Chivakanenyama Secondary has been upgraded to a High School and is now offering Advanced Level science classes. A donation of a microscope and other lab equipment from visiting OSU students has already enabled the first practical science lessons, marking a new era of education in Matau." },
         { type: "subheading", text: "Solar-Powered Irrigation: Cultivating a Sustainable Future" },
         { type: "paragraph", text: "Access to water is fundamental to health, hygiene, and economic prosperity. We are proud to report the successful drilling of 3 boreholes at Chiroti Primary, Zvimhinja Primary, and Denderedzi Secondary." },
+        { 
+          type: "image", 
+          src: "https://images.unsplash.com/photo-1560785496-3c9d27877182", 
+          alt: "Solar-powered irrigation",
+          caption: "Solar-powered garden at Denderedzi Primary School",
+          layout: "split"
+        },
         { type: "paragraph", text: "Building on this, we established two one-hectare, solar-powered, drip-irrigated garden plots at Zvimhonja and Denderedzi Primary Schools. In the first quarter of 2025, a total of 7,512 tomato plants were planted, with the first harvest in June expected to generate over $6,000 USD. These business models, along with other crop projects, are creating a vital income stream for the schools, fostering entrepreneurship, and ensuring the long-term sustainability of our projects." }
       ]
     },
@@ -105,6 +147,13 @@ export const reportData: ReportData = {
       title: "Strengthening Our Roots Through Partnership",
       content: [
         { type: "subheading", text: "Leadership Tours: Building Bridges and Trust" },
+        { 
+          type: "image", 
+          src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4", 
+          alt: "Leadership tour",
+          caption: "OSU students visiting TTI projects in Zimbabwe",
+          layout: "split"
+        },
         { type: "paragraph", text: "Partnerships are the lifeblood of our work. This reporting period, we were honored to host 20 students from Oklahoma State University, in partnership with Awakened Woman. These tours are invaluable. They allow our sponsors to see their impact firsthand, deepen their emotional connection to our mission, and witness the real-life stories of transformation. The visit fostered incredible learning on both sides and left our team and community feeling inspired and hopeful for future collaborations." },
         { type: "subheading", text: "The Endowment Fund: Securing Our Future" },
         { type: "paragraph", text: "To ensure the long-term impact of our work, we have focused on establishing an endowment fund. This fund will provide a reliable source of income, reducing our dependence on short-term grants and allowing us to plan, innovate, and scale our projects with confidence. We are deeply grateful to Alice, Susan, and TTI Chairperson Peace Mitchell, who dedicated their time to document our work in Hurungwe and interview scholarship beneficiaries. Their efforts are a critical step toward securing a sustainable future for TTI, and we remain hopeful for a positive outcome." }
@@ -119,5 +168,10 @@ export const reportData: ReportData = {
     "Continue construction of the Chivakanenyama Secondary School classroom block.",
     "Conduct a full financial review of all H1 2025 projects."
   ],
-  closing: "None of this would be possible without you—our dedicated partners, donors, and the resilient communities we serve. Your belief in our mission fuels our work and turns dreams into reality for thousands of children. Together, we are not just providing education; we are building a legacy of empowerment, sustainability, and hope. Thank you for being a part of this incredible journey."
+  closing: "None of this would be possible without you—our dedicated partners, donors, and the resilient communities we serve. Your belief in our mission fuels our work and turns dreams into reality for thousands of children. Together, we are not just providing education; we are building a legacy of empowerment, sustainability, and hope. Thank you for being a part of this incredible journey.",
+  closingImage: {
+    src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c",
+    alt: "TTI team and partners",
+    caption: "TTI team members with community partners and donors"
+  }
 };
