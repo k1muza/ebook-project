@@ -53,8 +53,12 @@ const ReportViewer = () => {
   return (
     <div className="max-w-5xl mx-auto bg-white font-serif text-gray-700 relative">
       <CoverPage />
-      <TableOfContents items={tocItems} active={activeSection} setActive={setActiveSection} />
-      <div className="px-8 print:px-0">
+      <div className="p-8 space-y-16 print:p-0">
+        <TableOfContents
+          items={tocItems}
+          active={activeSection}
+          setActive={setActiveSection}
+        />
         <GuidingMission />
         <MessageSection />
         <ImpactSection />
