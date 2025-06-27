@@ -29,7 +29,7 @@ const ContentRenderer = ({ content, index }: { content: ContentItem | string; in
       return (
         <figure
           key={index}
-          className={`my-8 print:break-inside-avoid ${content.layout === 'split' ? 'flex flex-col md:flex-row gap-8 items-center' : ''}`}
+          className={`my-8 print:break-inside-avoid ${content.layout === 'split' ? 'flex flex-col gap-8 items-center' : ''}`}
         >
           <div
             className={`relative overflow-hidden rounded-xl shadow-lg ${content.layout === 'split' ? 'md:w-1/2' : ''}`}
@@ -38,7 +38,7 @@ const ContentRenderer = ({ content, index }: { content: ContentItem | string; in
             <img src={content.src} alt={content.alt} className="w-full h-full object-cover" />
           </div>
           {content.caption && (
-            <figcaption className={`mt-2 text-sm text-gray-600 italic ${content.layout === 'split' ? 'md:w-1/2 md:mt-0' : ''}`}>{content.caption}</figcaption>
+            <figcaption className={`mt-2 text-sm text-gray-600 italic ${content.layout === 'split' ? 'md:w-1/2' : ''}`}>{content.caption}</figcaption>
           )}
         </figure>
       );
