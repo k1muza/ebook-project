@@ -2,7 +2,21 @@
 import React from 'react'
 import { ContentItem } from '@/types/report'
 
-const ContentRenderer = ({ content, index }: { content: ContentItem | string; index: number }) => {
+interface Props {
+  content: ContentItem | string
+  index: number
+  subheadingNumber?: string
+}
+
+const ContentRenderer = ({ content, index, subheadingNumber }: Props) => {
+  if (typeof content === 'string') {
+    return (
+      <p key={index} className="text-lg mb-4 text-gray-700">
+        {content}
+      </p>
+    )
+  }
+
   switch (content.type) {
     case 'paragraph':
       return <p key={index} className="mb-4 text-lg leading-relaxed text-gray-700">{content.text}</p>;
@@ -22,7 +36,12 @@ const ContentRenderer = ({ content, index }: { content: ContentItem | string; in
         </ul>
       );
     case 'subheading':
-      return <h3 key={index} className="text-2xl font-bold text-slate-800 mt-8 mb-4">{content.text}</h3>;
+      return (
+        <h3 key={index} className="text-2xl font-bold text-slate-800 mt-8 mb-4">
+          {subheadingNumber ? `${subheadingNumber} ` : ''}
+          {content.text}
+        </h3>
+      );
     case 'bold':
       return <strong key={index} className="font-semibold text-emerald-700">{content.text}</strong>;
     case 'image':
@@ -43,9 +62,6 @@ const ContentRenderer = ({ content, index }: { content: ContentItem | string; in
         </figure>
       );
     default:
-      if (typeof content === 'string') {
-        return <p key={index} className="text-lg mb-4 text-gray-700">{content}</p>;
-      }
       return null;
   }
 };
