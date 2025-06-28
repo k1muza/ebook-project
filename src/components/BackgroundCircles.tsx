@@ -25,7 +25,7 @@ const BackgroundCircles = ({ count = 5 }: Props) => {
   }, [count])
 
   return (
-    <div className="absolute inset-0 pointer-events-none -z-10 print:hidden">
+    <div className="fixed inset-0 pointer-events-none z-0 print:hidden">
       {circles.map((circle, i) => (
         <div
           key={i}
