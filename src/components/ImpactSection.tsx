@@ -9,7 +9,7 @@ const ImpactSection = ({ number }: Props) => {
   if (!reportData) return null;
 
   return (
-  <div id="impact" className="mb-20 scroll-mt-20">
+  <div id="impact" className="mb-20 scroll-mt-20 print:break-before">
     <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-center">
       {number}. Our Impact at a Glance
     </h2>

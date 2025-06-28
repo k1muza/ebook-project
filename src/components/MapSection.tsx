@@ -27,7 +27,7 @@ const MapSection = ({ number }: Props) => {
   const center: [number, number] = [data.locations[0].lat, data.locations[0].lng]
 
   return (
-    <div id="locations" className="mb-20 scroll-mt-20">
+    <div id="locations" className="mb-20 scroll-mt-20 print:break-before">
       <h2 className="text-3xl font-bold text-slate-800 mb-10">
         {number}. Where We Work
       </h2>

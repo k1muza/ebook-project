@@ -9,7 +9,7 @@ const StrategicVisionSection = ({ number }: Props) => {
   if (!reportData) return null;
 
   return (
-    <div id="vision" className="mb-20 scroll-mt-20">
+    <div id="vision" className="mb-20 scroll-mt-20 print:break-before">
       <h2 className="text-3xl font-bold text-slate-800 mb-6">
         {number}. Our Strategic Vision: A Blueprint for a Brighter Future
       </h2>

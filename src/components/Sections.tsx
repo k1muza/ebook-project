@@ -17,7 +17,7 @@ const Sections = ({ startNumber }: Props) => {
       const sectionId = `section-${sectionIndex + 1}`
       let subIndex = 0
       return (
-        <div key={sectionIndex} id={sectionId} className="mb-20 scroll-mt-20">
+        <div key={sectionIndex} id={sectionId} className="mb-20 scroll-mt-20 print:break-before">
           <h2 className="text-3xl font-bold text-slate-800 mb-10">
             {sectionNumber}. {section.title}
           </h2>
