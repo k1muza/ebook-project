@@ -1,6 +1,7 @@
 'use client'
 import useReportData from '@/hooks/useReportData'
 import HeadingNumber from './HeadingNumber'
+import EditableImage from './EditableImage'
 
 interface Props { number: number }
 
@@ -25,12 +26,14 @@ const FutureGoalsSection = ({ number }: Props) => {
       ))}
     </div>
     <div className="mt-12 print:break-inside-avoid">
-      <div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-xl">
-        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94" alt="Future vision" className="w-full h-full object-cover" />
-      </div>
-      <p className="text-center text-sm text-gray-600 italic mt-2">
-        Vision for the new Library and Computer Lab at Musukwi Secondary
-      </p>
+      <EditableImage
+        src="https://images.unsplash.com/photo-1523580494863-6f3031224c94"
+        alt="Future vision"
+        width={800}
+        height={320}
+        caption="Vision for the new Library and Computer Lab at Musukwi Secondary"
+        containerClassName="w-full rounded-2xl overflow-hidden shadow-xl"
+      />
     </div>
   </div>
   );

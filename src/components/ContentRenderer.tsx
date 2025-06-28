@@ -2,6 +2,7 @@
 import React from 'react'
 import { ContentItem } from '@/types/report'
 import HeadingNumber from './HeadingNumber'
+import EditableImage from './EditableImage'
 
 interface Props {
   content: ContentItem | string
@@ -87,39 +88,17 @@ const ContentRenderer = ({ content, index, subheadingNumber, editable, onChange 
       )
     case 'image':
       return (
-        <figure
+        <EditableImage
           key={index}
-          className={`my-8 print:break-inside-avoid ${content.layout === 'split' ? 'flex flex-col gap-8 items-center' : ''}`}
-        >
-          <div
-            className={`relative overflow-hidden rounded-xl shadow-lg ${content.layout === 'split' ? 'md:w-1/2' : ''}`}
-            style={{ height: content.layout === 'split' ? '300px' : '400px' }}
-          >
-            <img src={content.src} alt={content.alt} className="w-full h-full object-cover" />
-          </div>
-          {editable ? (
-            <>
-              <figcaption
-                className={`mt-2 text-sm text-gray-600 italic ${content.layout === 'split' ? 'md:w-1/2' : ''}`}
-                {...editableProps((val) => onChange?.({ ...content, caption: val }))}
-              >
-                {content.caption}
-              </figcaption>
-              <p className="text-sm text-gray-500">
-                Src:{' '}
-                <span {...editableProps((val) => onChange?.({ ...content, src: val }))}>{content.src}</span>
-              </p>
-              <p className="text-sm text-gray-500">
-                Alt:{' '}
-                <span {...editableProps((val) => onChange?.({ ...content, alt: val }))}>{content.alt}</span>
-              </p>
-            </>
-          ) : (
-            content.caption && (
-              <figcaption className={`mt-2 text-sm text-gray-600 italic ${content.layout === 'split' ? 'md:w-1/2' : ''}`}>{content.caption}</figcaption>
-            )
-          )}
-        </figure>
+          src={content.src}
+          alt={content.alt}
+          caption={content.caption}
+          width={content.width}
+          height={content.height}
+          layout={content.layout}
+          editable={editable}
+          onChange={(val) => onChange?.({ ...content, ...val })}
+        />
       )
     default:
       return null

@@ -10,12 +10,14 @@ export type ContentItem =
   | { type: 'list'; items: string[] }
   | { type: 'subheading'; text: string }
   | { type: 'bold'; text: string }
-  | { 
-      type: 'image'; 
-      src: string; 
-      alt: string; 
-      layout?: 'full' | 'split'; 
-      caption: string 
+  | {
+      type: 'image';
+      src: string;
+      alt: string;
+      width?: number;
+      height?: number;
+      layout?: 'full' | 'split';
+      caption: string
     };
 
 export interface Milestone {
@@ -65,5 +67,7 @@ export interface ReportData {
     src: string;
     alt: string;
     caption: string;
+    width?: number;
+    height?: number;
   };
 }

@@ -1,6 +1,7 @@
 'use client'
 import useReportData from '@/hooks/useReportData'
 import HeadingNumber from './HeadingNumber'
+import EditableImage from './EditableImage'
 
 interface Props { number: number }
 
@@ -16,10 +17,14 @@ const ClosingSection = ({ number }: Props) => {
       </h3>
       {reportData.closingImage && (
         <div className="mt-12 mb-8 max-w-3xl mx-auto print:break-inside-avoid">
-          <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-xl">
-            <img src={reportData.closingImage.src} alt={reportData.closingImage.alt} className="w-full h-full object-cover" />
-          </div>
-          <p className="text-center text-sm text-gray-600 italic mt-2">{reportData.closingImage.caption}</p>
+          <EditableImage
+            src={reportData.closingImage.src}
+            alt={reportData.closingImage.alt}
+            caption={reportData.closingImage.caption}
+            width={reportData.closingImage.width}
+            height={reportData.closingImage.height}
+            containerClassName="w-full rounded-2xl overflow-hidden shadow-xl"
+          />
         </div>
       )}
       <p className="text-xl text-slate-600 max-w-3xl mx-auto">{reportData.closing}</p>

@@ -1,5 +1,6 @@
 'use client'
 import useReportData from '@/hooks/useReportData';
+import EditableImage from './EditableImage';
 
 const CoverPage = () => {
   const reportData = useReportData();
@@ -23,13 +24,14 @@ const CoverPage = () => {
         {reportData.organization}<br />
         {reportData.period}
       </p>
-      <div className="relative w-64 h-64 rounded-full overflow-hidden border-8 border-emerald-100 shadow-xl mx-auto">
-        <img
-          src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1"
-          alt="African students learning"
-          className="w-full h-full object-cover opacity-90"
-        />
-      </div>
+      <EditableImage
+        src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1"
+        alt="African students learning"
+        width={256}
+        height={256}
+        imgClassName="opacity-90 rounded-full"
+        containerClassName="mx-auto overflow-hidden rounded-full border-8 border-emerald-100 shadow-xl"
+      />
     </div>
   </div>
   );
