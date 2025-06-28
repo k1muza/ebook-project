@@ -45,6 +45,11 @@ export interface FinancialEntry {
   amount: string
 }
 
+export interface IncomeStatement {
+  revenue: FinancialEntry[]
+  expenses: FinancialEntry[]
+}
+
 export interface ReportData {
   organization: string;
   reportTitle: string;
@@ -62,7 +67,8 @@ export interface ReportData {
     businessGoals: CoreGoal[];
   };
   highlights?: HighlightStat[];
-  financials?: FinancialEntry[];
+  financialIntro?: string;
+  financials?: IncomeStatement;
   sections: Section[];
   futureGoals: string[];
   locations: MapLocation[]
