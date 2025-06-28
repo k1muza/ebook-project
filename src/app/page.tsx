@@ -13,13 +13,15 @@ const HomePage = () => {
             @page {
               margin: 1.5cm;
               counter-increment: page;
-              
+
               @bottom-center {
-                content: "Page " counter(page);
-                font-size: 10pt;
-                font-family: sans-serif;
-                color: #2c3e50;
-                font-weight: 500;
+                content: counter(page) " / " counter(pages);
+                font-size: 11pt;
+                font-family: 'Georgia', serif;
+                color: #334155;
+                font-weight: 600;
+                border-top: 1px solid #e2e8f0;
+                padding-top: 4px;
               }
             }
             
