@@ -1,6 +1,5 @@
 'use client'
 import useReportData from '@/hooks/useReportData'
-import { BarChart2 } from 'lucide-react'
 
 
 interface Props { number: number }

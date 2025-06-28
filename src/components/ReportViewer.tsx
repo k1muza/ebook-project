@@ -10,6 +10,8 @@ import ImpactSection from './ImpactSection';
 import StrategicVisionSection from './StrategicVisionSection';
 import Sections from './Sections';
 import FutureGoalsSection from './FutureGoalsSection';
+import dynamic from 'next/dynamic';
+const MapSection = dynamic(() => import('./MapSection'), { ssr: false });
 import ClosingSection from './ClosingSection';
 
 /**
@@ -49,6 +51,7 @@ const ReportViewer = () => {
       title: section.title,
     })),
     { id: 'future', title: 'Looking Ahead' },
+    { id: 'locations', title: 'Where We Work' },
     { id: 'thankyou', title: 'Thank You' },
   ];
 
@@ -72,6 +75,7 @@ const ReportViewer = () => {
         <StrategicVisionSection number={sectionNumbers['vision']} />
         <Sections startNumber={sectionNumbers['section-1']} />
         <FutureGoalsSection number={sectionNumbers['future']} />
+        <MapSection number={sectionNumbers['locations']} />
         <ClosingSection number={sectionNumbers['thankyou']} />
       </div>
     </div>
