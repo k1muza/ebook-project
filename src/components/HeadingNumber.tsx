@@ -1,6 +1,6 @@
 'use client'
 
-import { bebas } from '@/fonts'
+import { merriweather } from '@/fonts'
 
 interface Props {
   number: number | string
@@ -9,10 +9,10 @@ interface Props {
 
 const HeadingNumber = ({ number, className = '' }: Props) => (
   <span
-    className={`${bebas.className} bg-gradient-to-br from-emerald-600 to-amber-600 bg-clip-text text-transparent font-bold mr-3 text-4xl md:text-5xl leading-none drop-shadow-sm ${className}`}
+    className={`${merriweather.className} inline-flex items-center justify-center rounded-full bg-slate-200 border border-slate-300 text-slate-800 font-bold mr-3 h-8 w-8 ${className}`}
     aria-hidden="true"
   >
-    {number}.
+    {number}
   </span>
 )
 

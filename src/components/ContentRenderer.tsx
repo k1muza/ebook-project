@@ -75,7 +75,7 @@ const ContentRenderer = ({ content, index, subheadingNumber, editable, onChange 
     case 'subheading':
       return (
         <h3 key={index} className="text-2xl font-bold text-slate-800 mt-8 mb-4 flex items-baseline">
-          {subheadingNumber && <HeadingNumber number={subheadingNumber} className="text-xl" />}
+          {subheadingNumber && <HeadingNumber number={subheadingNumber} />}
           <span {...editableProps((val) => onChange?.({ ...content, text: val }))}>{content.text}</span>
         </h3>
       )

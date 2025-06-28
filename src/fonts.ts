@@ -1,5 +1,9 @@
-import { Inter, Bebas_Neue } from 'next/font/google'
+import { Inter, Merriweather } from 'next/font/google'
 
 export const inter = Inter({ subsets: ['latin'] })
-export const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] })
+export const merriweather = Merriweather({
+  weight: '700',
+  subsets: ['latin'],
+  style: ['normal']
+})
 
