@@ -1,8 +1,10 @@
 'use client'
-import useReportData from '@/hooks/useReportData'
 import HeadingNumber from './HeadingNumber'
 import FinancialChart from './FinancialChart'
-import {AArrowUp as FaArrowUp, AArrowDown as FaArrowDown, DollarSign as FaDollarSign} from 'lucide-react'
+import { DollarSign as FaDollarSign } from 'lucide-react'
+import * as Icons from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
+import { useReport } from '@/contexts/ReportContext'
 
 interface Props {
   number: number
@@ -14,7 +16,7 @@ interface FinancialItem {
 }
 
 const FinancialsSection = ({ number }: Props) => {
-  const data = useReportData()
+  const { data, setData, editing } = useReport()
   if (!data || !data.financials) return null
 
   const parseAmount = (val: string) => {
@@ -39,34 +41,26 @@ const FinancialsSection = ({ number }: Props) => {
     })
   }
 
-  // Add more financial metrics for a comprehensive view
-  const financialMetrics = [
-    { 
-      label: 'Revenue Growth', 
-      value: '+12%', 
-      change: 'positive',
-      icon: <FaArrowUp className="text-green-500" />
-    },
-    { 
-      label: 'Program Efficiency', 
-      value: '86%', 
-      change: 'positive',
-      description: 'of funds go directly to programs'
-    },
-    { 
-      label: 'Admin Cost Ratio', 
-      value: '8.6%', 
-      change: 'negative',
-      icon: <FaArrowDown className="text-red-500" />,
-      description: 'below industry average of 15%'
-    }
-  ]
+  const financialMetrics = data.financialMetrics || []
 
   return (
     <div id="financials" className="mb-20 scroll-mt-20 print:break-before">
-      <h2 className="text-3xl font-bold text-slate-800 mb-6 flex items-baseline">
+      <h2
+        className="text-3xl font-bold text-slate-800 mb-6 flex items-baseline"
+        {...(editing
+          ? {
+              contentEditable: true,
+              suppressContentEditableWarning: true,
+              onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                const newData = { ...(data as typeof data) }
+                newData.financialsTitle = e.currentTarget.textContent || ''
+                setData(newData)
+              },
+            }
+          : {})}
+      >
         <HeadingNumber number={number} />
-        Financial Performance
+        {data.financialsTitle || 'Financials'}
       </h2>
       
       {data.financialIntro && (
@@ -85,7 +79,7 @@ const FinancialsSection = ({ number }: Props) => {
             <h3 className="text-lg font-semibold text-slate-800">Total Revenue</h3>
           </div>
           <p className="text-3xl font-bold text-blue-700">{formatCurrency(totalRevenue)}</p>
-          <p className="text-sm text-slate-500 mt-2">January - June 2025</p>
+          <p className="text-sm text-slate-500 mt-2">{data.period}</p>
         </div>
         
         <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100 shadow-sm">
@@ -125,31 +119,32 @@ const FinancialsSection = ({ number }: Props) => {
 
       {/* Financial Metrics */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        {financialMetrics.map((metric, index) => (
-          <div key={index} className="bg-white rounded-lg p-4 border border-slate-200 shadow-xs">
-            <div className="flex justify-between items-start">
-              <h4 className="font-medium text-slate-700">{metric.label}</h4>
-              <span className={`text-lg font-bold ${
-                metric.change === 'positive' ? 'text-green-600' : 'text-red-600'
-              }`}>
-                {metric.value}
-              </span>
+        {financialMetrics.map((metric, index) => {
+          const Icon = (Icons as unknown as Record<string, LucideIcon>)[metric.icon || 'ArrowUp']
+          return (
+            <div key={index} className="bg-white rounded-lg p-4 border border-slate-200 shadow-xs">
+              <div className="flex justify-between items-start">
+                <h4 className="font-medium text-slate-700">{metric.label}</h4>
+                <span className={`text-lg font-bold ${
+                  metric.change === 'positive' ? 'text-green-600' : 'text-red-600'
+                }`}>
+                  {metric.value}
+                </span>
+              </div>
+              <div className="flex items-center mt-1">
+                {Icon && <Icon className="mr-2" size={16} />}
+                <p className="text-sm text-slate-500">{metric.description}</p>
+              </div>
             </div>
-            <div className="flex items-center mt-1">
-              {metric.icon && <span className="mr-2">{metric.icon}</span>}
-              <p className="text-sm text-slate-500">
-                {metric.description}
-              </p>
-            </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
 
       {/* Enhanced Financial Table */}
       <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden mb-8">
         <div className="border-b border-slate-200 bg-slate-50 px-6 py-4">
           <h3 className="text-lg font-semibold text-slate-800">Income Statement</h3>
-          <p className="text-sm text-slate-500">January - June 2025</p>
+          <p className="text-sm text-slate-500">{data.period}</p>
         </div>
         
         <div className="overflow-x-auto">

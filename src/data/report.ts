@@ -2,11 +2,17 @@
 import { ReportData } from '@/types/report';
 
 export const reportData: ReportData = {
+  pageTitle: 'Tererai Trent Foundation - Progress Report',
+  pageDescription: 'H1 2025 Progress Report: Sowing Seeds of Hope and Opportunity',
   organization: "Tererai Trent International Foundation",
   reportTitle: "H1 2025 Progress Report: Sowing Seeds of Hope and Opportunity",
   period: "January – June 2025",
   guidingPrinciple: "Providing universal access to quality education",
   mission: "We envision empowered rural communities where all children have access to quality education, regardless of their gender or socio-economic backgrounds.",
+  coverImage: {
+    src: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1',
+    alt: 'African students learning',
+  },
   tocTitle: 'Table of Contents',
   message: {
     title: "A Message of Gratitude and Progress",
@@ -186,6 +192,12 @@ export const reportData: ReportData = {
   ],
   financialIntro:
     "The income statement below highlights how donations fund our programs and operations during the first half of 2025.",
+  financialsTitle: 'Financial Performance',
+  financialMetrics: [
+    { label: 'Revenue Growth', value: '+12%', change: 'positive', icon: 'ArrowUp' },
+    { label: 'Program Efficiency', value: '86%', change: 'positive', description: 'of funds go directly to programs' },
+    { label: 'Admin Cost Ratio', value: '8.6%', change: 'negative', icon: 'ArrowDown', description: 'below industry average of 15%' },
+  ],
   financials: {
     revenue: [{ item: 'Donations and Grants', amount: '$35,000' }],
     expenses: [
@@ -195,6 +207,7 @@ export const reportData: ReportData = {
       { item: 'Administrative Costs', amount: '$3,000' }
     ]
   },
+  locationsTitle: 'Where We Work',
   locations: [
     { name: 'Chivakanenyama Secondary School', lat: -16.712, lng: 29.164 },
     { name: 'Zvimhonja Primary School', lat: -16.745, lng: 29.123 },

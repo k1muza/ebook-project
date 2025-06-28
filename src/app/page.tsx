@@ -1,13 +1,14 @@
 // pages/report.tsx
 import ReportViewer from '@/components/ReportViewer';
 import Head from 'next/head';
+import { reportData } from '@/data/report';
 
 const HomePage = () => {
   return (
     <>
       <Head>
-        <title>Tererai Trent Foundation - Progress Report</title>
-        <meta name="description" content="H1 2025 Progress Report: Sowing Seeds of Hope and Opportunity" />
+        <title>{reportData.pageTitle}</title>
+        <meta name="description" content={reportData.pageDescription} />
         <style>{`
           @media print {
             @page {

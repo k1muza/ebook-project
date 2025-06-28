@@ -46,18 +46,18 @@ const ReportViewer = () => {
   // Generate TOC items
   const tocItems = [
     { id: 'message', title: reportData.message.title },
-    { id: 'impact', title: 'Our Impact at a Glance' },
-    { id: 'highlights', title: 'Key Highlights' },
-    { id: 'timeline', title: 'Progress Timeline' },
-    { id: 'vision', title: 'Our Strategic Vision' },
+    { id: 'impact', title: reportData.impactTitle },
+    { id: 'highlights', title: reportData.highlightsTitle },
+    { id: 'timeline', title: reportData.timelineTitle },
+    { id: 'vision', title: reportData.strategicVisionTitle },
     ...reportData.sections.map((section, i) => ({
       id: `section-${i + 1}`,
       title: section.title,
     })),
-    { id: 'financials', title: 'Financials' },
-    { id: 'future', title: 'Looking Ahead' },
-    { id: 'locations', title: 'Where We Work' },
-    { id: 'thankyou', title: 'Thank You' },
+    { id: 'financials', title: reportData.financialsTitle || 'Financials' },
+    { id: 'future', title: reportData.futureGoalsTitle },
+    { id: 'locations', title: reportData.locationsTitle },
+    { id: 'thankyou', title: reportData.closingTitle },
   ];
 
   const sectionNumbers = tocItems.reduce<Record<string, number>>((acc, item, idx) => {
