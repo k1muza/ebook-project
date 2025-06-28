@@ -33,12 +33,17 @@ const ReportEditor = () => {
         <h2 className="font-semibold text-xl">Message</h2>
         {data.message.content.map((c, i) =>
           typeof c === 'string' ? (
-            <textarea
+            <p
               key={i}
-              className="w-full border rounded p-2"
-              value={c}
-              onChange={(e) => updateMessageItem(i, e.target.value)}
-            />
+              className="text-lg mb-4 text-gray-700"
+              contentEditable
+              suppressContentEditableWarning
+              onInput={(e) =>
+                updateMessageItem(i, e.currentTarget.textContent || '')
+              }
+            >
+              {c}
+            </p>
           ) : (
             <EditableContentItem
               key={i}
@@ -51,15 +56,18 @@ const ReportEditor = () => {
 
       {data.sections.map((section, sIdx) => (
         <div key={sIdx} className="space-y-4 border-t pt-4">
-          <input
-            className="w-full border rounded p-2 font-semibold"
-            value={section.title}
-            onChange={(e) => {
+          <h2
+            className="text-3xl font-bold text-slate-800 mb-10"
+            contentEditable
+            suppressContentEditableWarning
+            onInput={(e) => {
               const newData = { ...data }
-              newData.sections[sIdx].title = e.target.value
+              newData.sections[sIdx].title = e.currentTarget.textContent || ''
               setData(newData)
             }}
-          />
+          >
+            {section.title}
+          </h2>
           {section.content.map((item, cIdx) => (
             <EditableContentItem
               key={cIdx}

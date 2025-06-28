@@ -20,7 +20,7 @@ const EditToggle = () => {
   }
 
   return (
-    <div className="fixed bottom-4 right-4 flex items-center space-x-2 z-50">
+    <div className="fixed bottom-4 right-4 flex items-center space-x-2 z-50 print:hidden">
       <span className="text-sm font-medium text-gray-700">{editing ? 'Editing' : 'View'}</span>
       <label className="relative inline-flex items-center cursor-pointer">
         <input
