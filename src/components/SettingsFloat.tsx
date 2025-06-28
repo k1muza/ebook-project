@@ -36,7 +36,7 @@ const SettingsFloat = () => {
     'p-2 rounded-full text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-emerald-500'
 
   return (
-    <div className="fixed bottom-4 right-4 flex flex-col space-y-2 p-2 bg-white/70 backdrop-blur-md rounded-xl shadow z-50">
+    <div className="fixed bottom-4 right-4 flex flex-col space-y-2 p-2 bg-white/70 backdrop-blur-md rounded-xl shadow z-50 print-hidden">
       <button onClick={toggle} className={btn} title={editing ? 'View mode' : 'Edit mode'}>
         {editing ? <Eye size={20} /> : <Pencil size={20} />}
       </button>
