@@ -35,6 +35,7 @@ const HomePage = () => {
             }
             
             body {
+              margin: 0;
               -webkit-print-color-adjust: exact !important;
               print-color-adjust: exact !important;
               background: white !important;
