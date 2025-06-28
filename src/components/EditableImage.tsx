@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 interface Props {
   src: string
@@ -9,7 +9,9 @@ interface Props {
   height?: number
   layout?: 'full' | 'split'
   editable?: boolean
-  onChange?: (val: { src: string; width?: number; height?: number }) => void
+  onChange?: (
+    val: { src?: string; caption?: string; width?: number; height?: number }
+  ) => void
   containerClassName?: string
   imgClassName?: string
 }
@@ -31,32 +33,46 @@ const EditableImage = ({
   const w = width ?? (layout === 'split' ? 400 : 600)
   const h = height ?? (layout === 'split' ? 300 : 400)
 
+  useEffect(() => {
+    setLocalSrc(src)
+  }, [src])
+
   const handleUpload = (file: File) => {
     const reader = new FileReader()
     reader.onload = (e) => {
       const result = e.target?.result as string
       if (result) {
         setLocalSrc(result)
-        onChange?.({ src: result, width: w, height: h })
+        onChange?.({ src: result, caption, width: w, height: h })
       }
     }
     reader.readAsDataURL(file)
   }
 
   const updateDims = (nw: number, nh: number) => {
-    onChange?.({ src: localSrc, width: nw, height: nh })
+    onChange?.({ src: localSrc, caption, width: nw, height: nh })
   }
+
+  const editableProps = (cb: (val: string) => void) =>
+    editable
+      ? {
+          contentEditable: true,
+          suppressContentEditableWarning: true,
+          onInput: (e: React.FormEvent<HTMLElement>) =>
+            cb((e.currentTarget.textContent as string) || ''),
+        }
+      : {}
 
   return (
     <figure
       className={`my-8 print:break-inside-avoid ${
         layout === 'split' ? 'flex flex-col gap-8 items-center' : ''
-      } ${containerClassName ?? ''} group`}
+      } ${containerClassName ?? ''}`}
     >
       <div
         className={`relative overflow-hidden rounded-xl shadow-lg ${
           layout === 'split' ? 'md:w-1/2' : ''
-        }`}
+        } group`}
         style={{ width: w, height: h }}
       >
         <img
@@ -74,11 +90,14 @@ const EditableImage = ({
           </button>
         )}
       </div>
-      {caption && (
+      {(caption || editable) && (
         <figcaption
           className={`mt-2 text-sm text-gray-600 italic ${
             layout === 'split' ? 'md:w-1/2' : ''
           }`}
+          {...editableProps((val) =>
+            onChange?.({ src: localSrc, caption: val, width: w, height: h })
+          )}
         >
           {caption}
         </figcaption>
