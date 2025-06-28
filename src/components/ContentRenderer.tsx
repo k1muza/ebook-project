@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { ContentItem } from '@/types/report'
+import HeadingNumber from './HeadingNumber'
 
 interface Props {
   content: ContentItem | string
@@ -73,8 +74,8 @@ const ContentRenderer = ({ content, index, subheadingNumber, editable, onChange 
       )
     case 'subheading':
       return (
-        <h3 key={index} className="text-2xl font-bold text-slate-800 mt-8 mb-4">
-          {subheadingNumber && <span className="mr-2">{subheadingNumber}</span>}
+        <h3 key={index} className="text-2xl font-bold text-slate-800 mt-8 mb-4 flex items-baseline">
+          {subheadingNumber && <HeadingNumber number={subheadingNumber} className="text-xl" />}
           <span {...editableProps((val) => onChange?.({ ...content, text: val }))}>{content.text}</span>
         </h3>
       )

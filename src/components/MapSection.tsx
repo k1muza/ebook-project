@@ -4,6 +4,7 @@ import 'leaflet/dist/leaflet.css'
 import useReportData from '@/hooks/useReportData'
 import L from 'leaflet'
 import { useEffect } from 'react'
+import HeadingNumber from './HeadingNumber'
 
 interface Props { number: number }
 
@@ -28,8 +29,9 @@ const MapSection = ({ number }: Props) => {
 
   return (
     <div id="locations" className="mb-20 scroll-mt-20 print:break-before">
-      <h2 className="text-3xl font-bold text-slate-800 mb-10">
-        {number}. Where We Work
+      <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-baseline">
+        <HeadingNumber number={number} />
+        Where We Work
       </h2>
       <div className="w-full h-96 rounded-xl overflow-hidden shadow-xl">
         <MapContainer center={center} zoom={9} className="h-full w-full">

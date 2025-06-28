@@ -1,9 +1,6 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 import SettingsFloat from "@/components/SettingsFloat";
-
-
-const inter = Inter({ subsets: ['latin'] });
+import { inter } from "@/fonts";
 
 export const metadata = {
   title: 'TTI Foundation H1 2025 Progress Report',
