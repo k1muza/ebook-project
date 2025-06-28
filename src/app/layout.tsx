@@ -2,6 +2,7 @@ import "./globals.css";
 import SettingsFloat from "@/components/SettingsFloat";
 import { inter } from "@/fonts";
 import { ReportProvider } from "@/contexts/ReportContext";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 import { reportData } from "@/data/report";
 
 export const metadata = {
@@ -17,10 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ReportProvider>
-          {children}
-          <SettingsFloat />
-        </ReportProvider>
+        <ThemeProvider>
+          <ReportProvider>
+            {children}
+            <SettingsFloat />
+          </ReportProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
