@@ -12,10 +12,9 @@ const HomePage = () => {
           @media print {
             @page {
               margin: 1.5cm;
-              counter-increment: page;
 
               @bottom-center {
-                content: counter(page) " / " counter(pages);
+                content: "Page " counter(page);
                 font-size: 11pt;
                 font-family: 'Georgia', serif;
                 color: #334155;
