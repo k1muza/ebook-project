@@ -184,19 +184,17 @@ export const reportData: ReportData = {
     "Continue construction of the Chivakanenyama Secondary School classroom block.",
     "Conduct a full financial review of all H1 2025 projects."
   ],
-  financials: [
-    { item: 'Total Donations', amount: '$35,000' },
-    { item: 'Scholarship Support', amount: '$15,000' },
-    { item: 'Infrastructure Projects', amount: '$10,000' },
-    { item: 'Community Programs', amount: '$7,000' },
-    { item: 'Administrative Costs', amount: '$3,000' }
-  ],
-  futureVisionImage: {
-    src: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94',
-    alt: 'Future vision',
-    caption: 'Vision for the new Library and Computer Lab at Musukwi Secondary',
+  financialIntro:
+    "The income statement below highlights how donations fund our programs and operations during the first half of 2025.",
+  financials: {
+    revenue: [{ item: 'Donations and Grants', amount: '$35,000' }],
+    expenses: [
+      { item: 'Scholarship Support', amount: '$15,000' },
+      { item: 'Infrastructure Projects', amount: '$10,000' },
+      { item: 'Community Programs', amount: '$7,000' },
+      { item: 'Administrative Costs', amount: '$3,000' }
+    ]
   },
-  locationsTitle: 'Where We Work',
   locations: [
     { name: 'Chivakanenyama Secondary School', lat: -16.712, lng: 29.164 },
     { name: 'Zvimhonja Primary School', lat: -16.745, lng: 29.123 },
