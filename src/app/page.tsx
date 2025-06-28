@@ -46,11 +46,6 @@ const HomePage = () => {
               page-break-inside: avoid;
             }
             
-            /* Hide non-essential elements */
-            .print-hidden {
-              display: none !important;
-            }
-            
             /* Cover page styling */
             .print\:min-h-screen {
               min-height: 100vh !important;
