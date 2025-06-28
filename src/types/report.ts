@@ -28,6 +28,12 @@ export interface CoreGoal {
   description: string;
 }
 
+export interface MapLocation {
+  name: string
+  lat: number
+  lng: number
+}
+
 export interface ReportData {
   organization: string;
   reportTitle: string;
@@ -46,6 +52,7 @@ export interface ReportData {
   };
   sections: Section[];
   futureGoals: string[];
+  locations: MapLocation[]
   closing: string;
   closingImage?: { // Optional closing image
     src: string;

@@ -168,6 +168,11 @@ export const reportData: ReportData = {
     "Continue construction of the Chivakanenyama Secondary School classroom block.",
     "Conduct a full financial review of all H1 2025 projects."
   ],
+  locations: [
+    { name: 'Chivakanenyama Secondary School', lat: -16.712, lng: 29.164 },
+    { name: 'Zvimhonja Primary School', lat: -16.745, lng: 29.123 },
+    { name: 'Denderedzi Secondary School', lat: -16.737, lng: 29.138 }
+  ],
   closing: "None of this would be possible without you—our dedicated partners, donors, and the resilient communities we serve. Your belief in our mission fuels our work and turns dreams into reality for thousands of children. Together, we are not just providing education; we are building a legacy of empowerment, sustainability, and hope. Thank you for being a part of this incredible journey.",
   closingImage: {
     src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c",
