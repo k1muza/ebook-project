@@ -89,7 +89,7 @@ const ContentRenderer = ({ content, index, subheadingNumber, editable, onChange 
       return (
         <figure
           key={index}
-          className={`my-8 print:break-inside-avoid ${content.layout === 'split' ? 'flex flex-col gap-8 items-center' : ''}`}
+          className={`my-8 print:break-inside-avoid ${content.layout === 'split' ? 'flex flex-col items-center' : ''}`}
         >
           <div
             className={`relative overflow-hidden rounded-xl shadow-lg ${content.layout === 'split' ? 'md:w-1/2' : ''}`}

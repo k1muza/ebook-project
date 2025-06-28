@@ -47,7 +47,6 @@ const ReportViewer = () => {
   const tocItems = [
     { id: 'message', title: reportData.message.title },
     { id: 'impact', title: reportData.impactTitle },
-    { id: 'highlights', title: reportData.highlightsTitle },
     { id: 'timeline', title: reportData.timelineTitle },
     { id: 'vision', title: reportData.strategicVisionTitle },
     ...reportData.sections.map((section, i) => ({

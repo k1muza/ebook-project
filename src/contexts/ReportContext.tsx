@@ -38,6 +38,7 @@ export const ReportProvider = ({ children }: { children: React.ReactNode }) => {
   }, [])
 
   const save = async (newData?: ReportData) => {
+    console.log('Saving report to IndexedDB', newData)
     const toSave = newData ?? data
     if (!toSave) return
     await db.table('report').put({ ...(toSave as ReportData), id: REPORT_ID })
