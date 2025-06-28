@@ -65,13 +65,44 @@ const CoverPage = () => {
         <br />
         {data.period}
       </p>
-      <div className="relative w-64 h-64 rounded-full overflow-hidden border-8 border-emerald-100 shadow-xl mx-auto">
-        <img
-          src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1"
-          alt="African students learning"
-          className="w-full h-full object-cover opacity-90"
-        />
-      </div>
+      {data.coverImage && (
+        <div className="relative w-64 h-64 rounded-full overflow-hidden border-8 border-emerald-100 shadow-xl mx-auto">
+          <img
+            src={data.coverImage.src}
+            alt={data.coverImage.alt}
+            className="w-full h-full object-cover opacity-90"
+          />
+          {editing && (
+            <div className="text-sm text-gray-500 text-center mt-2">
+              Src:{' '}
+              <span
+                contentEditable
+                suppressContentEditableWarning
+                onBlur={(e: React.FocusEvent<HTMLElement>) => {
+                  const newData = { ...(data as typeof data) }
+                  if (newData.coverImage) newData.coverImage.src = e.currentTarget.textContent || ''
+                  setData(newData)
+                }}
+              >
+                {data.coverImage.src}
+              </span>
+              <br />
+              Alt:{' '}
+              <span
+                contentEditable
+                suppressContentEditableWarning
+                onBlur={(e: React.FocusEvent<HTMLElement>) => {
+                  const newData = { ...(data as typeof data) }
+                  if (newData.coverImage) newData.coverImage.alt = e.currentTarget.textContent || ''
+                  setData(newData)
+                }}
+              >
+                {data.coverImage.alt}
+              </span>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   </div>
   );

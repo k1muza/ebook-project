@@ -50,12 +50,26 @@ export interface IncomeStatement {
   expenses: FinancialEntry[]
 }
 
+export interface FinancialMetric {
+  label: string
+  value: string
+  change?: 'positive' | 'negative'
+  icon?: string
+  description?: string
+}
+
 export interface ReportData {
+  pageTitle: string;
+  pageDescription: string;
   organization: string;
   reportTitle: string;
   period: string;
   guidingPrinciple: string;
   mission: string;
+  coverImage?: {
+    src: string;
+    alt: string;
+  };
   tocTitle: string;
   message: {
     title: string;
@@ -71,7 +85,10 @@ export interface ReportData {
     businessGoals: CoreGoal[];
   };
   strategicVisionTitle: string;
+  highlightsTitle: string;
   highlights?: HighlightStat[];
+  financialsTitle: string;
+  financialMetrics?: FinancialMetric[];
   financialIntro?: string;
   financials?: IncomeStatement;
   sections: Section[];
