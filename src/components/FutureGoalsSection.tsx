@@ -1,6 +1,5 @@
 'use client'
 import useReportData from '@/hooks/useReportData'
-import { ChevronRight } from 'lucide-react'
 
 interface Props { number: number }
 
