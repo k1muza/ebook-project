@@ -39,19 +39,19 @@ const SettingsFloat = () => {
 
   return (
     <>
-      {/* Backdrop */}
+      {/* Backdrop to catch outside clicks */}
       {showTree && (
         <div
           onClick={toggleTree}
-          className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 transition-opacity print:hidden"
+          className="fixed inset-0 z-40 print:hidden"
         />
       )}
       {/* Sliding panel */}
       <aside
-        className={`fixed top-0 right-0 h-full w-full max-w-xl bg-white rounded-l-xl shadow-2xl z-50 transform transition-transform duration-300 ease-in-out print:hidden ${showTree ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`fixed top-0 right-0 h-full w-full max-w-xl bg-white rounded-l-xl shadow-lg z-50 transform transition-transform duration-300 ease-in-out print:hidden ${showTree ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <div className="flex items-center justify-between p-3 border-b">
-          <h2 className="font-semibold">Report Data</h2>
+          <h2 className="font-semibold">Edit Report Data</h2>
           <button onClick={toggleTree} className={btn} title="Close editor">
             <X size={20} />
           </button>
