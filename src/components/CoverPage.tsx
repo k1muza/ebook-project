@@ -11,7 +11,7 @@ const CoverPage = () => {
     <div className="absolute top-10 left-10 w-24 h-24 rounded-full bg-emerald-200 opacity-50"></div>
     <div className="absolute bottom-20 right-10 w-32 h-32 rounded-full bg-amber-200 opacity-50"></div>
     <div className="absolute top-1/3 right-20 w-16 h-16 rounded-full bg-purple-200 opacity-50"></div>
-    <div className="relative z-10 px-8 py-12 rounded-2xl max-w-3xl mx-auto bg-transparent shadow-none">
+    <div className="relative z-10 px-8 py-12 max-w-3xl mx-auto bg-transparent shadow-none">
       <div className="bg-emerald-100 p-2 px-4 rounded-full mb-8 inline-block">
         <p className="text-emerald-700 font-sans font-bold">Progress Report • {reportData.period}</p>
       </div>
