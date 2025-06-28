@@ -19,7 +19,7 @@ const CoverPage = () => {
             ? {
                 contentEditable: true,
                 suppressContentEditableWarning: true,
-                onInput: (e: React.FormEvent<HTMLElement>) => {
+                onBlur: (e: React.FocusEvent<HTMLElement>) => {
                   const newData = { ...(data as typeof data) }
                   newData.period = e.currentTarget.textContent || ''
                   setData(newData)
@@ -36,7 +36,7 @@ const CoverPage = () => {
           ? {
               contentEditable: true,
               suppressContentEditableWarning: true,
-              onInput: (e: React.FormEvent<HTMLElement>) => {
+              onBlur: (e: React.FocusEvent<HTMLElement>) => {
                 const newData = { ...(data as typeof data) }
                 newData.reportTitle = e.currentTarget.textContent || ''
                 setData(newData)
@@ -53,7 +53,7 @@ const CoverPage = () => {
           ? {
               contentEditable: true,
               suppressContentEditableWarning: true,
-              onInput: (e: React.FormEvent<HTMLElement>) => {
+              onBlur: (e: React.FocusEvent<HTMLElement>) => {
                 const newData = { ...(data as typeof data) }
                 newData.organization = e.currentTarget.textContent || ''
                 setData(newData)

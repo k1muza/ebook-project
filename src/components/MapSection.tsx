@@ -35,7 +35,7 @@ const MapSection = ({ number }: Props) => {
           ? {
               contentEditable: true,
               suppressContentEditableWarning: true,
-              onInput: (e: React.FormEvent<HTMLElement>) => {
+              onBlur: (e: React.FocusEvent<HTMLElement>) => {
                 const newData = { ...(data as typeof data) }
                 newData.locationsTitle = e.currentTarget.textContent || ''
                 setData(newData)

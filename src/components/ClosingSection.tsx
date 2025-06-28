@@ -16,7 +16,7 @@ const ClosingSection = ({ number }: Props) => {
           ? {
               contentEditable: true,
               suppressContentEditableWarning: true,
-              onInput: (e: React.FormEvent<HTMLElement>) => {
+              onBlur: (e: React.FocusEvent<HTMLElement>) => {
                 const newData = { ...(data as typeof data) }
                 newData.closingTitle = e.currentTarget.textContent || ''
                 setData(newData)
@@ -38,7 +38,7 @@ const ClosingSection = ({ number }: Props) => {
               ? {
                   contentEditable: true,
                   suppressContentEditableWarning: true,
-                  onInput: (e: React.FormEvent<HTMLElement>) => {
+                  onBlur: (e: React.FocusEvent<HTMLElement>) => {
                     const newData = { ...(data as typeof data) }
                     if (newData.closingImage)
                       newData.closingImage.caption = e.currentTarget.textContent || ''
@@ -57,7 +57,7 @@ const ClosingSection = ({ number }: Props) => {
           ? {
               contentEditable: true,
               suppressContentEditableWarning: true,
-              onInput: (e: React.FormEvent<HTMLElement>) => {
+              onBlur: (e: React.FocusEvent<HTMLElement>) => {
                 const newData = { ...(data as typeof data) }
                 newData.closing = e.currentTarget.textContent || ''
                 setData(newData)

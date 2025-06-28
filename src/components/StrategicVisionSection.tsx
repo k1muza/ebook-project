@@ -17,7 +17,7 @@ const StrategicVisionSection = ({ number }: Props) => {
           ? {
               contentEditable: true,
               suppressContentEditableWarning: true,
-              onInput: (e: React.FormEvent<HTMLElement>) => {
+              onBlur: (e: React.FocusEvent<HTMLElement>) => {
                 const newData = { ...(data as typeof data) }
                 newData.strategicVisionTitle = e.currentTarget.textContent || ''
                 setData(newData)
@@ -34,7 +34,7 @@ const StrategicVisionSection = ({ number }: Props) => {
           ? {
               contentEditable: true,
               suppressContentEditableWarning: true,
-              onInput: (e: React.FormEvent<HTMLElement>) => {
+              onBlur: (e: React.FocusEvent<HTMLElement>) => {
                 const newData = { ...(data as typeof data) }
                 newData.strategicVision.intro = e.currentTarget.textContent || ''
                 setData(newData)
@@ -64,7 +64,7 @@ const StrategicVisionSection = ({ number }: Props) => {
                       ? {
                           contentEditable: true,
                           suppressContentEditableWarning: true,
-                          onInput: (e: React.FormEvent<HTMLElement>) => {
+                          onBlur: (e: React.FocusEvent<HTMLElement>) => {
                             const newData = { ...(data as typeof data) }
                             newData.strategicVision.educationGoals[index].title =
                               e.currentTarget.textContent || ''
@@ -81,7 +81,7 @@ const StrategicVisionSection = ({ number }: Props) => {
                       ? {
                           contentEditable: true,
                           suppressContentEditableWarning: true,
-                          onInput: (e: React.FormEvent<HTMLElement>) => {
+                          onBlur: (e: React.FocusEvent<HTMLElement>) => {
                             const newData = { ...(data as typeof data) }
                             newData.strategicVision.educationGoals[index].description =
                               e.currentTarget.textContent || ''
@@ -116,7 +116,7 @@ const StrategicVisionSection = ({ number }: Props) => {
                       ? {
                           contentEditable: true,
                           suppressContentEditableWarning: true,
-                          onInput: (e: React.FormEvent<HTMLElement>) => {
+                          onBlur: (e: React.FocusEvent<HTMLElement>) => {
                             const newData = { ...(data as typeof data) }
                             newData.strategicVision.businessGoals[index].title =
                               e.currentTarget.textContent || ''
@@ -133,7 +133,7 @@ const StrategicVisionSection = ({ number }: Props) => {
                       ? {
                           contentEditable: true,
                           suppressContentEditableWarning: true,
-                          onInput: (e: React.FormEvent<HTMLElement>) => {
+                          onBlur: (e: React.FocusEvent<HTMLElement>) => {
                             const newData = { ...(data as typeof data) }
                             newData.strategicVision.businessGoals[index].description =
                               e.currentTarget.textContent || ''

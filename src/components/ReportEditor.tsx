@@ -48,7 +48,7 @@ const ReportEditor = () => {
             className="text-3xl font-bold text-slate-800 mb-10"
             contentEditable
             suppressContentEditableWarning
-            onInput={(e) => {
+            onBlur={(e) => {
               const newData = { ...data }
               newData.sections[sIdx].title = e.currentTarget.textContent || ''
               setData(newData)

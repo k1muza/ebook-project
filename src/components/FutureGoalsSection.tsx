@@ -16,7 +16,7 @@ const FutureGoalsSection = ({ number }: Props) => {
         ? {
             contentEditable: true,
             suppressContentEditableWarning: true,
-            onInput: (e: React.FormEvent<HTMLElement>) => {
+            onBlur: (e: React.FocusEvent<HTMLElement>) => {
               const newData = { ...(data as typeof data) }
               newData.futureGoalsTitle = e.currentTarget.textContent || ''
               setData(newData)
@@ -39,7 +39,7 @@ const FutureGoalsSection = ({ number }: Props) => {
               ? {
                   contentEditable: true,
                   suppressContentEditableWarning: true,
-                  onInput: (e: React.FormEvent<HTMLElement>) => {
+                  onBlur: (e: React.FocusEvent<HTMLElement>) => {
                     const newData = { ...(data as typeof data) }
                     newData.futureGoals[index] = e.currentTarget.textContent || ''
                     setData(newData)

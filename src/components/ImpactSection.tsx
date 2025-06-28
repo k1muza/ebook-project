@@ -16,7 +16,7 @@ const ImpactSection = ({ number }: Props) => {
         ? {
             contentEditable: true,
             suppressContentEditableWarning: true,
-            onInput: (e: React.FormEvent<HTMLElement>) => {
+            onBlur: (e: React.FocusEvent<HTMLElement>) => {
               const newData = { ...(data as typeof data) }
               newData.impactTitle = e.currentTarget.textContent || ''
               setData(newData)
@@ -40,7 +40,7 @@ const ImpactSection = ({ number }: Props) => {
                 ? {
                     contentEditable: true,
                     suppressContentEditableWarning: true,
-                    onInput: (e: React.FormEvent<HTMLElement>) => {
+                    onBlur: (e: React.FocusEvent<HTMLElement>) => {
                       const newData = { ...(data as typeof data) }
                       newData.milestones[index].title =
                         e.currentTarget.textContent || ''
@@ -57,7 +57,7 @@ const ImpactSection = ({ number }: Props) => {
                 ? {
                     contentEditable: true,
                     suppressContentEditableWarning: true,
-                    onInput: (e: React.FormEvent<HTMLElement>) => {
+                    onBlur: (e: React.FocusEvent<HTMLElement>) => {
                       const newData = { ...(data as typeof data) }
                       newData.milestones[index].description =
                         e.currentTarget.textContent || ''

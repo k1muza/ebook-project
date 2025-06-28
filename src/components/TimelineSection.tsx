@@ -15,7 +15,7 @@ const TimelineSection = ({ number }: Props) => {
           ? {
               contentEditable: true,
               suppressContentEditableWarning: true,
-              onInput: (e: React.FormEvent<HTMLElement>) => {
+              onBlur: (e: React.FocusEvent<HTMLElement>) => {
                 const newData = { ...(data as typeof data) }
                 newData.timelineTitle = e.currentTarget.textContent || ''
                 setData(newData)
@@ -45,7 +45,7 @@ const TimelineSection = ({ number }: Props) => {
                   ? {
                       contentEditable: true,
                       suppressContentEditableWarning: true,
-                      onInput: (e: React.FormEvent<HTMLElement>) => {
+                      onBlur: (e: React.FocusEvent<HTMLElement>) => {
                         const newData = { ...(data as typeof data) }
                         newData.milestones[idx].title =
                           e.currentTarget.textContent || ''
@@ -62,7 +62,7 @@ const TimelineSection = ({ number }: Props) => {
                   ? {
                       contentEditable: true,
                       suppressContentEditableWarning: true,
-                      onInput: (e: React.FormEvent<HTMLElement>) => {
+                      onBlur: (e: React.FocusEvent<HTMLElement>) => {
                         const newData = { ...(data as typeof data) }
                         newData.milestones[idx].description =
                           e.currentTarget.textContent || ''

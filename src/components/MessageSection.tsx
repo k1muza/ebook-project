@@ -20,7 +20,7 @@ const MessageSection = ({ number }: Props) => {
         ? {
             contentEditable: true,
             suppressContentEditableWarning: true,
-            onInput: (e: React.FormEvent<HTMLElement>) => {
+            onBlur: (e: React.FocusEvent<HTMLElement>) => {
               const newData = { ...(data as ReportData) }
               newData.message.title = e.currentTarget.textContent || ''
               setData(newData)

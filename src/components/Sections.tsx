@@ -26,7 +26,7 @@ const Sections = ({ startNumber }: Props) => {
                 ? {
                     contentEditable: true,
                     suppressContentEditableWarning: true,
-                    onInput: (e: React.FormEvent<HTMLElement>) => {
+                    onBlur: (e: React.FocusEvent<HTMLElement>) => {
                       const newData = { ...(data as ReportData) }
                       newData.sections[sectionIndex].title =
                         e.currentTarget.textContent || ''

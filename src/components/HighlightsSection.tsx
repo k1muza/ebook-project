@@ -17,7 +17,7 @@ const HighlightsSection = ({ number }: Props) => {
           ? {
               contentEditable: true,
               suppressContentEditableWarning: true,
-              onInput: (e: React.FormEvent<HTMLElement>) => {
+              onBlur: (e: React.FocusEvent<HTMLElement>) => {
                 const newData = { ...(data as typeof data) }
                 newData.highlightsTitle = e.currentTarget.textContent || ''
                 setData(newData)
@@ -42,7 +42,7 @@ const HighlightsSection = ({ number }: Props) => {
                   ? {
                       contentEditable: true,
                       suppressContentEditableWarning: true,
-                      onInput: (e: React.FormEvent<HTMLElement>) => {
+                      onBlur: (e: React.FocusEvent<HTMLElement>) => {
                         const newData = { ...(data as typeof data) }
                         if (newData.highlights)
                           newData.highlights[idx].value = Number(e.currentTarget.textContent) || 0
@@ -59,7 +59,7 @@ const HighlightsSection = ({ number }: Props) => {
                   ? {
                       contentEditable: true,
                       suppressContentEditableWarning: true,
-                      onInput: (e: React.FormEvent<HTMLElement>) => {
+                      onBlur: (e: React.FocusEvent<HTMLElement>) => {
                         const newData = { ...(data as typeof data) }
                         if (newData.highlights)
                           newData.highlights[idx].label = e.currentTarget.textContent || ''
