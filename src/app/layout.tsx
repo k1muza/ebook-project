@@ -1,6 +1,5 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import EditToggle from "@/components/EditToggle";
 
 
 const inter = Inter({ subsets: ['latin'] });
@@ -21,7 +20,6 @@ export default function RootLayout({
         className={inter.className}
       >
         {children}
-        <EditToggle />
       </body>
     </html>
   );
