@@ -2,7 +2,7 @@
 import React from 'react'
 import useEditableReportData from '@/hooks/useEditableReportData'
 import { ContentItem } from '@/types/report'
-import EditableContentItem from './EditableContentItem'
+import ContentRenderer from './ContentRenderer'
 
 const ReportEditor = () => {
   const { data, setData, save, reset } = useEditableReportData()
@@ -31,40 +31,40 @@ const ReportEditor = () => {
 
       <div className="space-y-4">
         <h2 className="font-semibold text-xl">Message</h2>
-        {data.message.content.map((c, i) =>
-          typeof c === 'string' ? (
-            <textarea
-              key={i}
-              className="w-full border rounded p-2"
-              value={c}
-              onChange={(e) => updateMessageItem(i, e.target.value)}
-            />
-          ) : (
-            <EditableContentItem
-              key={i}
-              item={c}
-              onChange={(val) => updateMessageItem(i, val)}
-            />
-          )
-        )}
+        {data.message.content.map((c, i) => (
+          <ContentRenderer
+            key={i}
+            content={c}
+            index={i}
+            editable
+            onChange={(val) => updateMessageItem(i, val as ContentItem | string)}
+          />
+        ))}
       </div>
 
       {data.sections.map((section, sIdx) => (
         <div key={sIdx} className="space-y-4 border-t pt-4">
-          <input
-            className="w-full border rounded p-2 font-semibold"
-            value={section.title}
-            onChange={(e) => {
+          <h2
+            className="text-3xl font-bold text-slate-800 mb-10"
+            contentEditable
+            suppressContentEditableWarning
+            onInput={(e) => {
               const newData = { ...data }
-              newData.sections[sIdx].title = e.target.value
+              newData.sections[sIdx].title = e.currentTarget.textContent || ''
               setData(newData)
             }}
-          />
+          >
+            {section.title}
+          </h2>
           {section.content.map((item, cIdx) => (
-            <EditableContentItem
+            <ContentRenderer
               key={cIdx}
-              item={item as ContentItem}
-              onChange={(val) => updateSectionItem(sIdx, cIdx, val)}
+              content={item as ContentItem}
+              index={cIdx}
+              editable
+              onChange={(val) =>
+                updateSectionItem(sIdx, cIdx, val as ContentItem)
+              }
             />
           ))}
         </div>
