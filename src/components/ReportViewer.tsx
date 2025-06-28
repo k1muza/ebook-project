@@ -10,6 +10,7 @@ import HighlightsSection from './HighlightsSection';
 import TimelineSection from './TimelineSection';
 import StrategicVisionSection from './StrategicVisionSection';
 import Sections from './Sections';
+import FinancialsSection from './FinancialsSection';
 import FutureGoalsSection from './FutureGoalsSection';
 import dynamic from 'next/dynamic';
 const MapSection = dynamic(() => import('./MapSection'), { ssr: false });
@@ -53,6 +54,7 @@ const ReportViewer = () => {
       id: `section-${i + 1}`,
       title: section.title,
     })),
+    { id: 'financials', title: 'Financials' },
     { id: 'future', title: 'Looking Ahead' },
     { id: 'locations', title: 'Where We Work' },
     { id: 'thankyou', title: 'Thank You' },
@@ -78,6 +80,7 @@ const ReportViewer = () => {
         <TimelineSection number={sectionNumbers['timeline']} />
         <StrategicVisionSection number={sectionNumbers['vision']} />
         <Sections startNumber={sectionNumbers['section-1']} />
+        <FinancialsSection number={sectionNumbers['financials']} />
         <FutureGoalsSection number={sectionNumbers['future']} />
         <MapSection number={sectionNumbers['locations']} />
         <ClosingSection number={sectionNumbers['thankyou']} />

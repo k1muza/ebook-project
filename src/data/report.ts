@@ -176,6 +176,13 @@ export const reportData: ReportData = {
     "Continue construction of the Chivakanenyama Secondary School classroom block.",
     "Conduct a full financial review of all H1 2025 projects."
   ],
+  financials: [
+    { item: 'Total Donations', amount: '$35,000' },
+    { item: 'Scholarship Support', amount: '$15,000' },
+    { item: 'Infrastructure Projects', amount: '$10,000' },
+    { item: 'Community Programs', amount: '$7,000' },
+    { item: 'Administrative Costs', amount: '$3,000' }
+  ],
   locations: [
     { name: 'Chivakanenyama Secondary School', lat: -16.712, lng: 29.164 },
     { name: 'Zvimhonja Primary School', lat: -16.745, lng: 29.123 },
