@@ -193,7 +193,7 @@ export const reportData: ReportData = {
   financialIntro: "The income statement below highlights how donations fund our programs and operations during the first half of 2025.",
   financialsTitle: 'Financial Performance',
   financialMetrics: [
-    { label: 'Revenue Growth', value: '+12%', change: 'positive', icon: 'ArrowUp' },
+    { label: 'Revenue Growth', value: '+12%', change: 'positive', icon: 'ArrowUp', description: 'compared to H1 2024' },
     { label: 'Program Efficiency', value: '86%', change: 'positive', description: 'of funds go directly to programs' },
     { label: 'Admin Cost Ratio', value: '8.6%', change: 'negative', icon: 'ArrowDown', description: 'below industry average of 15%' },
   ],
