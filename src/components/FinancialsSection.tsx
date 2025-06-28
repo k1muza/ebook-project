@@ -199,7 +199,7 @@ const FinancialsSection = ({ number }: Props) => {
         </div>
       </div>
 
-      <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-6 border border-blue-100">
+      <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-6 border border-blue-100 print:break-inside-avoid">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <h3 className="text-xl font-bold text-slate-800 mb-2">Financial Allocation</h3>
