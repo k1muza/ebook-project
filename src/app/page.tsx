@@ -12,8 +12,9 @@ const HomePage = () => {
         <style>{`
           @media print {
             @page {
-              margin: 1.5cm;
-
+              margin-top: 1.5cm;
+              margin-bottom: 1.5cm;
+              
               @bottom-center {
                 content: "Page " counter(page);
                 font-size: 11pt;
@@ -26,13 +27,15 @@ const HomePage = () => {
             }
             
             @page :first {
-              margin: 0;
+              margin-top: 0;
+              margin-bottom: 0;
               @bottom-center {
                 content: none;
               }
             }
             
             body {
+              margin: 0;
               -webkit-print-color-adjust: exact !important;
               print-color-adjust: exact !important;
               background: white !important;

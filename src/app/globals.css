@@ -44,10 +44,17 @@ body {
 
 @media print {
   @page {
-    margin: 0.5cm;
+    margin-top: 1.5cm;
+    margin-bottom: 1.5cm;
+  }
+
+  @page :first {
+    margin-top: 0;
+    margin-bottom: 0;
   }
   
   body {
+    margin: 0;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
     background: white !important;
