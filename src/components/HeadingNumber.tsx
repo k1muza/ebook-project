@@ -9,7 +9,8 @@ interface Props {
 
 const HeadingNumber = ({ number, className = '' }: Props) => (
   <span
-    className={`${merriweather.className} inline-flex items-center justify-center rounded-full bg-slate-200 border border-slate-300 text-slate-800 font-bold mr-3 h-8 w-8 ${className}`}
+    className={`${merriweather.className} relative inline-flex items-center justify-center text-slate-800 font-bold mr-3 h-8 w-12 ${className}`}
+    style={{ background: "url('/brush.svg') center/contain no-repeat" }}
     aria-hidden="true"
   >
     {number}
