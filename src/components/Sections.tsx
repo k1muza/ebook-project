@@ -1,12 +1,16 @@
 'use client'
-import { reportData } from '@/data/report'
+import useReportData from '@/hooks/useReportData'
 import ContentRenderer from './ContentRenderer'
 import { ContentItem } from '@/types/report'
 interface Props {
   startNumber: number
 }
 
-const Sections = ({ startNumber }: Props) => (
+const Sections = ({ startNumber }: Props) => {
+  const reportData = useReportData();
+  if (!reportData) return null;
+
+  return (
   <>
     {reportData.sections.map((section, sectionIndex) => {
       const sectionNumber = startNumber + sectionIndex
@@ -38,6 +42,7 @@ const Sections = ({ startNumber }: Props) => (
       )
     })}
   </>
-)
+  );
+}
 
 export default Sections

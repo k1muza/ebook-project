@@ -1,10 +1,13 @@
 'use client'
-import { reportData } from '@/data/report'
-import { ChevronRight } from 'lucide-react'
+import useReportData from '@/hooks/useReportData'
 
 interface Props { number: number }
 
-const FutureGoalsSection = ({ number }: Props) => (
+const FutureGoalsSection = ({ number }: Props) => {
+  const reportData = useReportData();
+  if (!reportData) return null;
+
+  return (
   <div id="future" className="mb-20 scroll-mt-20">
     <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-center">
       {number}. Looking Ahead: Our Goals for H2 2025
@@ -28,6 +31,7 @@ const FutureGoalsSection = ({ number }: Props) => (
       </p>
     </div>
   </div>
-)
+  );
+}
 
 export default FutureGoalsSection

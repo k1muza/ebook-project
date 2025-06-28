@@ -1,7 +1,6 @@
 // components/ReportViewer.tsx
 'use client';
-import { reportData } from '@/data/report';
-
+import useReportData from '@/hooks/useReportData';
 import { useEffect, useState } from 'react';
 import CoverPage from './CoverPage';
 import TableOfContents from './TableOfContents';
@@ -20,6 +19,7 @@ import ClosingSection from './ClosingSection';
  * to each section.
  */
 const ReportViewer = () => {
+  const reportData = useReportData();
   const [activeSection, setActiveSection] = useState('');
   
   useEffect(() => {
@@ -36,6 +36,8 @@ const ReportViewer = () => {
     }
   }, []);
 
+  if (!reportData) return null;
+
 
   // Generate TOC items
   const tocItems = [
@@ -44,10 +46,10 @@ const ReportViewer = () => {
     { id: 'vision', title: 'Our Strategic Vision' },
     ...reportData.sections.map((section, i) => ({
       id: `section-${i + 1}`,
-      title: section.title
+      title: section.title,
     })),
     { id: 'future', title: 'Looking Ahead' },
-    { id: 'thankyou', title: 'Thank You' }
+    { id: 'thankyou', title: 'Thank You' },
   ];
 
   const sectionNumbers = tocItems.reduce<Record<string, number>>((acc, item, idx) => {

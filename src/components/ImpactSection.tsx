@@ -1,10 +1,15 @@
 'use client'
-import { reportData } from '@/data/report'
+import useReportData from '@/hooks/useReportData'
 import { BarChart2 } from 'lucide-react'
+
 
 interface Props { number: number }
 
-const ImpactSection = ({ number }: Props) => (
+const ImpactSection = ({ number }: Props) => {
+  const reportData = useReportData();
+  if (!reportData) return null;
+
+  return (
   <div id="impact" className="mb-20 scroll-mt-20">
     <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-center">
       <BarChart2 className="mr-3 text-emerald-600" size={32} />
@@ -24,6 +29,7 @@ const ImpactSection = ({ number }: Props) => (
       ))}
     </div>
   </div>
-)
+  );
+}
 
 export default ImpactSection
