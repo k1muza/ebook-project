@@ -8,7 +8,7 @@ const FutureGoalsSection = ({ number }: Props) => {
   if (!reportData) return null;
 
   return (
-  <div id="future" className="mb-20 scroll-mt-20">
+  <div id="future" className="mb-20 scroll-mt-20 print:break-before">
     <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-center">
       {number}. Looking Ahead: Our Goals for H2 2025
     </h2>
