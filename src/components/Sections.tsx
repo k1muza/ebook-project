@@ -1,8 +1,12 @@
 'use client'
-import { reportData } from '@/data/report'
+import useReportData from '@/hooks/useReportData'
 import ContentRenderer from './ContentRenderer'
 
-const Sections = () => (
+const Sections = () => {
+  const reportData = useReportData();
+  if (!reportData) return null;
+
+  return (
   <>
     {reportData.sections.map((section, sectionIndex) => {
       const sectionId = `section-${sectionIndex + 1}`
@@ -20,6 +24,7 @@ const Sections = () => (
       )
     })}
   </>
-)
+  );
+}
 
 export default Sections

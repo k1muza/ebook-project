@@ -1,7 +1,11 @@
 'use client'
-import { reportData } from '@/data/report';
+import useReportData from '@/hooks/useReportData';
 
-const CoverPage = () => (
+const CoverPage = () => {
+  const reportData = useReportData();
+  if (!reportData) return null;
+
+  return (
   <div className="min-h-screen flex flex-col justify-center items-center text-center py-20 mb-16 relative print:min-h-screen print:mb-0 print:py-0 print:flex print:justify-center print:items-center">
     <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 to-amber-100 z-0"></div>
     <div className="absolute top-10 left-10 w-24 h-24 rounded-full bg-emerald-200 opacity-50"></div>
@@ -28,6 +32,7 @@ const CoverPage = () => (
       </div>
     </div>
   </div>
-);
+  );
+};
 
 export default CoverPage;

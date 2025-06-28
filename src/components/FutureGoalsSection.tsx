@@ -1,8 +1,12 @@
 'use client'
-import { reportData } from '@/data/report'
+import useReportData from '@/hooks/useReportData'
 import { ChevronRight } from 'lucide-react'
 
-const FutureGoalsSection = () => (
+const FutureGoalsSection = () => {
+  const reportData = useReportData();
+  if (!reportData) return null;
+
+  return (
   <div id="future" className="mb-20 scroll-mt-20">
     <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-center">
       <ChevronRight className="mr-3 text-emerald-600" size={32} />
@@ -27,6 +31,7 @@ const FutureGoalsSection = () => (
       </p>
     </div>
   </div>
-)
+  );
+}
 
 export default FutureGoalsSection

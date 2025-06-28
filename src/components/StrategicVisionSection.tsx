@@ -1,8 +1,12 @@
 'use client'
-import { reportData } from '@/data/report'
+import useReportData from '@/hooks/useReportData'
 import { GraduationCap, Handshake } from 'lucide-react'
 
-const StrategicVisionSection = () => (
+const StrategicVisionSection = () => {
+  const reportData = useReportData();
+  if (!reportData) return null;
+
+  return (
   <div id="vision" className="mb-20 scroll-mt-20">
     <h2 className="text-3xl font-bold text-slate-800 mb-6">Our Strategic Vision: A Blueprint for a Brighter Future</h2>
     <p className="text-lg mb-8">{reportData.strategicVision.intro}</p>
@@ -49,6 +53,7 @@ const StrategicVisionSection = () => (
       </div>
     </div>
   </div>
-)
+  );
+}
 
 export default StrategicVisionSection
