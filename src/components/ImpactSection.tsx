@@ -12,7 +12,6 @@ const ImpactSection = ({ number }: Props) => {
   return (
   <div id="impact" className="mb-20 scroll-mt-20">
     <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-center">
-      <BarChart2 className="mr-3 text-emerald-600" size={32} />
       {number}. Our Impact at a Glance
     </h2>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
