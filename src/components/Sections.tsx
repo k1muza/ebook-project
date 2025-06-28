@@ -2,6 +2,7 @@
 import useReportData from '@/hooks/useReportData'
 import ContentRenderer from './ContentRenderer'
 import { ContentItem } from '@/types/report'
+import HeadingNumber from './HeadingNumber'
 interface Props {
   startNumber: number
 }
@@ -18,8 +19,9 @@ const Sections = ({ startNumber }: Props) => {
       let subIndex = 0
       return (
         <div key={sectionIndex} id={sectionId} className="mb-20 scroll-mt-20 print:break-before">
-          <h2 className="text-3xl font-bold text-slate-800 mb-10">
-            {sectionNumber}. {section.title}
+          <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-baseline">
+            <HeadingNumber number={sectionNumber} />
+            {section.title}
           </h2>
           <div className="space-y-6">
             {section.content.map((content, contentIndex) => {

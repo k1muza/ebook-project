@@ -1,6 +1,7 @@
 'use client'
 import useReportData from '@/hooks/useReportData'
 import { GraduationCap, Handshake } from 'lucide-react'
+import HeadingNumber from './HeadingNumber'
 
 interface Props { number: number }
 
@@ -10,8 +11,9 @@ const StrategicVisionSection = ({ number }: Props) => {
 
   return (
     <div id="vision" className="mb-20 scroll-mt-20 print:break-before">
-      <h2 className="text-3xl font-bold text-slate-800 mb-6">
-        {number}. Our Strategic Vision: A Blueprint for a Brighter Future
+      <h2 className="text-3xl font-bold text-slate-800 mb-6 flex items-baseline">
+        <HeadingNumber number={number} />
+        Our Strategic Vision: A Blueprint for a Brighter Future
       </h2>
       <p className="text-lg mb-8">{reportData.strategicVision.intro}</p>
 
