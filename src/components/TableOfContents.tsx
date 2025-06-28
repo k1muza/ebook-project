@@ -1,6 +1,7 @@
 'use client'
 import { Dispatch, SetStateAction } from 'react'
 import { BookOpen } from 'lucide-react'
+import useReportData from '@/hooks/useReportData'
 
 interface TocItem {
   id: string
@@ -14,6 +15,8 @@ interface Props {
 }
 
 const TableOfContents = ({ items, active, setActive }: Props) => {
+  const reportData = useReportData()
+  if (!reportData) return null
   const circleColor = (index: number) => {
     const startHue = 160
     const endHue = 220
@@ -23,6 +26,10 @@ const TableOfContents = ({ items, active, setActive }: Props) => {
 
   return (
     <div className="mb-20 p-8 mx-8 print:break-before print:break-after">
+      <div className="mb-12 text-center p-6 bg-gradient-to-r from-emerald-50 to-amber-50 rounded-xl">
+        <p className="text-xl italic text-emerald-700 mb-6">“{reportData.guidingPrinciple}”</p>
+        <p className="text-lg text-slate-700">{reportData.mission}</p>
+      </div>
       <h2 className="text-3xl font-bold text-slate-800 mb-6 flex items-center">
         <BookOpen className="mr-3 text-emerald-600" size={32} />
         Table of Contents
@@ -31,12 +38,12 @@ const TableOfContents = ({ items, active, setActive }: Props) => {
         {items.map((item, index) => (
           <li key={item.id}>
             <a
-            href={`#${item.id}`}
-            onClick={e => {
-              e.preventDefault()
-              document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' })
-              setActive(item.id)
-            }}
+              href={`#${item.id}`}
+              onClick={e => {
+                e.preventDefault()
+                document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' })
+                setActive(item.id)
+              }}
               className={`flex items-center p-3 rounded-lg transition-all ${
                 active === item.id ? 'bg-emerald-100 text-emerald-700 font-bold' : 'hover:bg-emerald-50'
               }`}
