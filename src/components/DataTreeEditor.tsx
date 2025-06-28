@@ -12,7 +12,7 @@ const DataTreeEditor = () => {
   const update = (src: unknown) => {
     const cloned = JSON.parse(JSON.stringify(src)) as ReportData
     setData(cloned)
-    save()
+    save(cloned)
   }
 
   return (
