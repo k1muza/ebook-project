@@ -6,7 +6,7 @@ import { db, REPORT_ID, resetReportData } from '@/utils/db'
 type ReportContextType = {
   data: ReportData | null
   setData: React.Dispatch<React.SetStateAction<ReportData | null>>
-  save: () => Promise<void>
+  save: (newData?: ReportData) => Promise<void>
   reset: () => Promise<void>
   editing: boolean
   toggleEditing: () => void
@@ -37,9 +37,10 @@ export const ReportProvider = ({ children }: { children: React.ReactNode }) => {
     load()
   }, [])
 
-  const save = async () => {
-    if (!data) return
-    await db.table('report').put({ ...(data as ReportData), id: REPORT_ID })
+  const save = async (newData?: ReportData) => {
+    const toSave = newData ?? data
+    if (!toSave) return
+    await db.table('report').put({ ...(toSave as ReportData), id: REPORT_ID })
   }
 
   const reset = async () => {
