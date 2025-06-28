@@ -5,7 +5,7 @@ import { ContentItem } from '@/types/report'
 import EditableContentItem from './EditableContentItem'
 
 const ReportEditor = () => {
-  const { data, setData, save } = useEditableReportData()
+  const { data, setData, save, reset } = useEditableReportData()
 
   if (!data) return <p>Loading...</p>
 
@@ -70,12 +70,22 @@ const ReportEditor = () => {
         </div>
       ))}
 
-      <button
-        className="px-4 py-2 bg-emerald-600 text-white rounded"
-        onClick={() => save(data)}
-      >
-        Save
-      </button>
+      <div className="flex space-x-4">
+        <button
+          className="px-4 py-2 bg-emerald-600 text-white rounded"
+          onClick={() => save(data)}
+        >
+          Save
+        </button>
+        <button
+          className="px-4 py-2 bg-gray-200 text-gray-800 rounded"
+          onClick={async () => {
+            await reset();
+          }}
+        >
+          Reset Data
+        </button>
+      </div>
     </div>
   )
 }

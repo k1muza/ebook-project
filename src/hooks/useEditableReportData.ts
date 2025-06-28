@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { ReportData } from '@/types/report'
-import { db, REPORT_ID } from '@/utils/db'
+import { db, REPORT_ID, resetReportData } from '@/utils/db'
 
 // Hook that loads report data from Dexie and allows saving updates
 const useEditableReportData = () => {
@@ -9,9 +9,18 @@ const useEditableReportData = () => {
 
   useEffect(() => {
     const load = async () => {
-      const existing = await db.table('report').get(REPORT_ID)
-      if (existing) {
-        setData(existing as ReportData)
+      try {
+        const existing = await db.table('report').get(REPORT_ID)
+        if (existing) {
+          setData(existing as ReportData)
+        } else {
+          const fresh = await resetReportData()
+          setData(fresh)
+        }
+      } catch (err) {
+        console.error('Failed to load report from IndexedDB', err)
+        const fresh = await resetReportData()
+        setData(fresh)
       }
     }
     load()
@@ -22,7 +31,12 @@ const useEditableReportData = () => {
     setData(newData)
   }
 
-  return { data, setData, save }
+  const reset = async () => {
+    const fresh = await resetReportData()
+    setData(fresh)
+  }
+
+  return { data, setData, save, reset }
 }
 
 export default useEditableReportData
