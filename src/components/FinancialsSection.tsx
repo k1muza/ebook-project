@@ -7,13 +7,27 @@ interface Props {
   number: number
 }
 
+// Fix 1: Add type for financial items
+interface FinancialItem {
+  item: string
+  amount: string
+}
+
 const FinancialsSection = ({ number }: Props) => {
   const data = useReportData()
   if (!data || !data.financials) return null
 
-  const parseAmount = (val: string) => parseFloat(val.replace(/[$,]/g, ''))
-  const revenue = data.financials.revenue
-  const expenses = data.financials.expenses
+  // Fix 2: Safer amount parsing with error handling
+  const parseAmount = (val: string) => {
+    const numericValue = parseFloat(val.replace(/[^0-9.-]/g, ''))
+    return isNaN(numericValue) ? 0 : numericValue
+  }
+
+  // Fix 3: Provide default empty arrays and handle potential undefined
+  const revenue: FinancialItem[] = data.financials.revenue || []
+  const expenses: FinancialItem[] = data.financials.expenses || []
+
+  // Fix 4: Calculate totals safely
   const totalRevenue = revenue.reduce((sum, f) => sum + parseAmount(f.amount), 0)
   const totalExpenses = expenses.reduce((sum, f) => sum + parseAmount(f.amount), 0)
   const net = totalRevenue - totalExpenses
@@ -26,13 +40,13 @@ const FinancialsSection = ({ number }: Props) => {
       </h2>
       {data.financialIntro && <p className="mb-6">{data.financialIntro}</p>}
       <div className="overflow-x-auto">
-        <table className="financial-table">
+        <table className="financial-table w-full">
           <thead>
             <tr>
               <th colSpan={2}>Income Statement</th>
             </tr>
             <tr>
-              <th>Item</th>
+              <th className="text-left">Item</th>
               <th className="text-right">Amount</th>
             </tr>
           </thead>
@@ -59,8 +73,8 @@ const FinancialsSection = ({ number }: Props) => {
               <td>Net Income</td>
               <td className="text-right">
                 {net >= 0
-                  ? `$${net.toLocaleString()}`
-                  : `-$${Math.abs(net).toLocaleString()}`}
+                  ? `$${net.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+                  : `-$${Math.abs(net).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`}
               </td>
             </tr>
           </tbody>
@@ -74,4 +88,3 @@ const FinancialsSection = ({ number }: Props) => {
 }
 
 export default FinancialsSection
-
