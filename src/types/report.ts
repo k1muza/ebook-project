@@ -34,6 +34,12 @@ export interface MapLocation {
   lng: number
 }
 
+export interface HighlightStat {
+  label: string
+  value: number
+  icon?: string
+}
+
 export interface ReportData {
   organization: string;
   reportTitle: string;
@@ -50,6 +56,7 @@ export interface ReportData {
     educationGoals: CoreGoal[];
     businessGoals: CoreGoal[];
   };
+  highlights?: HighlightStat[];
   sections: Section[];
   futureGoals: string[];
   locations: MapLocation[]

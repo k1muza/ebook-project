@@ -51,6 +51,14 @@ export const reportData: ReportData = {
       description: "including a fuel-saver vehicle for local travel, two significant stationery donations, and laboratory equipment from OSU."
     }
   ],
+  highlights: [
+    { label: 'New Female Students', value: 10, icon: 'UserPlus' },
+    { label: 'Boreholes Drilled', value: 3, icon: 'Droplet' },
+    { label: 'Science Labs Launched', value: 2, icon: 'FlaskConical' },
+    { label: 'Women Employed', value: 15, icon: 'Users' },
+    { label: 'Partner Students on Tour', value: 20, icon: 'Globe' },
+    { label: 'Classrooms Built', value: 1, icon: 'Building2' }
+  ],
   strategicVision: {
     intro: "TTI's common goal is to provide universal access to quality education and develop an educational system that is sustainable and not solely reliant on external funding. To accomplish this, our work is guided by six core goals:",
     educationGoals: [

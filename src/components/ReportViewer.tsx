@@ -6,6 +6,8 @@ import CoverPage from './CoverPage';
 import TableOfContents from './TableOfContents';
 import MessageSection from './MessageSection';
 import ImpactSection from './ImpactSection';
+import HighlightsSection from './HighlightsSection';
+import TimelineSection from './TimelineSection';
 import StrategicVisionSection from './StrategicVisionSection';
 import Sections from './Sections';
 import FutureGoalsSection from './FutureGoalsSection';
@@ -44,6 +46,8 @@ const ReportViewer = () => {
   const tocItems = [
     { id: 'message', title: reportData.message.title },
     { id: 'impact', title: 'Our Impact at a Glance' },
+    { id: 'highlights', title: 'Key Highlights' },
+    { id: 'timeline', title: 'Progress Timeline' },
     { id: 'vision', title: 'Our Strategic Vision' },
     ...reportData.sections.map((section, i) => ({
       id: `section-${i + 1}`,
@@ -70,6 +74,8 @@ const ReportViewer = () => {
         />
         <MessageSection number={sectionNumbers['message']} />
         <ImpactSection number={sectionNumbers['impact']} />
+        <HighlightsSection number={sectionNumbers['highlights']} />
+        <TimelineSection number={sectionNumbers['timeline']} />
         <StrategicVisionSection number={sectionNumbers['vision']} />
         <Sections startNumber={sectionNumbers['section-1']} />
         <FutureGoalsSection number={sectionNumbers['future']} />
