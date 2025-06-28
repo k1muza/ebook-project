@@ -4,7 +4,6 @@ import useReportData from '@/hooks/useReportData';
 import { useEffect, useState } from 'react';
 import CoverPage from './CoverPage';
 import TableOfContents from './TableOfContents';
-import GuidingMission from './GuidingMission';
 import MessageSection from './MessageSection';
 import ImpactSection from './ImpactSection';
 import StrategicVisionSection from './StrategicVisionSection';
@@ -69,7 +68,6 @@ const ReportViewer = () => {
           active={activeSection}
           setActive={setActiveSection}
         />
-        <GuidingMission />
         <MessageSection number={sectionNumbers['message']} />
         <ImpactSection number={sectionNumbers['impact']} />
         <StrategicVisionSection number={sectionNumbers['vision']} />
