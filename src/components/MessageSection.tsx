@@ -13,7 +13,7 @@ const MessageSection = ({ number }: Props) => {
   if (!data) return null
 
   return (
-  <div id="message" className="mb-20 scroll-mt-20 print:break-before">
+  <div id="message" className="mb-20 scroll-mt-20">
     <h2
       className="text-3xl font-bold text-slate-800 mb-6 flex items-baseline"
       {...(editing

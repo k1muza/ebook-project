@@ -6,7 +6,7 @@ import CoverPage from './CoverPage';
 import TableOfContents from './TableOfContents';
 import MessageSection from './MessageSection';
 import ImpactSection from './ImpactSection';
-import HighlightsSection from './HighlightsSection';
+// import HighlightsSection from './HighlightsSection';
 import TimelineSection from './TimelineSection';
 import StrategicVisionSection from './StrategicVisionSection';
 import Sections from './Sections';
@@ -76,7 +76,7 @@ const ReportViewer = () => {
         />
         <MessageSection number={sectionNumbers['message']} />
         <ImpactSection number={sectionNumbers['impact']} />
-        <HighlightsSection number={sectionNumbers['highlights']} />
+        {/* <HighlightsSection number={sectionNumbers['highlights']} /> */}
         <TimelineSection number={sectionNumbers['timeline']} />
         <StrategicVisionSection number={sectionNumbers['vision']} />
         <Sections startNumber={sectionNumbers['section-1']} />

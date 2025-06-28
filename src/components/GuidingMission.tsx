@@ -6,7 +6,7 @@ const GuidingMission = () => {
   if (!data) return null;
 
   return (
-  <div className="mb-16 text-center p-6 bg-gradient-to-r from-emerald-50 to-amber-50 rounded-xl print:break-before">
+  <div className="mb-16 text-center p-6 bg-gradient-to-r from-emerald-50 to-amber-50 rounded-xl">
     <p
       className="text-xl italic text-emerald-700 mb-6"
       {...(editing

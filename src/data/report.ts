@@ -19,11 +19,11 @@ export const reportData: ReportData = {
     content: [
       "The first half of 2025 has been a period of incredible growth and transformative impact for the Tererai Trent International (TTI) Foundation. With the unwavering support of our partners, donors, and community members, we have made significant strides in our core focus areas of educational support, sustainable agriculture, and community empowerment.",
       "This report celebrates the milestones we have achieved together. It tells the story of how three key initiatives—our scholarship program, an income-generating sewing project, and school-based irrigation systems—are not just changing lives but are building a foundation for a self-sustaining future. We are thrilled to share our progress, acknowledge the challenges we've faced, and look ahead with renewed purpose to the work that still needs to be done.",
-      { 
-        type: "image", 
-        src: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d", 
+      {
+        type: "image",
+        src: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d",
         alt: "Community gathering",
-          caption: "Figure 1: Community members and TTI staff celebrating progress in education initiatives",
+        caption: "Figure 1: Community members and TTI staff celebrating progress in education initiatives",
         layout: "full"
       }
     ]
@@ -59,15 +59,15 @@ export const reportData: ReportData = {
       description: "including a fuel-saver vehicle for local travel, two significant stationery donations, and laboratory equipment from OSU."
     }
   ],
-  highlightsTitle: 'Key Highlights',
-  highlights: [
-    { label: 'New Female Students', value: 10, icon: 'UserPlus' },
-    { label: 'Boreholes Drilled', value: 3, icon: 'Droplet' },
-    { label: 'Science Labs Launched', value: 2, icon: 'FlaskConical' },
-    { label: 'Women Employed', value: 15, icon: 'Users' },
-    { label: 'Partner Students on Tour', value: 20, icon: 'Globe' },
-    { label: 'Classrooms Built', value: 1, icon: 'Building2' }
-  ],
+  // highlightsTitle: 'Key Highlights',
+  // highlights: [
+  //   { label: 'New Female Students', value: 10, icon: 'UserPlus' },
+  //   { label: 'Boreholes Drilled', value: 3, icon: 'Droplet' },
+  //   { label: 'Science Labs Launched', value: 2, icon: 'FlaskConical' },
+  //   { label: 'Women Employed', value: 15, icon: 'Users' },
+  //   { label: 'Partner Students on Tour', value: 20, icon: 'Globe' },
+  //   { label: 'Classrooms Built', value: 1, icon: 'Building2' }
+  // ],
   timelineTitle: 'Progress Timeline',
   strategicVision: {
     intro: "TTI's common goal is to provide universal access to quality education and develop an educational system that is sustainable and not solely reliant on external funding. To accomplish this, our work is guided by six core goals:",
@@ -107,9 +107,9 @@ export const reportData: ReportData = {
         { type: "paragraph", text: "Our scholarship program remains the cornerstone of our commitment to educational access. This half-year, we proudly supported 28 tertiary students and 3 Advanced Level high school students, covering their tuition, accommodation, and food. Strategic follow-ups ensured that our support was aligned with both their academic performance and individual needs." },
         { type: "paragraph", text: "We are thrilled to announce that we welcomed 10 more brilliant young women into the program. Empowering a girl is one of the most profound investments we can make. When girls are educated in safe, encouraging environments, they are more likely to stay in school, avoid early marriage, and make informed choices about their futures. They become leaders who uplift their families and communities, breaking the cycle of poverty for generations to come." },
         { type: "paragraph", text: "A landmark achievement this period was celebrating Tryness Nyauvanga and Christabel Dura, the first TTI-supported students to pursue a degree in Software Engineering. Their courage in entering a male-dominated field is a powerful testament to our efforts in promoting STEM education for girls. To support their journey, TTI provided each with a new laptop, removing a critical barrier to their success." },
-        { 
-          type: "image", 
-          src: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc", 
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc",
           alt: "Students receiving scholarships",
           caption: "Figure 2: Scholarship recipients at the January 2025 orientation",
           layout: "split"
@@ -117,9 +117,9 @@ export const reportData: ReportData = {
         { type: "subheading", text: "Scholarship Orientation: Building a Community of Leaders" },
         { type: "paragraph", text: "In January 2025, thanks to our generous donors, we held our first-ever orientation for 27 scholarship beneficiaries. This session was more than an introduction; it was a community-building experience. Students learned practical skills like time management and goal setting, connected with peers and mentors, and aligned their personal journeys with TTI's mission to uplift and empower." },
         { type: "quote", text: "Before the orientation, I was nervous and unsure about what to expect. But after hearing stories and guidance, I felt confident and ready to focus on my goals. I now understand that this scholarship is not just about school fees; it's about shaping my future.", author: "Christabel Dura" },
-        { 
-          type: "image", 
-          src: "https://images.unsplash.com/photo-1584697964358-3e14ca57658b", 
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1584697964358-3e14ca57658b",
           alt: "School supplies donation",
           caption: "Figure 3: Distribution of exercise books to students in need",
           layout: "full"
@@ -134,9 +134,9 @@ export const reportData: ReportData = {
         { type: "paragraph", text: "Beyond direct scholarships, our strategy focuses on building systems that foster independence and create lasting change." },
         { type: "subheading", text: "Vocational Training: From Skills to Enterprise" },
         { type: "paragraph", text: "The Skills and Business Center, established in late 2024, is already bearing fruit. This reporting period, we successfully integrated 80% of the women trained in fashion and tailoring into a new school uniform production initiative." },
-        { 
-          type: "image", 
-          src: "https://images.unsplash.com/photo-1600267165477-6d4cc741b379", 
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1600267165477-6d4cc741b379",
           alt: "Women sewing uniforms",
           caption: "Figure 4: Women from the vocational training program producing school uniforms",
           layout: "split"
@@ -144,8 +144,8 @@ export const reportData: ReportData = {
         { type: "paragraph", text: "This community-led enterprise addresses multiple needs at once. By producing affordable, locally-made uniforms, we are easing the financial burden on families and improving school attendance. More importantly, we are providing graduates of our training program with immediate, meaningful employment. The income generated not only strengthens household resilience but is also channeled back into our scholarship fund, creating a virtuous, sustainable cycle." },
         { type: "subheading", text: "Science Labs: Opening a World of Possibility" },
         { type: "paragraph", text: "In the past, over 88% of students in the Matau cluster graduated with an Arts focus, largely due to a lack of science facilities. This year, we shattered that barrier by introducing and completing two modern science laboratories at Chivakanenyama and Zvimhonja Secondary Schools." },
-        { 
-          type: "image", 
+        {
+          type: "image",
           src: "https://images.unsplash.com/photo-1532094349884-543bc11b234d",
           alt: "Science laboratory",
           caption: "Figure 5: New science lab at Zvimhonja Secondary School",
@@ -154,9 +154,9 @@ export const reportData: ReportData = {
         { type: "paragraph", text: "A science lab levels the playing field, giving rural students the same opportunities as their urban peers. It ignites dreams of becoming doctors, engineers, and innovators. The impact was immediate: Chivakanenyama Secondary has been upgraded to a High School and is now offering Advanced Level science classes. A donation of a microscope and other lab equipment from visiting OSU students has already enabled the first practical science lessons, marking a new era of education in Matau." },
         { type: "subheading", text: "Solar-Powered Irrigation: Cultivating a Sustainable Future" },
         { type: "paragraph", text: "Access to water is fundamental to health, hygiene, and economic prosperity. We are proud to report the successful drilling of 3 boreholes at Chiroti Primary, Zvimhinja Primary, and Denderedzi Secondary." },
-        { 
-          type: "image", 
-          src: "https://images.unsplash.com/photo-1560785496-3c9d27877182", 
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1560785496-3c9d27877182",
           alt: "Solar-powered irrigation",
           caption: "Figure 6: Solar-powered garden at Denderedzi Primary School",
           layout: "split"
@@ -168,9 +168,9 @@ export const reportData: ReportData = {
       title: "Strengthening Our Roots Through Partnership",
       content: [
         { type: "subheading", text: "Leadership Tours: Building Bridges and Trust" },
-        { 
-          type: "image", 
-          src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4", 
+        {
+          type: "image",
+          src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4",
           alt: "Leadership tour",
           caption: "Figure 7: OSU students visiting TTI projects in Zimbabwe",
           layout: "split"
@@ -190,8 +190,7 @@ export const reportData: ReportData = {
     "Continue construction of the Chivakanenyama Secondary School classroom block.",
     "Conduct a full financial review of all H1 2025 projects."
   ],
-  financialIntro:
-    "The income statement below highlights how donations fund our programs and operations during the first half of 2025.",
+  financialIntro: "The income statement below highlights how donations fund our programs and operations during the first half of 2025.",
   financialsTitle: 'Financial Performance',
   financialMetrics: [
     { label: 'Revenue Growth', value: '+12%', change: 'positive', icon: 'ArrowUp' },
@@ -219,5 +218,6 @@ export const reportData: ReportData = {
     src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c",
     alt: "TTI team and partners",
     caption: "Figure 8: TTI team members with community partners and donors"
-  }
+  },
+  highlightsTitle: ''
 };

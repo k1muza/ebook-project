@@ -44,7 +44,7 @@ const FinancialsSection = ({ number }: Props) => {
   const financialMetrics = data.financialMetrics || []
 
   return (
-    <div id="financials" className="mb-20 scroll-mt-20 print:break-before">
+    <div id="financials" className="mb-20 scroll-mt-20">
       <h2
         className="text-3xl font-bold text-slate-800 mb-6 flex items-baseline"
         {...(editing
@@ -70,7 +70,7 @@ const FinancialsSection = ({ number }: Props) => {
       )}
 
       {/* Financial Highlights Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div className="grid grid-cols-3 gap-6 mb-8">
         <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 border border-blue-100 shadow-sm">
           <div className="flex items-center mb-2">
             <div className="bg-blue-100 p-2 rounded-lg mr-3">

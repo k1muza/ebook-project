@@ -9,7 +9,7 @@ const ImpactSection = ({ number }: Props) => {
   if (!data) return null;
 
   return (
-  <div id="impact" className="mb-20 scroll-mt-20 print:break-before">
+  <div id="impact" className="mb-20 scroll-mt-20">
     <h2
       className="text-3xl font-bold text-slate-800 mb-10 flex items-baseline"
       {...(editing
@@ -29,7 +29,7 @@ const ImpactSection = ({ number }: Props) => {
     </h2>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {data.milestones.map((milestone, index) => (
-        <div key={index} className="flex items-start p-6 bg-gradient-to-br from-emerald-50 to-amber-50 rounded-xl border border-emerald-100">
+        <div key={index} className="flex items-start p-6 bg-gradient-to-br from-emerald-50 to-amber-50 rounded-xl border border-emerald-100 print:break-inside-avoid">
           <div className="bg-emerald-500 text-white rounded-full h-8 w-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
             {index + 1}
           </div>

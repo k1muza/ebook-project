@@ -25,10 +25,10 @@ const TableOfContents = ({ items, active, setActive }: Props) => {
   }
 
   return (
-    <div className="mb-20 p-8 mx-8 print:break-before print:break-after">
+    <div className="mb-20 px-8 mx-8 print:break-before print:break-after">
       <div className="mb-12 text-center p-6 bg-gradient-to-r from-emerald-50 to-amber-50 rounded-xl">
         <p
-          className="text-xl italic text-emerald-700 mb-6"
+          className="text-sm italic text-emerald-700 mb-6"
           {...(editing
             ? {
                 contentEditable: true,
@@ -44,7 +44,7 @@ const TableOfContents = ({ items, active, setActive }: Props) => {
           “{data.guidingPrinciple}”
         </p>
         <p
-          className="text-lg text-slate-700"
+          className="text-sm text-slate-700"
           {...(editing
             ? {
                 contentEditable: true,

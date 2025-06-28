@@ -10,7 +10,7 @@ const HighlightsSection = ({ number }: Props) => {
   const { data, setData, editing } = useReport()
   if (!data || !data.highlights) return null
   return (
-    <div id="highlights" className="mb-20 scroll-mt-20 print:break-before">
+    <div id="highlights" className="mb-20 scroll-mt-20">
       <h2
         className="text-3xl font-bold text-slate-800 mb-10 flex items-baseline"
         {...(editing

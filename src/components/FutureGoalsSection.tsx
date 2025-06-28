@@ -9,7 +9,7 @@ const FutureGoalsSection = ({ number }: Props) => {
   if (!data) return null;
 
   return (
-  <div id="future" className="mb-20 scroll-mt-20 print:break-before">
+  <div id="future" className="mb-20 scroll-mt-20">
     <h2
       className="text-3xl font-bold text-slate-800 mb-10 flex items-baseline"
       {...(editing
