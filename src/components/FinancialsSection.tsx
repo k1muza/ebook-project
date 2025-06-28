@@ -118,7 +118,7 @@ const FinancialsSection = ({ number }: Props) => {
       </div>
 
       {/* Financial Metrics */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-3 gap-4 mb-8">
         {financialMetrics.map((metric, index) => {
           const Icon = (Icons as unknown as Record<string, LucideIcon>)[metric.icon || 'ArrowUp']
           return (

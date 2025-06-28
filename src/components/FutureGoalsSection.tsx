@@ -29,7 +29,7 @@ const FutureGoalsSection = ({ number }: Props) => {
     </h2>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {data.futureGoals.map((goal, index) => (
-        <div key={index} className="flex items-start bg-gradient-to-br from-emerald-50 to-white p-6 rounded-xl border border-emerald-100">
+        <div key={index} className="flex items-start bg-gradient-to-br from-emerald-50 to-white p-6 rounded-xl border border-emerald-100 print:break-inside-avoid">
           <div className="bg-emerald-500 text-white rounded-full h-8 w-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
             {index + 1}
           </div>

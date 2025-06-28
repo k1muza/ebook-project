@@ -76,7 +76,6 @@ const ReportViewer = () => {
         />
         <MessageSection number={sectionNumbers['message']} />
         <ImpactSection number={sectionNumbers['impact']} />
-        {/* <HighlightsSection number={sectionNumbers['highlights']} /> */}
         <TimelineSection number={sectionNumbers['timeline']} />
         <StrategicVisionSection number={sectionNumbers['vision']} />
         <Sections startNumber={sectionNumbers['section-1']} />

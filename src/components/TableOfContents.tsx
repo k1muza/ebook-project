@@ -25,8 +25,8 @@ const TableOfContents = ({ items, active, setActive }: Props) => {
   }
 
   return (
-    <div className="mb-20 px-8 mx-8 print:break-before print:break-after">
-      <div className="mb-12 text-center p-6 bg-gradient-to-r from-emerald-50 to-amber-50 rounded-xl">
+    <div className="mb-20 px-8 print:px-0 mx-8 print:mx-0 print:break-before print:break-after relative">
+      <div className="mb-12 text-center p-6 bg-gradient-to-r from-emerald-50 to-amber-50 rounded-full w-80 h-80 flex flex-col items-center justify-center absolute right-0 top-0">
         <p
           className="text-sm italic text-emerald-700 mb-6"
           {...(editing
