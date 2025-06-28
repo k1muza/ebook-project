@@ -7,15 +7,19 @@ import {
   Printer,
   Save,
   ListTree,
+  Sun,
+  Moon,
   X,
 } from 'lucide-react'
 import { useState } from 'react'
+import { useTheme } from '@/contexts/ThemeContext'
 import DataTreeEditor from './DataTreeEditor'
 import { useReport } from '@/contexts/ReportContext'
 
 const SettingsFloat = () => {
   const { editing, toggleEditing, save } = useReport()
   const [showTree, setShowTree] = useState(false)
+  const { theme, toggleTheme } = useTheme()
 
   const toggle = () => {
     toggleEditing()
@@ -73,6 +77,9 @@ const SettingsFloat = () => {
         </button>
         <button onClick={print} className={btn} title="Print">
           <Printer size={20} />
+        </button>
+        <button onClick={toggleTheme} className={btn} title="Toggle theme">
+          {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
         </button>
         <button onClick={toggleTree} className={btn} title="Edit data tree">
           <ListTree size={20} />
