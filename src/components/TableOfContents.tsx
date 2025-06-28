@@ -25,46 +25,40 @@ const TableOfContents = ({ items, active, setActive }: Props) => {
   }
 
   return (
-    <div className="mb-20 mx-8 print:break-before print:break-after">
-      <div className="p-8 bg-gradient-to-r from-emerald-50 to-amber-50 rounded-xl md:grid md:grid-cols-3 md:gap-8">
-        <div className="md:col-span-1 mb-8 md:mb-0 text-center md:text-left">
-          <p className="text-xl italic text-emerald-700 mb-4">
-            “{reportData.guidingPrinciple}”
-          </p>
-          <p className="text-lg text-slate-700">{reportData.mission}</p>
-        </div>
-        <div className="md:col-span-2">
-          <h2 className="text-3xl font-bold text-slate-800 mb-6 flex items-center">
-            <BookOpen className="mr-3 text-emerald-600" size={32} />
-            Table of Contents
-          </h2>
-          <ul className="space-y-3">
-            {items.map((item, index) => (
-              <li key={item.id}>
-                <a
-                  href={`#${item.id}`}
-                  onClick={e => {
-                    e.preventDefault()
-                    document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' })
-                    setActive(item.id)
-                  }}
-                  className={`flex items-center p-3 rounded-lg transition-all ${
-                    active === item.id ? 'bg-emerald-100 text-emerald-700 font-bold' : 'hover:bg-emerald-50'
-                  }`}
-                >
-                  <span
-                    className="mr-3 flex items-center justify-center w-8 h-8 rounded-full text-white font-semibold"
-                    style={{ backgroundColor: circleColor(index) }}
-                  >
-                    {index + 1}
-                  </span>
-                  <span>{item.title}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <div className="mb-20 p-8 mx-8 print:break-before print:break-after">
+      <div className="mb-12 text-center p-6 bg-gradient-to-r from-emerald-50 to-amber-50 rounded-xl">
+        <p className="text-xl italic text-emerald-700 mb-6">“{reportData.guidingPrinciple}”</p>
+        <p className="text-lg text-slate-700">{reportData.mission}</p>
       </div>
+      <h2 className="text-3xl font-bold text-slate-800 mb-6 flex items-center">
+        <BookOpen className="mr-3 text-emerald-600" size={32} />
+        Table of Contents
+      </h2>
+      <ul className="space-y-3">
+        {items.map((item, index) => (
+          <li key={item.id}>
+            <a
+              href={`#${item.id}`}
+              onClick={e => {
+                e.preventDefault()
+                document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' })
+                setActive(item.id)
+              }}
+              className={`flex items-center p-3 rounded-lg transition-all ${
+                active === item.id ? 'bg-emerald-100 text-emerald-700 font-bold' : 'hover:bg-emerald-50'
+              }`}
+            >
+              <span
+                className="mr-3 flex items-center justify-center w-8 h-8 rounded-full text-white font-semibold"
+                style={{ backgroundColor: circleColor(index) }}
+              >
+                {index + 1}
+              </span>
+              <span>{item.title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
