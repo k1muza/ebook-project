@@ -1,24 +1,13 @@
 'use client'
-import { useRouter, usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
 import { resetReportData } from '@/utils/db'
-import { RefreshCcw, Pencil, Eye, Printer } from 'lucide-react'
+import { RefreshCcw, Pencil, Eye, Printer, Save } from 'lucide-react'
+import { useReport } from '@/contexts/ReportContext'
 
 const SettingsFloat = () => {
-  const router = useRouter()
-  const pathname = usePathname()
-  const [editing, setEditing] = useState(false)
-
-  useEffect(() => {
-    setEditing(pathname.startsWith('/edit'))
-  }, [pathname])
+  const { editing, toggleEditing, save } = useReport()
 
   const toggle = () => {
-    if (editing) {
-      router.push('/')
-    } else {
-      router.push('/edit')
-    }
+    toggleEditing()
   }
 
   const reset = async () => {
@@ -39,6 +28,9 @@ const SettingsFloat = () => {
     <div className="fixed bottom-4 right-4 flex flex-col space-y-2 p-2 bg-white/70 backdrop-blur-md rounded-xl shadow z-50 print:hidden">
       <button onClick={toggle} className={btn} title={editing ? 'View mode' : 'Edit mode'}>
         {editing ? <Eye size={20} /> : <Pencil size={20} />}
+      </button>
+      <button onClick={() => save()} className={btn} title="Save changes">
+        <Save size={20} />
       </button>
       <button onClick={reset} className={btn} title="Reset data">
         <RefreshCcw size={20} />

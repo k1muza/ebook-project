@@ -1,8 +1,8 @@
 'use client'
-import ReportEditor from '@/components/ReportEditor'
+import ReportViewer from '@/components/ReportViewer'
 
 const EditPage = () => {
-  return <ReportEditor />
+  return <ReportViewer />
 }
 
 export default EditPage

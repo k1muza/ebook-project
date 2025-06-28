@@ -1,6 +1,7 @@
 'use client'
 import ContentRenderer from './ContentRenderer'
-import useReportData from '@/hooks/useReportData'
+import { useReport } from '@/contexts/ReportContext'
+import { ReportData } from '@/types/report'
 import HeadingNumber from './HeadingNumber'
 
 interface Props {
@@ -8,17 +9,40 @@ interface Props {
 }
 
 const MessageSection = ({ number }: Props) => {
-  const reportData = useReportData();
-  if (!reportData) return null;
+  const { data, setData, editing } = useReport()
+  if (!data) return null
 
   return (
   <div id="message" className="mb-20 scroll-mt-20 print:break-before">
-    <h2 className="text-3xl font-bold text-slate-800 mb-6 flex items-baseline">
+    <h2
+      className="text-3xl font-bold text-slate-800 mb-6 flex items-baseline"
+      {...(editing
+        ? {
+            contentEditable: true,
+            suppressContentEditableWarning: true,
+            onBlur: (e: React.FocusEvent<HTMLElement>) => {
+              const newData = { ...(data as ReportData) }
+              newData.message.title = e.currentTarget.textContent || ''
+              setData(newData)
+            },
+          }
+        : {})}
+    >
       <HeadingNumber number={number} />
-      {reportData.message.title}
+      {data.message.title}
     </h2>
-    {reportData.message.content.map((content, index) => (
-      <ContentRenderer key={index} content={content} index={index} />
+    {data.message.content.map((content, index) => (
+      <ContentRenderer
+        key={index}
+        content={content}
+        index={index}
+        editable={editing}
+        onChange={(val) => {
+          const newData = { ...(data as ReportData) }
+          newData.message.content[index] = val
+          setData(newData)
+        }}
+      />
     ))}
   </div>
   );

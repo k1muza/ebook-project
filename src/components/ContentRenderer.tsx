@@ -17,7 +17,7 @@ const ContentRenderer = ({ content, index, subheadingNumber, editable, onChange 
       ? {
           contentEditable: true,
           suppressContentEditableWarning: true,
-          onInput: (e: React.FormEvent<HTMLElement>) =>
+          onBlur: (e: React.FocusEvent<HTMLElement>) =>
             cb((e.currentTarget.textContent as string) || ''),
         }
       : {}

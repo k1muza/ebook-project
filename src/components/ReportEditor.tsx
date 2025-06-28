@@ -48,7 +48,7 @@ const ReportEditor = () => {
             className="text-3xl font-bold text-slate-800 mb-10"
             contentEditable
             suppressContentEditableWarning
-            onInput={(e) => {
+            onBlur={(e) => {
               const newData = { ...data }
               newData.sections[sIdx].title = e.currentTarget.textContent || ''
               setData(newData)
@@ -73,7 +73,7 @@ const ReportEditor = () => {
       <div className="flex space-x-4">
         <button
           className="px-4 py-2 bg-emerald-600 text-white rounded"
-          onClick={() => save(data)}
+          onClick={() => save()}
         >
           Save
         </button>

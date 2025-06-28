@@ -1,7 +1,7 @@
 'use client'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
-import useReportData from '@/hooks/useReportData'
+import { useReport } from '@/contexts/ReportContext'
 import L from 'leaflet'
 import { useEffect } from 'react'
 import HeadingNumber from './HeadingNumber'
@@ -9,7 +9,7 @@ import HeadingNumber from './HeadingNumber'
 interface Props { number: number }
 
 const MapSection = ({ number }: Props) => {
-  const data = useReportData()
+  const { data, setData, editing } = useReport()
 
   useEffect(() => {
     if (!data) return
@@ -29,9 +29,22 @@ const MapSection = ({ number }: Props) => {
 
   return (
     <div id="locations" className="mb-20 scroll-mt-20 print:break-before">
-      <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-baseline">
+      <h2
+        className="text-3xl font-bold text-slate-800 mb-10 flex items-baseline"
+        {...(editing
+          ? {
+              contentEditable: true,
+              suppressContentEditableWarning: true,
+              onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                const newData = { ...(data as typeof data) }
+                newData.locationsTitle = e.currentTarget.textContent || ''
+                setData(newData)
+              },
+            }
+          : {})}
+      >
         <HeadingNumber number={number} />
-        Where We Work
+        {data.locationsTitle}
       </h2>
       <div className="w-full h-96 rounded-xl overflow-hidden shadow-xl">
         <MapContainer center={center} zoom={9} className="h-full w-full">

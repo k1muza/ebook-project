@@ -1,7 +1,7 @@
 'use client'
 import { Dispatch, SetStateAction } from 'react'
 import { BookOpen } from 'lucide-react'
-import useReportData from '@/hooks/useReportData'
+import { useReport } from '@/contexts/ReportContext'
 
 interface TocItem {
   id: string
@@ -15,8 +15,8 @@ interface Props {
 }
 
 const TableOfContents = ({ items, active, setActive }: Props) => {
-  const reportData = useReportData()
-  if (!reportData) return null
+  const { data, setData, editing } = useReport()
+  if (!data) return null
   const circleColor = (index: number) => {
     const startHue = 160
     const endHue = 220
@@ -27,12 +27,55 @@ const TableOfContents = ({ items, active, setActive }: Props) => {
   return (
     <div className="mb-20 p-8 mx-8 print:break-before print:break-after">
       <div className="mb-12 text-center p-6 bg-gradient-to-r from-emerald-50 to-amber-50 rounded-xl">
-        <p className="text-xl italic text-emerald-700 mb-6">“{reportData.guidingPrinciple}”</p>
-        <p className="text-lg text-slate-700">{reportData.mission}</p>
+        <p
+          className="text-xl italic text-emerald-700 mb-6"
+          {...(editing
+            ? {
+                contentEditable: true,
+                suppressContentEditableWarning: true,
+                onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                  const newData = { ...(data as typeof data) }
+                  newData.guidingPrinciple = e.currentTarget.textContent || ''
+                  setData(newData)
+                },
+              }
+            : {})}
+        >
+          “{data.guidingPrinciple}”
+        </p>
+        <p
+          className="text-lg text-slate-700"
+          {...(editing
+            ? {
+                contentEditable: true,
+                suppressContentEditableWarning: true,
+                onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                  const newData = { ...(data as typeof data) }
+                  newData.mission = e.currentTarget.textContent || ''
+                  setData(newData)
+                },
+              }
+            : {})}
+        >
+          {data.mission}
+        </p>
       </div>
-      <h2 className="text-3xl font-bold text-slate-800 mb-6 flex items-center">
+      <h2
+        className="text-3xl font-bold text-slate-800 mb-6 flex items-center"
+        {...(editing
+          ? {
+              contentEditable: true,
+              suppressContentEditableWarning: true,
+              onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                const newData = { ...(data as typeof data) }
+                newData.tocTitle = e.currentTarget.textContent || ''
+                setData(newData)
+              },
+            }
+          : {})}
+      >
         <BookOpen className="mr-3 text-emerald-600" size={32} />
-        Table of Contents
+        {data.tocTitle}
       </h2>
       <ul className="space-y-3">
         {items.map((item, index) => (

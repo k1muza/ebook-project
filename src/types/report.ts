@@ -46,21 +46,36 @@ export interface ReportData {
   period: string;
   guidingPrinciple: string;
   mission: string;
+  tocTitle: string;
   message: {
     title: string;
     content: (string | ContentItem)[]; // Allow mixed content types
   };
   milestones: Milestone[];
+  impactTitle: string;
   strategicVision: {
     intro: string;
+    educationHeading: string;
     educationGoals: CoreGoal[];
+    businessHeading: string;
     businessGoals: CoreGoal[];
   };
+  strategicVisionTitle: string;
   highlights?: HighlightStat[];
+  highlightsTitle: string;
   sections: Section[];
+  timelineTitle: string;
   futureGoals: string[];
+  futureGoalsTitle: string;
+  futureVisionImage?: {
+    src: string;
+    alt: string;
+    caption: string;
+  };
   locations: MapLocation[]
+  locationsTitle: string;
   closing: string;
+  closingTitle: string;
   closingImage?: { // Optional closing image
     src: string;
     alt: string;
