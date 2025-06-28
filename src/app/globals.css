@@ -25,6 +25,23 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Stylish tables used for financial data */
+.financial-table {
+  @apply w-full text-left border-collapse rounded-xl overflow-hidden shadow;
+}
+
+.financial-table th {
+  @apply bg-emerald-600 text-white font-semibold px-4 py-2;
+}
+
+.financial-table td {
+  @apply px-4 py-2 border-b border-emerald-100;
+}
+
+.financial-table tbody tr:nth-child(even) {
+  @apply bg-emerald-50;
+}
+
 @media print {
   @page {
     margin: 0.5cm;
