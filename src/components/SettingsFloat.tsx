@@ -2,7 +2,7 @@
 import { useRouter, usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { resetReportData } from '@/utils/db'
-import { RefreshCcw } from 'lucide-react'
+import { RefreshCcw, Pencil, Eye, Printer } from 'lucide-react'
 
 const SettingsFloat = () => {
   const router = useRouter()
@@ -26,27 +26,25 @@ const SettingsFloat = () => {
     window.location.reload()
   }
 
+  const print = () => {
+    if (typeof window !== 'undefined') {
+      window.print()
+    }
+  }
+
+  const btn =
+    'p-2 rounded-full text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-emerald-500'
+
   return (
-    <div className="fixed bottom-4 right-4 flex items-center space-x-4 z-50">
-      <div className="flex items-center space-x-2">
-        <span className="text-sm font-medium text-gray-700">
-          {editing ? 'Editing' : 'View'}
-        </span>
-        <label className="relative inline-flex items-center cursor-pointer">
-          <input
-            type="checkbox"
-            checked={editing}
-            onChange={toggle}
-            className="sr-only peer"
-          />
-          <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-emerald-500 rounded-full peer dark:bg-gray-300 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-600"></div>
-        </label>
-      </div>
-      <button
-        onClick={reset}
-        className="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-      >
+    <div className="fixed bottom-4 right-4 flex flex-col space-y-2 p-2 bg-white/70 backdrop-blur-md rounded-xl shadow z-50">
+      <button onClick={toggle} className={btn} title={editing ? 'View mode' : 'Edit mode'}>
+        {editing ? <Eye size={20} /> : <Pencil size={20} />}
+      </button>
+      <button onClick={reset} className={btn} title="Reset data">
         <RefreshCcw size={20} />
+      </button>
+      <button onClick={print} className={btn} title="Print">
+        <Printer size={20} />
       </button>
     </div>
   )
