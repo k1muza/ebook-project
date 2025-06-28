@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SettingsFloat from "@/components/SettingsFloat";
+import BackgroundCircles from "@/components/BackgroundCircles";
 
 
 const inter = Inter({ subsets: ['latin'] });
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body
         className={inter.className}
       >
+        <BackgroundCircles count={6} />
         {children}
         <SettingsFloat />
       </body>
