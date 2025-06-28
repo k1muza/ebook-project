@@ -1,5 +1,5 @@
 'use client'
-import { useMemo } from 'react'
+import { useEffect, useState } from 'react'
 
 const COLORS = ['#a7f3d0', '#fde68a', '#ddd6fe']
 
@@ -15,13 +15,16 @@ interface Props {
 }
 
 const BackgroundCircles = ({ count = 5 }: Props) => {
-  const circles = useMemo<Circle[]>(() => {
-    return Array.from({ length: count }).map(() => ({
+  const [circles, setCircles] = useState<Circle[]>([])
+
+  useEffect(() => {
+    const randomCircles = Array.from({ length: count }).map(() => ({
       top: Math.random() * 100,
       left: Math.random() * 100,
       size: 150 + Math.random() * 150,
       color: COLORS[Math.floor(Math.random() * COLORS.length)],
     }))
+    setCircles(randomCircles)
   }, [count])
 
   return (
