@@ -27,6 +27,7 @@ const EditableImage = ({
   imgClassName
 }: Props) => {
   const [localSrc, setLocalSrc] = useState(src)
+  const [isEditing, setIsEditing] = useState(false)
   const w = width ?? (layout === 'split' ? 400 : 600)
   const h = height ?? (layout === 'split' ? 300 : 400)
 
@@ -50,7 +51,7 @@ const EditableImage = ({
     <figure
       className={`my-8 print:break-inside-avoid ${
         layout === 'split' ? 'flex flex-col gap-8 items-center' : ''
-      } ${containerClassName ?? ''}`}
+      } ${containerClassName ?? ''} group`}
     >
       <div
         className={`relative overflow-hidden rounded-xl shadow-lg ${
@@ -63,6 +64,15 @@ const EditableImage = ({
           alt={alt}
           className={`w-full h-full object-cover ${imgClassName ?? ''}`}
         />
+        {editable && (
+          <button
+            type="button"
+            onClick={() => setIsEditing((prev) => !prev)}
+            className="absolute top-2 right-2 bg-white/80 text-xs px-2 py-1 rounded-md shadow-md opacity-0 group-hover:opacity-100 transition"
+          >
+            {isEditing ? 'Done' : 'Edit'}
+          </button>
+        )}
       </div>
       {caption && (
         <figcaption
@@ -73,7 +83,7 @@ const EditableImage = ({
           {caption}
         </figcaption>
       )}
-      {editable && (
+      {editable && isEditing && (
         <div className="mt-2 space-x-2 text-sm flex items-center">
           <input
             type="file"
