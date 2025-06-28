@@ -39,10 +39,18 @@ const SettingsFloat = () => {
 
   return (
     <>
-      <div
-        className={`fixed top-0 right-0 h-full w-full max-w-xl bg-white shadow-lg z-50 transform transition-transform ${showTree ? 'translate-x-0' : 'translate-x-full'}`}
+      {/* Backdrop */}
+      {showTree && (
+        <div
+          onClick={toggleTree}
+          className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 transition-opacity print:hidden"
+        />
+      )}
+      {/* Sliding panel */}
+      <aside
+        className={`fixed top-0 right-0 h-full w-full max-w-xl bg-white rounded-l-xl shadow-2xl z-50 transform transition-transform duration-300 ease-in-out print:hidden ${showTree ? 'translate-x-0' : 'translate-x-full'}`}
       >
-        <div className="flex items-center justify-between p-2 border-b">
+        <div className="flex items-center justify-between p-3 border-b">
           <h2 className="font-semibold">Report Data</h2>
           <button onClick={toggleTree} className={btn} title="Close editor">
             <X size={20} />
@@ -51,7 +59,8 @@ const SettingsFloat = () => {
         <div className="overflow-y-auto h-[calc(100%-48px)]">
           <DataTreeEditor />
         </div>
-      </div>
+      </aside>
+      {/* Floating button group */}
       <div className="fixed bottom-4 right-4 flex flex-col space-y-2 p-2 bg-white/70 backdrop-blur-md rounded-xl shadow z-40 print:hidden">
         <button onClick={toggle} className={btn} title={editing ? 'View mode' : 'Edit mode'}>
           {editing ? <Eye size={20} /> : <Pencil size={20} />}
