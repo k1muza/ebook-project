@@ -11,66 +11,145 @@ const EditableContentItem = ({ item, onChange }: Props) => {
   switch (item.type) {
     case 'paragraph':
       return (
-        <textarea
-          className="w-full border rounded p-2"
-          value={item.text}
-          onChange={(e) => onChange({ ...item, text: e.target.value })}
-        />
+        <p
+          className="mb-4 text-lg leading-relaxed text-gray-700"
+          contentEditable
+          suppressContentEditableWarning
+          onInput={(e) =>
+            onChange({ ...item, text: e.currentTarget.textContent || '' })
+          }
+        >
+          {item.text}
+        </p>
       )
     case 'quote':
       return (
-        <div className="space-y-2">
-          <textarea
-            className="w-full border rounded p-2"
-            value={item.text}
-            onChange={(e) => onChange({ ...item, text: e.target.value })}
-          />
-          <input
-            className="w-full border rounded p-2"
-            value={item.author}
-            onChange={(e) => onChange({ ...item, author: e.target.value })}
-          />
-        </div>
+        <blockquote className="pl-6 py-4 my-6 border-l-4 border-emerald-500 bg-emerald-50 rounded-r-lg italic">
+          <p className="text-lg">
+            &quot;
+            <span
+              contentEditable
+              suppressContentEditableWarning
+              onInput={(e) =>
+                onChange({ ...item, text: e.currentTarget.textContent || '' })
+              }
+            >
+              {item.text}
+            </span>
+            &quot;
+          </p>
+          <p className="mt-2 font-medium text-emerald-700">
+            —{' '}
+            <span
+              contentEditable
+              suppressContentEditableWarning
+              onInput={(e) =>
+                onChange({ ...item, author: e.currentTarget.textContent || '' })
+              }
+            >
+              {item.author}
+            </span>
+          </p>
+        </blockquote>
       )
     case 'list':
       return (
-        <textarea
-          className="w-full border rounded p-2"
-          value={item.items.join('\n')}
-          onChange={(e) => onChange({ ...item, items: e.target.value.split('\n') })}
-        />
+        <ul className="list-disc pl-6 mb-6 space-y-2">
+          {item.items.map((li, idx) => (
+            <li
+              key={idx}
+              className="text-lg"
+              contentEditable
+              suppressContentEditableWarning
+              onInput={(e) => {
+                const newItems = [...item.items]
+                newItems[idx] = e.currentTarget.textContent || ''
+                onChange({ ...item, items: newItems })
+              }}
+            >
+              {li}
+            </li>
+          ))}
+        </ul>
       )
     case 'subheading':
+      return (
+        <h3
+          className="text-2xl font-bold text-slate-800 mt-8 mb-4"
+          contentEditable
+          suppressContentEditableWarning
+          onInput={(e) =>
+            onChange({ ...item, text: e.currentTarget.textContent || '' })
+          }
+        >
+          {item.text}
+        </h3>
+      )
     case 'bold':
       return (
-        <input
-          className="w-full border rounded p-2"
-          value={item.text}
-          onChange={(e) => onChange({ ...item, text: e.target.value })}
-        />
+        <strong
+          className="font-semibold text-emerald-700"
+          contentEditable
+          suppressContentEditableWarning
+          onInput={(e) =>
+            onChange({ ...item, text: e.currentTarget.textContent || '' })
+          }
+        >
+          {item.text}
+        </strong>
       )
     case 'image':
       return (
-        <div className="space-y-2">
-          <input
-            className="w-full border rounded p-2"
-            placeholder="src"
-            value={item.src}
-            onChange={(e) => onChange({ ...item, src: e.target.value })}
-          />
-          <input
-            className="w-full border rounded p-2"
-            placeholder="alt"
-            value={item.alt}
-            onChange={(e) => onChange({ ...item, alt: e.target.value })}
-          />
-          <input
-            className="w-full border rounded p-2"
-            placeholder="caption"
-            value={item.caption}
-            onChange={(e) => onChange({ ...item, caption: e.target.value })}
-          />
-        </div>
+        <figure
+          className={`my-8 print:break-inside-avoid ${
+            item.layout === 'split' ? 'flex flex-col gap-8 items-center' : ''
+          }`}
+        >
+          <div
+            className={`relative overflow-hidden rounded-xl shadow-lg ${
+              item.layout === 'split' ? 'md:w-1/2' : ''
+            }`}
+            style={{ height: item.layout === 'split' ? '300px' : '400px' }}
+          >
+            <img src={item.src} alt={item.alt} className="w-full h-full object-cover" />
+          </div>
+          <figcaption
+            className={`mt-2 text-sm text-gray-600 italic ${
+              item.layout === 'split' ? 'md:w-1/2' : ''
+            }`}
+            contentEditable
+            suppressContentEditableWarning
+            onInput={(e) =>
+              onChange({ ...item, caption: e.currentTarget.textContent || '' })
+            }
+          >
+            {item.caption}
+          </figcaption>
+          <p className="text-sm text-gray-500">
+            Src:{' '}
+            <span
+              contentEditable
+              suppressContentEditableWarning
+              onInput={(e) =>
+                onChange({ ...item, src: e.currentTarget.textContent || '' })
+              }
+            >
+              {item.src}
+            </span>
+          </p>
+          <p className="text-sm text-gray-500">
+            Alt:{' '}
+            <span
+              contentEditable
+              suppressContentEditableWarning
+              onInput={(e) =>
+                onChange({ ...item, alt: e.currentTarget.textContent || '' })
+              }
+            >
+              {item.alt}
+            </span>
+          </p>
+        </figure>
       )
     default:
       return null
