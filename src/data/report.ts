@@ -21,6 +21,7 @@ export const reportData: ReportData = {
       }
     ]
   },
+  impactTitle: "Our Impact at a Glance",
   milestones: [
     {
       title: "Expanded Our Scholarship Program",
@@ -51,6 +52,7 @@ export const reportData: ReportData = {
       description: "including a fuel-saver vehicle for local travel, two significant stationery donations, and laboratory equipment from OSU."
     }
   ],
+  highlightsTitle: 'Key Highlights',
   highlights: [
     { label: 'New Female Students', value: 10, icon: 'UserPlus' },
     { label: 'Boreholes Drilled', value: 3, icon: 'Droplet' },
@@ -59,6 +61,7 @@ export const reportData: ReportData = {
     { label: 'Partner Students on Tour', value: 20, icon: 'Globe' },
     { label: 'Classrooms Built', value: 1, icon: 'Building2' }
   ],
+  timelineTitle: 'Progress Timeline',
   strategicVision: {
     intro: "TTI's common goal is to provide universal access to quality education and develop an educational system that is sustainable and not solely reliant on external funding. To accomplish this, our work is guided by six core goals:",
     educationGoals: [
@@ -86,6 +89,7 @@ export const reportData: ReportData = {
       }
     ]
   },
+  strategicVisionTitle: 'Our Strategic Vision: A Blueprint for a Brighter Future',
   sections: [
     {
       title: "Empowering Minds, One Student at a Time",
@@ -168,6 +172,7 @@ export const reportData: ReportData = {
       ]
     }
   ],
+  futureGoalsTitle: 'Looking Ahead: Our Goals for H2 2025',
   futureGoals: [
     "Conduct our 2nd Half Strategic Review Meeting to assess progress and refine our plans.",
     "Complete the Borehole and Fence Installation for the Chiroti Primary garden project.",
@@ -176,11 +181,13 @@ export const reportData: ReportData = {
     "Continue construction of the Chivakanenyama Secondary School classroom block.",
     "Conduct a full financial review of all H1 2025 projects."
   ],
+  locationsTitle: 'Where We Work',
   locations: [
     { name: 'Chivakanenyama Secondary School', lat: -16.712, lng: 29.164 },
     { name: 'Zvimhonja Primary School', lat: -16.745, lng: 29.123 },
     { name: 'Denderedzi Secondary School', lat: -16.737, lng: 29.138 }
   ],
+  closingTitle: 'A Heartfelt Thank You',
   closing: "None of this would be possible without you—our dedicated partners, donors, and the resilient communities we serve. Your belief in our mission fuels our work and turns dreams into reality for thousands of children. Together, we are not just providing education; we are building a legacy of empowerment, sustainability, and hope. Thank you for being a part of this incredible journey.",
   closingImage: {
     src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c",

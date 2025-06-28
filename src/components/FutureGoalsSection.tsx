@@ -1,26 +1,54 @@
 'use client'
-import useReportData from '@/hooks/useReportData'
+import { useReport } from '@/contexts/ReportContext'
 import HeadingNumber from './HeadingNumber'
 
 interface Props { number: number }
 
 const FutureGoalsSection = ({ number }: Props) => {
-  const reportData = useReportData();
-  if (!reportData) return null;
+  const { data, setData, editing } = useReport();
+  if (!data) return null;
 
   return (
   <div id="future" className="mb-20 scroll-mt-20 print:break-before">
-    <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-baseline">
+    <h2
+      className="text-3xl font-bold text-slate-800 mb-10 flex items-baseline"
+      {...(editing
+        ? {
+            contentEditable: true,
+            suppressContentEditableWarning: true,
+            onInput: (e: React.FormEvent<HTMLElement>) => {
+              const newData = { ...(data as typeof data) }
+              newData.futureGoalsTitle = e.currentTarget.textContent || ''
+              setData(newData)
+            },
+          }
+        : {})}
+    >
       <HeadingNumber number={number} />
-      Looking Ahead: Our Goals for H2 2025
+      {data.futureGoalsTitle}
     </h2>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {reportData.futureGoals.map((goal, index) => (
+      {data.futureGoals.map((goal, index) => (
         <div key={index} className="flex items-start bg-gradient-to-br from-emerald-50 to-white p-6 rounded-xl border border-emerald-100">
           <div className="bg-emerald-500 text-white rounded-full h-8 w-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
             {index + 1}
           </div>
-          <p className="font-medium">{goal}</p>
+          <p
+            className="font-medium"
+            {...(editing
+              ? {
+                  contentEditable: true,
+                  suppressContentEditableWarning: true,
+                  onInput: (e: React.FormEvent<HTMLElement>) => {
+                    const newData = { ...(data as typeof data) }
+                    newData.futureGoals[index] = e.currentTarget.textContent || ''
+                    setData(newData)
+                  },
+                }
+              : {})}
+          >
+            {goal}
+          </p>
         </div>
       ))}
     </div>

@@ -51,16 +51,23 @@ export interface ReportData {
     content: (string | ContentItem)[]; // Allow mixed content types
   };
   milestones: Milestone[];
+  impactTitle: string;
   strategicVision: {
     intro: string;
     educationGoals: CoreGoal[];
     businessGoals: CoreGoal[];
   };
+  strategicVisionTitle: string;
   highlights?: HighlightStat[];
+  highlightsTitle: string;
   sections: Section[];
+  timelineTitle: string;
   futureGoals: string[];
+  futureGoalsTitle: string;
   locations: MapLocation[]
+  locationsTitle: string;
   closing: string;
+  closingTitle: string;
   closingImage?: { // Optional closing image
     src: string;
     alt: string;

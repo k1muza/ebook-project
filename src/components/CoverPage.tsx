@@ -1,9 +1,9 @@
 'use client'
-import useReportData from '@/hooks/useReportData';
+import { useReport } from '@/contexts/ReportContext';
 
 const CoverPage = () => {
-  const reportData = useReportData();
-  if (!reportData) return null;
+  const { data, setData, editing } = useReport();
+  if (!data) return null;
 
   return (
   <div className="min-h-screen flex flex-col justify-center items-center text-center py-20 mb-16 relative print:min-h-screen print:mb-0 print:py-0 print:flex print:justify-center print:items-center">
@@ -13,15 +13,57 @@ const CoverPage = () => {
     <div className="absolute top-1/3 right-20 w-16 h-16 rounded-full bg-purple-200 opacity-50"></div>
     <div className="relative z-10 px-8 py-12 max-w-3xl mx-auto bg-transparent shadow-none">
       <div className="bg-emerald-100 p-2 px-4 rounded-full mb-8 inline-block">
-        <p className="text-emerald-700 font-sans font-bold">Progress Report • {reportData.period}</p>
+        <p
+          className="text-emerald-700 font-sans font-bold"
+          {...(editing
+            ? {
+                contentEditable: true,
+                suppressContentEditableWarning: true,
+                onInput: (e: React.FormEvent<HTMLElement>) => {
+                  const newData = { ...(data as typeof data) }
+                  newData.period = e.currentTarget.textContent || ''
+                  setData(newData)
+                },
+              }
+            : {})}
+        >
+          Progress Report • {data.period}
+        </p>
       </div>
-      <h1 className="text-5xl md:text-6xl font-bold text-slate-800 mb-6 leading-tight">
-        {reportData.reportTitle}
+      <h1
+        className="text-5xl md:text-6xl font-bold text-slate-800 mb-6 leading-tight"
+        {...(editing
+          ? {
+              contentEditable: true,
+              suppressContentEditableWarning: true,
+              onInput: (e: React.FormEvent<HTMLElement>) => {
+                const newData = { ...(data as typeof data) }
+                newData.reportTitle = e.currentTarget.textContent || ''
+                setData(newData)
+              },
+            }
+          : {})}
+      >
+        {data.reportTitle}
       </h1>
       <div className="w-32 h-1 bg-amber-500 my-8 mx-auto"></div>
-      <p className="text-2xl text-slate-600 mb-12">
-        {reportData.organization}<br />
-        {reportData.period}
+      <p
+        className="text-2xl text-slate-600 mb-12"
+        {...(editing
+          ? {
+              contentEditable: true,
+              suppressContentEditableWarning: true,
+              onInput: (e: React.FormEvent<HTMLElement>) => {
+                const newData = { ...(data as typeof data) }
+                newData.organization = e.currentTarget.textContent || ''
+                setData(newData)
+              },
+            }
+          : {})}
+      >
+        {data.organization}
+        <br />
+        {data.period}
       </p>
       <div className="relative w-64 h-64 rounded-full overflow-hidden border-8 border-emerald-100 shadow-xl mx-auto">
         <img

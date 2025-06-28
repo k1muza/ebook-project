@@ -1,17 +1,30 @@
 'use client'
-import useReportData from '@/hooks/useReportData'
+import { useReport } from '@/contexts/ReportContext'
 import HeadingNumber from './HeadingNumber'
 
 interface Props { number: number }
 
 const TimelineSection = ({ number }: Props) => {
-  const data = useReportData()
+  const { data, setData, editing } = useReport()
   if (!data) return null
   return (
     <div id="timeline" className="mb-20 scroll-mt-20 print:break-before">
-      <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-baseline">
+      <h2
+        className="text-3xl font-bold text-slate-800 mb-10 flex items-baseline"
+        {...(editing
+          ? {
+              contentEditable: true,
+              suppressContentEditableWarning: true,
+              onInput: (e: React.FormEvent<HTMLElement>) => {
+                const newData = { ...(data as typeof data) }
+                newData.timelineTitle = e.currentTarget.textContent || ''
+                setData(newData)
+              },
+            }
+          : {})}
+      >
         <HeadingNumber number={number} />
-        Progress Timeline
+        {data.timelineTitle}
       </h2>
       <div className="relative ml-6">
         <div className="absolute left-5 top-5 bottom-5 w-0.5 bg-emerald-500 z-0"></div>
@@ -26,8 +39,40 @@ const TimelineSection = ({ number }: Props) => {
               )}
             </div>
             <div>
-              <h3 className="font-bold text-emerald-700 mb-1">{m.title}</h3>
-              <p className="text-slate-700">{m.description}</p>
+              <h3
+                className="font-bold text-emerald-700 mb-1"
+                {...(editing
+                  ? {
+                      contentEditable: true,
+                      suppressContentEditableWarning: true,
+                      onInput: (e: React.FormEvent<HTMLElement>) => {
+                        const newData = { ...(data as typeof data) }
+                        newData.milestones[idx].title =
+                          e.currentTarget.textContent || ''
+                        setData(newData)
+                      },
+                    }
+                  : {})}
+              >
+                {m.title}
+              </h3>
+              <p
+                className="text-slate-700"
+                {...(editing
+                  ? {
+                      contentEditable: true,
+                      suppressContentEditableWarning: true,
+                      onInput: (e: React.FormEvent<HTMLElement>) => {
+                        const newData = { ...(data as typeof data) }
+                        newData.milestones[idx].description =
+                          e.currentTarget.textContent || ''
+                        setData(newData)
+                      },
+                    }
+                  : {})}
+              >
+                {m.description}
+              </p>
             </div>
           </div>
         ))}
