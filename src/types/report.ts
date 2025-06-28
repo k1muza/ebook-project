@@ -46,6 +46,7 @@ export interface ReportData {
   period: string;
   guidingPrinciple: string;
   mission: string;
+  tocTitle: string;
   message: {
     title: string;
     content: (string | ContentItem)[]; // Allow mixed content types
@@ -54,7 +55,9 @@ export interface ReportData {
   impactTitle: string;
   strategicVision: {
     intro: string;
+    educationHeading: string;
     educationGoals: CoreGoal[];
+    businessHeading: string;
     businessGoals: CoreGoal[];
   };
   strategicVisionTitle: string;
@@ -64,6 +67,11 @@ export interface ReportData {
   timelineTitle: string;
   futureGoals: string[];
   futureGoalsTitle: string;
+  futureVisionImage?: {
+    src: string;
+    alt: string;
+    caption: string;
+  };
   locations: MapLocation[]
   locationsTitle: string;
   closing: string;

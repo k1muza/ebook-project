@@ -7,6 +7,7 @@ export const reportData: ReportData = {
   period: "January – June 2025",
   guidingPrinciple: "Providing universal access to quality education",
   mission: "We envision empowered rural communities where all children have access to quality education, regardless of their gender or socio-economic backgrounds.",
+  tocTitle: 'Table of Contents',
   message: {
     title: "A Message of Gratitude and Progress",
     content: [
@@ -64,6 +65,7 @@ export const reportData: ReportData = {
   timelineTitle: 'Progress Timeline',
   strategicVision: {
     intro: "TTI's common goal is to provide universal access to quality education and develop an educational system that is sustainable and not solely reliant on external funding. To accomplish this, our work is guided by six core goals:",
+    educationHeading: 'Education-Driven Goals',
     educationGoals: [
       {
         title: "Improving Education Quality",
@@ -78,6 +80,7 @@ export const reportData: ReportData = {
         description: "Promoting modern educational tools and programs to enable students to attain higher education degrees and valuable certifications."
       }
     ],
+    businessHeading: 'Business-Driven Goals',
     businessGoals: [
       {
         title: "Establishing a Self-Sustainable Organization",
@@ -181,6 +184,11 @@ export const reportData: ReportData = {
     "Continue construction of the Chivakanenyama Secondary School classroom block.",
     "Conduct a full financial review of all H1 2025 projects."
   ],
+  futureVisionImage: {
+    src: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94',
+    alt: 'Future vision',
+    caption: 'Vision for the new Library and Computer Lab at Musukwi Secondary',
+  },
   locationsTitle: 'Where We Work',
   locations: [
     { name: 'Chivakanenyama Secondary School', lat: -16.712, lng: 29.164 },

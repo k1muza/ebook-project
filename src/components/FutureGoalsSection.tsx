@@ -52,14 +52,69 @@ const FutureGoalsSection = ({ number }: Props) => {
         </div>
       ))}
     </div>
-    <div className="mt-12 print:break-inside-avoid">
-      <div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-xl">
-        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94" alt="Future vision" className="w-full h-full object-cover" />
+    {data.futureVisionImage && (
+      <div className="mt-12 print:break-inside-avoid">
+        <div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-xl">
+          <img src={data.futureVisionImage.src} alt={data.futureVisionImage.alt} className="w-full h-full object-cover" />
+        </div>
+        <p
+          className="text-center text-sm text-gray-600 italic mt-2"
+          {...(editing
+            ? {
+                contentEditable: true,
+                suppressContentEditableWarning: true,
+                onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                  const newData = { ...(data as typeof data) }
+                  if (newData.futureVisionImage)
+                    newData.futureVisionImage.caption = e.currentTarget.textContent || ''
+                  setData(newData)
+                },
+              }
+            : {})}
+        >
+          {data.futureVisionImage.caption}
+        </p>
+        {editing && (
+          <div className="text-sm text-gray-500 text-center">
+            Src:{' '}
+            <span
+              {...(editing
+                ? {
+                    contentEditable: true,
+                    suppressContentEditableWarning: true,
+                    onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                      const newData = { ...(data as typeof data) }
+                      if (newData.futureVisionImage)
+                        newData.futureVisionImage.src = e.currentTarget.textContent || ''
+                      setData(newData)
+                    },
+                  }
+                : {})}
+            >
+              {data.futureVisionImage.src}
+            </span>
+            <br />
+            Alt:{' '}
+            <span
+              {...(editing
+                ? {
+                    contentEditable: true,
+                    suppressContentEditableWarning: true,
+                    onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                      const newData = { ...(data as typeof data) }
+                      if (newData.futureVisionImage)
+                        newData.futureVisionImage.alt = e.currentTarget.textContent || ''
+                      setData(newData)
+                    },
+                  }
+                : {})}
+            >
+              {data.futureVisionImage.alt}
+            </span>
+          </div>
+        )}
       </div>
-      <p className="text-center text-sm text-gray-600 italic mt-2">
-        Vision for the new Library and Computer Lab at Musukwi Secondary
-      </p>
-    </div>
+    )}
   </div>
   );
 }

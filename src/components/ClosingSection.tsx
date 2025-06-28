@@ -49,6 +49,37 @@ const ClosingSection = ({ number }: Props) => {
           >
             {data.closingImage.caption}
           </p>
+          {editing && (
+            <div className="text-sm text-gray-500 text-center">
+              Src:{' '}
+              <span
+                contentEditable
+                suppressContentEditableWarning
+                onBlur={(e: React.FocusEvent<HTMLElement>) => {
+                  const newData = { ...(data as typeof data) }
+                  if (newData.closingImage)
+                    newData.closingImage.src = e.currentTarget.textContent || ''
+                  setData(newData)
+                }}
+              >
+                {data.closingImage.src}
+              </span>
+              <br />
+              Alt:{' '}
+              <span
+                contentEditable
+                suppressContentEditableWarning
+                onBlur={(e: React.FocusEvent<HTMLElement>) => {
+                  const newData = { ...(data as typeof data) }
+                  if (newData.closingImage)
+                    newData.closingImage.alt = e.currentTarget.textContent || ''
+                  setData(newData)
+                }}
+              >
+                {data.closingImage.alt}
+              </span>
+            </div>
+          )}
         </div>
       )}
       <p

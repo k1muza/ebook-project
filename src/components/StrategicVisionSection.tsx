@@ -47,9 +47,23 @@ const StrategicVisionSection = ({ number }: Props) => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="bg-gradient-to-br from-blue-50 to-emerald-50 p-8 rounded-2xl border-l-4 border-blue-500">
-          <h3 className="text-xl font-bold text-blue-800 mb-4 flex items-center">
+          <h3
+            className="text-xl font-bold text-blue-800 mb-4 flex items-center"
+            {...(editing
+              ? {
+                  contentEditable: true,
+                  suppressContentEditableWarning: true,
+                  onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                    const newData = { ...(data as typeof data) }
+                    newData.strategicVision.educationHeading =
+                      e.currentTarget.textContent || ''
+                    setData(newData)
+                  },
+                }
+              : {})}
+          >
             <GraduationCap className="mr-2" size={24} />
-            Education-Driven Goals
+            {data.strategicVision.educationHeading}
           </h3>
           <ul className="space-y-4">
             {data.strategicVision.educationGoals.map((goal, index) => (
@@ -99,9 +113,23 @@ const StrategicVisionSection = ({ number }: Props) => {
         </div>
 
         <div className="bg-gradient-to-br from-amber-50 to-emerald-50 p-8 rounded-2xl border-l-4 border-amber-500">
-          <h3 className="text-xl font-bold text-amber-800 mb-4 flex items-center">
+          <h3
+            className="text-xl font-bold text-amber-800 mb-4 flex items-center"
+            {...(editing
+              ? {
+                  contentEditable: true,
+                  suppressContentEditableWarning: true,
+                  onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                    const newData = { ...(data as typeof data) }
+                    newData.strategicVision.businessHeading =
+                      e.currentTarget.textContent || ''
+                    setData(newData)
+                  },
+                }
+              : {})}
+          >
             <Handshake className="mr-2" size={24} />
-            Business-Driven Goals
+            {data.strategicVision.businessHeading}
           </h3>
           <ul className="space-y-4">
             {data.strategicVision.businessGoals.map((goal, index) => (
