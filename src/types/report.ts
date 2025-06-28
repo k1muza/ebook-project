@@ -40,6 +40,11 @@ export interface HighlightStat {
   icon?: string
 }
 
+export interface FinancialEntry {
+  item: string
+  amount: string
+}
+
 export interface ReportData {
   organization: string;
   reportTitle: string;
@@ -63,6 +68,7 @@ export interface ReportData {
   strategicVisionTitle: string;
   highlights?: HighlightStat[];
   highlightsTitle: string;
+  financials?: FinancialEntry[];
   sections: Section[];
   timelineTitle: string;
   futureGoals: string[];

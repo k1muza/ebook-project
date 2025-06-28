@@ -184,6 +184,13 @@ export const reportData: ReportData = {
     "Continue construction of the Chivakanenyama Secondary School classroom block.",
     "Conduct a full financial review of all H1 2025 projects."
   ],
+  financials: [
+    { item: 'Total Donations', amount: '$35,000' },
+    { item: 'Scholarship Support', amount: '$15,000' },
+    { item: 'Infrastructure Projects', amount: '$10,000' },
+    { item: 'Community Programs', amount: '$7,000' },
+    { item: 'Administrative Costs', amount: '$3,000' }
+  ],
   futureVisionImage: {
     src: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94',
     alt: 'Future vision',
