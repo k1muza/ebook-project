@@ -112,7 +112,7 @@ const StrategicVisionSection = ({ number }: Props) => {
           </ul>
         </div>
 
-        <div className="bg-gradient-to-br from-amber-50 to-emerald-50 p-8 rounded-2xl border-l-4 border-amber-500">
+        <div className="bg-gradient-to-br from-amber-50 to-emerald-50 p-8 rounded-2xl border-l-4 border-amber-500 print:break-inside-avoid">
           <h3
             className="text-xl font-bold text-amber-800 mb-4 flex items-center"
             {...(editing

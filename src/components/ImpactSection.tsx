@@ -11,7 +11,7 @@ const ImpactSection = ({ number }: Props) => {
   return (
   <div id="impact" className="mb-20 scroll-mt-20">
     <h2
-      className="text-3xl font-bold text-slate-800 mb-10 flex items-baseline"
+      className="text-3xl font-bold text-slate-800 mb-10 flex items-baseline print:break-before-page"
       {...(editing
         ? {
             contentEditable: true,

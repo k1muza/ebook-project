@@ -14,7 +14,6 @@ const firebaseConfig = {
   appId: "1:635252380775:web:9946d49d0f016d4b42b0c2"
 }
 
-console.log(firebaseConfig)
 const app = getApps().length ? getApp() : initializeApp(firebaseConfig)
 const database = getDatabase(app)
 
