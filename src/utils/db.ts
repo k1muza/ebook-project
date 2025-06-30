@@ -1,27 +1,40 @@
-import Dexie, { Table } from 'dexie';
-import { ReportData } from '@/types/report';
-import { reportData as initialData } from '@/data/report';
+'use client'
+import { initializeApp, getApps, getApp } from 'firebase/app'
+import { getDatabase, ref, get, set } from 'firebase/database'
+import { ReportData } from '@/types/report'
+import { reportData as initialData } from '@/data/report'
 
-export interface ReportRecord extends ReportData {
-  id: string;
+const firebaseConfig = {
+  apiKey: "AIzaSyAy4scLKVS5Ry8O2volMnH8mz123Klb7mw",
+  authDomain: "ebook-project-9b88d.firebaseapp.com",
+  databaseURL: "https://ebook-project-9b88d-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "ebook-project-9b88d",
+  storageBucket: "ebook-project-9b88d.firebasestorage.app",
+  messagingSenderId: "635252380775",
+  appId: "1:635252380775:web:9946d49d0f016d4b42b0c2"
 }
 
-class AppDB extends Dexie {
-  report!: Table<ReportRecord, string>;
+console.log(firebaseConfig)
+const app = getApps().length ? getApp() : initializeApp(firebaseConfig)
+const database = getDatabase(app)
 
-  constructor() {
-    super('report-db');
-    this.version(1).stores({
-      report: '&id',
-    });
+export const REPORT_PATH = 'report/current'
+
+export const fetchReportData = async (): Promise<ReportData> => {
+  const snapshot = await get(ref(database, REPORT_PATH))
+  if (snapshot.exists()) {
+    return snapshot.val() as ReportData
+  } else {
+    await resetReportData()
+    return initialData as ReportData
   }
 }
 
-export const db = new AppDB();
-export const REPORT_ID = 'current';
+export const saveReportData = async (data: ReportData): Promise<void> => {
+  await set(ref(database, REPORT_PATH), data)
+}
 
 export const resetReportData = async (): Promise<ReportData> => {
-  await db.table('report').clear();
-  await db.table('report').put({ ...(initialData as ReportData), id: REPORT_ID });
-  return initialData as ReportData;
-};
+  await set(ref(database, REPORT_PATH), initialData)
+  return initialData as ReportData
+}

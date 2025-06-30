@@ -1,7 +1,11 @@
 'use client'
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { ReportData } from '@/types/report'
-import { db, REPORT_ID, resetReportData } from '@/utils/db'
+import {
+  fetchReportData,
+  saveReportData,
+  resetReportData,
+} from '@/utils/db'
 
 type ReportContextType = {
   data: ReportData | null
@@ -21,15 +25,10 @@ export const ReportProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const load = async () => {
       try {
-        const existing = await db.table('report').get(REPORT_ID)
-        if (existing) {
-          setData(existing as ReportData)
-        } else {
-          const fresh = await resetReportData()
-          setData(fresh)
-        }
+        const existing = await fetchReportData()
+        setData(existing)
       } catch (err) {
-        console.error('Failed to load report from IndexedDB', err)
+        console.error('Failed to load report from Firebase', err)
         const fresh = await resetReportData()
         setData(fresh)
       }
@@ -38,10 +37,9 @@ export const ReportProvider = ({ children }: { children: React.ReactNode }) => {
   }, [])
 
   const save = async (newData?: ReportData) => {
-    console.log('Saving report to IndexedDB', newData)
     const toSave = newData ?? data
     if (!toSave) return
-    await db.table('report').put({ ...(toSave as ReportData), id: REPORT_ID })
+    await saveReportData(toSave as ReportData)
   }
 
   const reset = async () => {
