@@ -167,11 +167,20 @@ export const reportData: ReportData = {
         { type: "subheading", text: "Solar-Powered Irrigation: Cultivating a Sustainable Future" },
         { type: "paragraph", text: "Access to water is fundamental to health, hygiene, and economic prosperity. We are proud to report the successful drilling of 3 boreholes at Chiroti Primary, Zvimhinja Primary, and Denderedzi Secondary." },
         {
-          type: "image",
-          src: "/images/solar.jpg",
-          alt: "Solar-powered irrigation",
-          caption: "Figure 7: Solar-powered garden at Denderedzi Primary School",
-          layout: "split"
+          type: "imagePair",
+          layout: "split",
+          images: [
+            {
+              src: "/images/solar.jpg",
+              alt: "Solar-powered irrigation",
+              caption: "Figure 7: Solar-powered garden at Denderedzi Primary School"
+            },
+            {
+              src: "/images/tank.jpg",
+              alt: "Water storage tank",
+              caption: "Figure 7: Solar-powered garden at Denderedzi Primary School"
+            }
+          ]
         },
         { type: "paragraph", text: "Building on this, we established two one-hectare, solar-powered, drip-irrigated garden plots at Zvimhonja and Denderedzi Primary Schools. In the first quarter of 2025, a total of 7,512 tomato plants were planted, with the first harvest in June expected to generate over $6,000 USD. These business models, along with other crop projects, are creating a vital income stream for the schools, fostering entrepreneurship, and ensuring the long-term sustainability of our projects." }
       ]
