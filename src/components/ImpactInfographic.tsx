@@ -72,27 +72,37 @@ const Section = ({ title, icon: Icon, color, children }) => {
 
 const StatCard = ({ value, label, icon: Icon, color }) => {
   const colorClasses = {
-    text: { 
-      blue: 'text-blue-700', 
-      green: 'text-green-600', 
-      purple: 'text-purple-600', 
+    text: {
+      blue: 'text-blue-700',
+      green: 'text-green-600',
+      purple: 'text-purple-600',
       yellow: 'text-yellow-600',
       pink: 'text-pink-600',
       teal: 'text-teal-600'
     },
-    bg: { 
-      blue: 'bg-blue-50', 
-      green: 'bg-green-50', 
-      purple: 'bg-purple-50', 
+    bg: {
+      blue: 'bg-blue-50',
+      green: 'bg-green-50',
+      purple: 'bg-purple-50',
       yellow: 'bg-yellow-50',
       pink: 'bg-pink-50',
       teal: 'bg-teal-50'
+    },
+    gradient: {
+      blue: 'from-blue-100 via-white to-blue-50',
+      green: 'from-green-100 via-white to-green-50',
+      purple: 'from-purple-100 via-white to-purple-50',
+      yellow: 'from-yellow-100 via-white to-yellow-50',
+      pink: 'from-pink-100 via-white to-pink-50',
+      teal: 'from-teal-100 via-white to-teal-50'
     }
   };
   return (
-    <div className="bg-white p-4 rounded-xl border border-gray-200 flex items-start space-x-3 shadow-sm">
-      <div className={`p-3 rounded-lg ${colorClasses.bg[color]}`}>
-          <Icon className={`h-6 w-6 ${colorClasses.text[color]}`} />
+    <div
+      className={`p-4 rounded-xl border border-gray-200 flex items-start space-x-3 shadow-sm hover:shadow-md transition-shadow bg-gradient-to-br ${colorClasses.gradient[color]}`}
+    >
+      <div className={`p-3 rounded-lg ${colorClasses.bg[color]}`}> 
+        <Icon className={`h-6 w-6 ${colorClasses.text[color]}`} />
       </div>
       <div>
         <div className={`text-2xl font-bold ${colorClasses.text[color]} mb-1`}>{value}</div>
