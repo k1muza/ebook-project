@@ -23,7 +23,7 @@ import {
 const infographicData = {
   sections: {
     impact: {
-      title: "Community Impact",
+      title: "Impact Overview",
       icon: HeartIcon,
       color: 'purple',
       stats: [
@@ -53,15 +53,15 @@ const infographicData = {
 
 const Section = ({ title, icon: Icon, color, children }) => {
   const colorClasses = {
-    blue: 'text-blue-600 border-blue-200',
-    green: 'text-green-600 border-green-200',
-    purple: 'text-purple-600 border-purple-200',
-    yellow: 'text-yellow-600 border-yellow-200',
+    blue: 'text-blue-600',
+    green: 'text-green-600',
+    purple: 'text-purple-600',
+    yellow: 'text-yellow-600',
   };
   return (
     <div className="p-6 print:p-4">
-      <h2 className={`text-xl font-bold text-gray-800 mb-5 flex items-center pb-3 border-b ${colorClasses[color]}`}>
-        <Icon className={`h-5 w-5 mr-3 ${colorClasses[color].split(' ')[0]}`} />
+      <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-baseline">
+        <Icon className={`h-6 w-6 mr-4 ${colorClasses[color]}`} />
         {title}
       </h2>
       {children}
