@@ -91,10 +91,14 @@ export interface ReportData {
   financialMetrics?: FinancialMetric[];
   financialIntro?: string;
   financials?: IncomeStatement;
+  totalRevenueAmount?: string;
   totalRevenueHeading?: string;
+  programInvestmentAmount?: string;
   programInvestmentHeading?: string;
   programInvestmentNote?: string;
+  netImpactAmount?: string;
   netImpactHeading?: string;
+  netIncomeAmount?: string;
   netSurplusText?: string;
   netDeficitText?: string;
   incomeStatementHeading?: string;

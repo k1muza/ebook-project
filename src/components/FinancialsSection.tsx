@@ -107,7 +107,22 @@ const FinancialsSection = ({ number }: Props) => {
               {data.totalRevenueHeading}
             </h3>
           </div>
-          <p className="text-3xl font-bold text-blue-700">{formatCurrency(totalRevenue)}</p>
+          <p
+            className="text-3xl font-bold text-blue-700"
+            {...(editing
+              ? {
+                  contentEditable: true,
+                  suppressContentEditableWarning: true,
+                  onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                    const newData = { ...(data as typeof data) }
+                    newData.totalRevenueAmount = e.currentTarget.textContent || ''
+                    setData(newData)
+                  },
+                }
+              : {})}
+          >
+            {data.totalRevenueAmount || formatCurrency(totalRevenue)}
+          </p>
           <p
             className="text-sm text-slate-500 mt-2"
             {...(editing
@@ -149,7 +164,23 @@ const FinancialsSection = ({ number }: Props) => {
               {data.programInvestmentHeading}
             </h3>
           </div>
-          <p className="text-3xl font-bold text-green-700">{formatCurrency(totalExpenses)}</p>
+          <p
+            className="text-3xl font-bold text-green-700"
+            {...(editing
+              ? {
+                  contentEditable: true,
+                  suppressContentEditableWarning: true,
+                  onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                    const newData = { ...(data as typeof data) }
+                    newData.programInvestmentAmount =
+                      e.currentTarget.textContent || ''
+                    setData(newData)
+                  },
+                }
+              : {})}
+          >
+            {data.programInvestmentAmount || formatCurrency(totalExpenses)}
+          </p>
           <p
             className="text-sm text-slate-500 mt-2"
             {...(editing
@@ -200,10 +231,23 @@ const FinancialsSection = ({ number }: Props) => {
               {data.netImpactHeading}
             </h3>
           </div>
-          <p className={`text-3xl font-bold ${
-            net >= 0 ? 'text-emerald-700' : 'text-rose-700'
-          }`}>
-            {net >= 0 ? '+' : ''}{formatCurrency(net)}
+          <p
+            className={`text-3xl font-bold ${
+              net >= 0 ? 'text-emerald-700' : 'text-rose-700'
+            }`}
+            {...(editing
+              ? {
+                  contentEditable: true,
+                  suppressContentEditableWarning: true,
+                  onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                    const newData = { ...(data as typeof data) }
+                    newData.netImpactAmount = e.currentTarget.textContent || ''
+                    setData(newData)
+                  },
+                }
+              : {})}
+          >
+            {data.netImpactAmount || `${net >= 0 ? '+' : ''}${formatCurrency(net)}`}
           </p>
           <p
             className="text-sm text-slate-500 mt-2"
@@ -518,12 +562,26 @@ const FinancialsSection = ({ number }: Props) => {
                 >
                   {data.incomeStatementNetLabel}
                 </td>
-                <td className={`py-4 px-6 text-right font-bold ${
-                  net >= 0 ? 'text-emerald-700' : 'text-rose-700'
-                }`}>
-                  {net >= 0
-                    ? `+${formatCurrency(net)}`
-                    : `-${formatCurrency(Math.abs(net))}`}
+                <td
+                  className={`py-4 px-6 text-right font-bold ${
+                    net >= 0 ? 'text-emerald-700' : 'text-rose-700'
+                  }`}
+                  {...(editing
+                    ? {
+                        contentEditable: true,
+                        suppressContentEditableWarning: true,
+                        onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                          const newData = { ...(data as typeof data) }
+                          newData.netIncomeAmount = e.currentTarget.textContent || ''
+                          setData(newData)
+                        },
+                      }
+                    : {})}
+                >
+                  {data.netIncomeAmount ||
+                    (net >= 0
+                      ? `+${formatCurrency(net)}`
+                      : `-${formatCurrency(Math.abs(net))}`)}
                 </td>
               </tr>
             </tbody>
