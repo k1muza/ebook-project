@@ -27,7 +27,7 @@ export const reportData: ReportData = {
         type: "image",
         src: "/images/classroom.jpg",
         alt: "Students learning in classroom",
-        caption: "Figure 1: Students engaged in classroom learning",
+        caption: "Figure 1: Classroom construction",
         layout: "split"
       },
       {
@@ -234,6 +234,7 @@ export const reportData: ReportData = {
   closing: "None of this would be possible without you—our dedicated partners, donors, and the resilient communities we serve. Your belief in our mission fuels our work and turns dreams into reality for thousands of children. Together, we are not just providing education; we are building a legacy of empowerment, sustainability, and hope. Thank you for being a part of this incredible journey.",
   closingImage: {
     src: "/images/endowment.jpg",
+    classes: "object-top",
     alt: "TTI team and partners",
     caption: "Figure 9: TTI team members with community partners and donors"
   },

@@ -126,6 +126,7 @@ export interface ReportData {
   closingImage?: { // Optional closing image
     src: string;
     alt: string;
+    classes?: string;
     caption: string;
   };
 }

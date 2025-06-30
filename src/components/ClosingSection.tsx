@@ -30,7 +30,7 @@ const ClosingSection = ({ number }: Props) => {
       {data.closingImage && (
         <div className="mt-12 mb-8 max-w-3xl mx-auto print:break-inside-avoid">
           <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-xl">
-            <img src={data.closingImage.src} alt={data.closingImage.alt} className="w-full h-full object-cover" />
+            <img src={data.closingImage.src} alt={data.closingImage.alt} className={`w-full h-full object-cover ${data.closingImage.classes}`}/>
           </div>
           <p
             className="text-center text-sm text-gray-600 italic mt-2"
