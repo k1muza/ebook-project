@@ -5,15 +5,16 @@ import { ReportData } from '@/types/report'
 import { reportData as initialData } from '@/data/report'
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  apiKey: "AIzaSyAy4scLKVS5Ry8O2volMnH8mz123Klb7mw",
+  authDomain: "ebook-project-9b88d.firebaseapp.com",
+  databaseURL: "https://ebook-project-9b88d-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "ebook-project-9b88d",
+  storageBucket: "ebook-project-9b88d.firebasestorage.app",
+  messagingSenderId: "635252380775",
+  appId: "1:635252380775:web:9946d49d0f016d4b42b0c2"
 }
 
+console.log(firebaseConfig)
 const app = getApps().length ? getApp() : initializeApp(firebaseConfig)
 const database = getDatabase(app)
 
