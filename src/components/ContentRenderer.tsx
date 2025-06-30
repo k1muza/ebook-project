@@ -121,6 +121,68 @@ const ContentRenderer = ({ content, index, subheadingNumber, editable, onChange 
           )}
         </figure>
       )
+    case 'imagePair':
+      return (
+        <div
+          key={index}
+          className="my-8 flex flex-col gap-4 md:flex-row print:break-inside-avoid"
+        >
+          {content.images.map((img, i) => (
+            <figure key={i} className="flex flex-col items-center md:w-1/2">
+              <div
+                className="relative overflow-hidden rounded-xl shadow-lg w-full"
+                style={{ height: content.layout === 'split' ? '300px' : '400px' }}
+              >
+                <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
+              </div>
+              {editable ? (
+                <>
+                  <figcaption
+                    className="mt-2 text-sm text-gray-600 italic"
+                    {...editableProps((val) => {
+                      const newImages = [...content.images]
+                      newImages[i].caption = val
+                      onChange?.({ ...content, images: newImages })
+                    })}
+                  >
+                    {img.caption}
+                  </figcaption>
+                  <p className="text-sm text-gray-500">
+                    Src:{' '}
+                    <span
+                      {...editableProps((val) => {
+                        const newImages = [...content.images]
+                        newImages[i].src = val
+                        onChange?.({ ...content, images: newImages })
+                      })}
+                    >
+                      {img.src}
+                    </span>
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    Alt:{' '}
+                    <span
+                      {...editableProps((val) => {
+                        const newImages = [...content.images]
+                        newImages[i].alt = val
+                        onChange?.({ ...content, images: newImages })
+                      })}
+                    >
+                      {img.alt}
+                    </span>
+                  </p>
+                </>
+              ) : (
+                img.caption && (
+                  <figcaption className="mt-2 text-sm text-gray-600 italic">
+                    {img.caption}
+                  </figcaption>
+                )
+              )}
+            </figure>
+          ))}
+        </div>
+      )
     default:
       return null
   }
