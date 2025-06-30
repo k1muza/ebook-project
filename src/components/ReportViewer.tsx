@@ -14,6 +14,7 @@ import FutureGoalsSection from './FutureGoalsSection';
 import dynamic from 'next/dynamic';
 const MapSection = dynamic(() => import('./MapSection'), { ssr: false });
 import ClosingSection from './ClosingSection';
+import TTIInfographic from './ImpactInfographic';
 
 /**
  * The ReportViewer component renders a report with sections,
@@ -71,6 +72,7 @@ const ReportViewer = () => {
           active={activeSection}
           setActive={setActiveSection}
         />
+        <TTIInfographic />
         <MessageSection number={sectionNumbers['message']} />
         <ImpactSection number={sectionNumbers['impact']} />
         <StrategicVisionSection number={sectionNumbers['vision']} />
