@@ -130,11 +130,20 @@ export const reportData: ReportData = {
         { type: "paragraph", text: "In January 2025, thanks to our generous donors, we held our first-ever orientation for 27 scholarship beneficiaries. This session was more than an introduction; it was a community-building experience. Students learned practical skills like time management and goal setting, connected with peers and mentors, and aligned their personal journeys with TTI's mission to uplift and empower." },
         { type: "quote", text: "Before the orientation, I was nervous and unsure about what to expect. But after hearing stories and guidance, I felt confident and ready to focus on my goals. I now understand that this scholarship is not just about school fees; it's about shaping my future.", author: "Christabel Dura" },
         {
-          type: "image",
-          src: "/images/potatoes.jpg",
-          alt: "School supplies donation",
-          caption: "Figure 5: Potato field ",
-          layout: "full"
+          type: "imagePair",
+          layout: "split",
+          images: [
+            {
+              src: "/images/potatoes.jpg",
+              alt: "Potato field",
+              caption: "Figure 5: Potato field "
+            },
+            {
+              src: "/images/tomatoes.jpg",
+              alt: "Tomato field",
+              caption: "Figure 6: Tomato field"
+            }
+          ]
         },
         { type: "subheading", text: "Gender Equity: Addressing Critical Needs" },
         { type: "paragraph", text: "A needs assessment in our 6 partner secondary schools revealed a dire situation: over half the children lacked basic stationery, and approximately 100 were not attending school due to financial hardship. In response, we secured a donation of 2,500 exercise books and 4,000 counter books from Rank Zimbabwe. The first distribution reached 461 students who had no supplies, with a second planned for August. Our hope is to secure further support to cover tuition fees and ensure no child is left behind." }
@@ -150,7 +159,7 @@ export const reportData: ReportData = {
           type: "image",
           src: "/images/sewing.jpg",
           alt: "Women sewing uniforms",
-          caption: "Figure 6: Women from the vocational training program producing school uniforms",
+          caption: "Figure 7: Women from the vocational training program producing school uniforms",
           layout: "split"
         },
         { type: "paragraph", text: "This community-led enterprise addresses multiple needs at once. By producing affordable, locally-made uniforms, we are easing the financial burden on families and improving school attendance. More importantly, we are providing graduates of our training program with immediate, meaningful employment. The income generated not only strengthens household resilience but is also channeled back into our scholarship fund, creating a virtuous, sustainable cycle." },
@@ -160,7 +169,7 @@ export const reportData: ReportData = {
           type: "image",
           src: "/images/lab.jpg",
           alt: "Science laboratory",
-          caption: "Figure 7: New science lab at Zvimhonja Secondary School",
+          caption: "Figure 8: New science lab at Zvimhonja Secondary School",
           layout: "full"
         },
         { type: "paragraph", text: "A science lab levels the playing field, giving rural students the same opportunities as their urban peers. It ignites dreams of becoming doctors, engineers, and innovators. The impact was immediate: Chivakanenyama Secondary has been upgraded to a High School and is now offering Advanced Level science classes. A donation of a microscope and other lab equipment from visiting OSU students has already enabled the first practical science lessons, marking a new era of education in Matau." },
@@ -173,12 +182,12 @@ export const reportData: ReportData = {
             {
               src: "/images/solar.jpg",
               alt: "Solar-powered irrigation",
-              caption: "Figure 8: Solar-powered garden at Denderedzi Primary School"
+              caption: "Figure 9: Solar-powered garden at Denderedzi Primary School"
             },
             {
               src: "/images/tank.jpg",
               alt: "Water storage tank",
-              caption: "Figure 9: Solar-powered garden at Denderedzi Primary School"
+              caption: "Figure 10: Solar-powered garden at Denderedzi Primary School"
             }
           ]
         },
@@ -196,12 +205,12 @@ export const reportData: ReportData = {
             {
               src: "/images/driller.jpg",
               alt: "Leadership tour",
-              caption: "Figure 10: OSU students visiting TTI projects in Zimbabwe"
+              caption: "Figure 11: OSU students visiting TTI projects in Zimbabwe"
             },
             {
               src: "/images/osu.jpg",
               alt: "OSU students group",
-              caption: "Figure 11: OSU students visiting TTI projects in Zimbabwe"
+              caption: "Figure 12: OSU students visiting TTI projects in Zimbabwe"
             }
           ]
         },
@@ -268,7 +277,7 @@ export const reportData: ReportData = {
     src: "/images/endowment.jpg",
     classes: "object-top",
     alt: "TTI team and partners",
-    caption: "Figure 12: TTI team members with community partners and donors"
+    caption: "Figure 13: TTI team members with community partners and donors"
   },
   highlightsTitle: ''
 };
