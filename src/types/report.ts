@@ -4,18 +4,27 @@ export interface Section {
   content: ContentItem[];
 }
 
-export type ContentItem = 
+export type ContentItem =
   | { type: 'paragraph'; text: string }
   | { type: 'quote'; text: string; author: string }
   | { type: 'list'; items: string[] }
   | { type: 'subheading'; text: string }
   | { type: 'bold'; text: string }
-  | { 
-      type: 'image'; 
-      src: string; 
-      alt: string; 
-      layout?: 'full' | 'split'; 
-      caption: string 
+  | {
+      type: 'image';
+      src: string;
+      alt: string;
+      layout?: 'full' | 'split';
+      caption: string
+    }
+  | {
+      type: 'imagePair';
+      images: {
+        src: string;
+        alt: string;
+        caption: string;
+      }[];
+      layout?: 'full' | 'split';
     };
 
 export interface Milestone {

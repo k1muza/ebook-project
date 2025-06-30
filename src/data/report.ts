@@ -24,18 +24,20 @@ export const reportData: ReportData = {
       "The first half of 2025 has been a period of incredible growth and transformative impact for the Tererai Trent International (TTI) Foundation. With the unwavering support of our partners, donors, and community members, we have made significant strides in our core focus areas of educational support, sustainable agriculture, and community empowerment.",
       "This report celebrates the milestones we have achieved together. It tells the story of how three key initiatives—our scholarship program, an income-generating sewing project, and school-based irrigation systems—are not just changing lives but are building a foundation for a self-sustaining future. We are thrilled to share our progress, acknowledge the challenges we've faced, and look ahead with renewed purpose to the work that still needs to be done.",
       {
-        type: "image",
-        src: "/images/classroom.jpg",
-        alt: "Students learning in classroom",
-        caption: "Figure 1: Classroom construction",
-        layout: "split"
-      },
-      {
-        type: "image",
-        src: "/images/celebration.jpg",
-        alt: "Community gathering",
-        caption: "Figure 2: Community members and TTI staff celebrating progress in education initiatives",
-        layout: "full"
+        type: "imagePair",
+        layout: "split",
+        images: [
+          {
+            src: "/images/classroom.jpg",
+            alt: "Students learning in classroom",
+            caption: "Figure 1: Classroom construction"
+          },
+          {
+            src: "/images/celebration.jpg",
+            alt: "Community gathering",
+            caption: "Figure 2: Community members and TTI staff celebrating progress in education initiatives"
+          }
+        ]
       }
     ]
   },
