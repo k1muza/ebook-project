@@ -21,7 +21,7 @@ export const reportData: ReportData = {
   infographic: {
     sections: {
       impact: {
-        title: 'Impact Overview',
+        title: 'ii. Impact Overview',
         icon: 'HeartIcon',
         color: 'purple',
         stats: [
