@@ -122,7 +122,7 @@ export const reportData: ReportData = {
             {
               src: "/images/students.jpg",
               alt: "Students at orientation",
-              caption: "Figure 3: Scholarship recipients at the January 2025 orientation"
+              caption: "Figure 4: Scholarship recipients at the January 2025 orientation"
             }
           ]
         },
@@ -133,7 +133,7 @@ export const reportData: ReportData = {
           type: "image",
           src: "/images/potatoes.jpg",
           alt: "School supplies donation",
-          caption: "Figure 4: Distribution of exercise books to students in need",
+          caption: "Figure 5: Distribution of exercise books to students in need",
           layout: "full"
         },
         { type: "subheading", text: "Gender Equity: Addressing Critical Needs" },
@@ -150,7 +150,7 @@ export const reportData: ReportData = {
           type: "image",
           src: "/images/sewing.jpg",
           alt: "Women sewing uniforms",
-          caption: "Figure 5: Women from the vocational training program producing school uniforms",
+          caption: "Figure 6: Women from the vocational training program producing school uniforms",
           layout: "split"
         },
         { type: "paragraph", text: "This community-led enterprise addresses multiple needs at once. By producing affordable, locally-made uniforms, we are easing the financial burden on families and improving school attendance. More importantly, we are providing graduates of our training program with immediate, meaningful employment. The income generated not only strengthens household resilience but is also channeled back into our scholarship fund, creating a virtuous, sustainable cycle." },
@@ -160,7 +160,7 @@ export const reportData: ReportData = {
           type: "image",
           src: "/images/lab.jpg",
           alt: "Science laboratory",
-          caption: "Figure 6: New science lab at Zvimhonja Secondary School",
+          caption: "Figure 7: New science lab at Zvimhonja Secondary School",
           layout: "full"
         },
         { type: "paragraph", text: "A science lab levels the playing field, giving rural students the same opportunities as their urban peers. It ignites dreams of becoming doctors, engineers, and innovators. The impact was immediate: Chivakanenyama Secondary has been upgraded to a High School and is now offering Advanced Level science classes. A donation of a microscope and other lab equipment from visiting OSU students has already enabled the first practical science lessons, marking a new era of education in Matau." },
@@ -173,12 +173,12 @@ export const reportData: ReportData = {
             {
               src: "/images/solar.jpg",
               alt: "Solar-powered irrigation",
-              caption: "Figure 7: Solar-powered garden at Denderedzi Primary School"
+              caption: "Figure 8: Solar-powered garden at Denderedzi Primary School"
             },
             {
               src: "/images/tank.jpg",
               alt: "Water storage tank",
-              caption: "Figure 7: Solar-powered garden at Denderedzi Primary School"
+              caption: "Figure 9: Solar-powered garden at Denderedzi Primary School"
             }
           ]
         },
@@ -196,12 +196,12 @@ export const reportData: ReportData = {
             {
               src: "/images/driller.jpg",
               alt: "Leadership tour",
-              caption: "Figure 8: OSU students visiting TTI projects in Zimbabwe"
+              caption: "Figure 10: OSU students visiting TTI projects in Zimbabwe"
             },
             {
               src: "/images/osu.jpg",
               alt: "OSU students group",
-              caption: "Figure 9: OSU students visiting TTI projects in Zimbabwe"
+              caption: "Figure 11: OSU students visiting TTI projects in Zimbabwe"
             }
           ]
         },
@@ -268,7 +268,7 @@ export const reportData: ReportData = {
     src: "/images/endowment.jpg",
     classes: "object-top",
     alt: "TTI team and partners",
-    caption: "Figure 10: TTI team members with community partners and donors"
+    caption: "Figure 12: TTI team members with community partners and donors"
   },
   highlightsTitle: ''
 };
