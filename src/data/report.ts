@@ -111,11 +111,20 @@ export const reportData: ReportData = {
         { type: "paragraph", text: "We are thrilled to announce that we welcomed 10 more brilliant young women into the program. Empowering a girl is one of the most profound investments we can make. When girls are educated in safe, encouraging environments, they are more likely to stay in school, avoid early marriage, and make informed choices about their futures. They become leaders who uplift their families and communities, breaking the cycle of poverty for generations to come." },
         { type: "paragraph", text: "A landmark achievement this period was celebrating Tryness Nyauvanga and Christabel Dura, the first TTI-supported students to pursue a degree in Software Engineering. Their courage in entering a male-dominated field is a powerful testament to our efforts in promoting STEM education for girls. To support their journey, TTI provided each with a new laptop, removing a critical barrier to their success." },
         {
-          type: "image",
-          src: "/images/books.jpg",
-          alt: "Students receiving scholarships",
-          caption: "Figure 3: Scholarship recipients at the January 2025 orientation",
-          layout: "split"
+          type: "imagePair",
+          layout: "split",
+          images: [
+            {
+              src: "/images/books.jpg",
+              alt: "Students receiving scholarships",
+              caption: "Figure 3: Scholarship recipients at the January 2025 orientation"
+            },
+            {
+              src: "/images/students.jpg",
+              alt: "Students at orientation",
+              caption: "Figure 3: Scholarship recipients at the January 2025 orientation"
+            }
+          ]
         },
         { type: "subheading", text: "Scholarship Orientation: Building a Community of Leaders" },
         { type: "paragraph", text: "In January 2025, thanks to our generous donors, we held our first-ever orientation for 27 scholarship beneficiaries. This session was more than an introduction; it was a community-building experience. Students learned practical skills like time management and goal setting, connected with peers and mentors, and aligned their personal journeys with TTI's mission to uplift and empower." },
