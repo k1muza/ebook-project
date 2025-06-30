@@ -12,6 +12,44 @@ const CoverPage = () => {
     <div className="absolute bottom-20 right-10 w-32 h-32 rounded-full bg-amber-200 opacity-50"></div>
     <div className="absolute top-1/3 right-20 w-16 h-16 rounded-full bg-purple-200 opacity-50"></div>
     <div className="relative z-10 px-8 py-12 max-w-3xl mx-auto bg-transparent shadow-none">
+      {data.logoImage && (
+        <div className="absolute top-0 right-0 w-20 h-20">
+          <img
+            src={data.logoImage.src}
+            alt={data.logoImage.alt}
+            className="w-full h-full object-contain"
+          />
+          {editing && (
+            <div className="text-xs text-gray-500 text-center mt-1">
+              Src:{' '}
+              <span
+                contentEditable
+                suppressContentEditableWarning
+                onBlur={(e: React.FocusEvent<HTMLElement>) => {
+                  const newData = { ...(data as typeof data) }
+                  if (newData.logoImage) newData.logoImage.src = e.currentTarget.textContent || ''
+                  setData(newData)
+                }}
+              >
+                {data.logoImage.src}
+              </span>
+              <br />
+              Alt:{' '}
+              <span
+                contentEditable
+                suppressContentEditableWarning
+                onBlur={(e: React.FocusEvent<HTMLElement>) => {
+                  const newData = { ...(data as typeof data) }
+                  if (newData.logoImage) newData.logoImage.alt = e.currentTarget.textContent || ''
+                  setData(newData)
+                }}
+              >
+                {data.logoImage.alt}
+              </span>
+            </div>
+          )}
+        </div>
+      )}
       <div className="bg-emerald-100 p-2 px-4 rounded-full mb-8 inline-block">
         <p
           className="text-emerald-700 font-sans font-bold"

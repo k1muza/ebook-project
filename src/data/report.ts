@@ -9,8 +9,12 @@ export const reportData: ReportData = {
   period: "January – June 2025",
   guidingPrinciple: "Providing universal access to quality education",
   mission: "We envision empowered rural communities where all children have access to quality education, regardless of their gender or socio-economic backgrounds.",
+  logoImage: {
+    src: '/images/logo.jpg',
+    alt: 'TTI logo',
+  },
   coverImage: {
-    src: '/images/classroom.jpg',
+    src: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1',
     alt: 'African students learning',
   },
   tocTitle: 'Table of Contents',
@@ -21,9 +25,16 @@ export const reportData: ReportData = {
       "This report celebrates the milestones we have achieved together. It tells the story of how three key initiatives—our scholarship program, an income-generating sewing project, and school-based irrigation systems—are not just changing lives but are building a foundation for a self-sustaining future. We are thrilled to share our progress, acknowledge the challenges we've faced, and look ahead with renewed purpose to the work that still needs to be done.",
       {
         type: "image",
+        src: "/images/classroom.jpg",
+        alt: "Students learning in classroom",
+        caption: "Figure 1: Students engaged in classroom learning",
+        layout: "split"
+      },
+      {
+        type: "image",
         src: "/images/celebration.jpg",
         alt: "Community gathering",
-        caption: "Figure 1: Community members and TTI staff celebrating progress in education initiatives",
+        caption: "Figure 2: Community members and TTI staff celebrating progress in education initiatives",
         layout: "full"
       }
     ]
@@ -102,7 +113,7 @@ export const reportData: ReportData = {
           type: "image",
           src: "/images/books.jpg",
           alt: "Students receiving scholarships",
-          caption: "Figure 2: Scholarship recipients at the January 2025 orientation",
+          caption: "Figure 3: Scholarship recipients at the January 2025 orientation",
           layout: "split"
         },
         { type: "subheading", text: "Scholarship Orientation: Building a Community of Leaders" },
@@ -112,7 +123,7 @@ export const reportData: ReportData = {
           type: "image",
           src: "/images/potatoes.jpg",
           alt: "School supplies donation",
-          caption: "Figure 3: Distribution of exercise books to students in need",
+          caption: "Figure 4: Distribution of exercise books to students in need",
           layout: "full"
         },
         { type: "subheading", text: "Gender Equity: Addressing Critical Needs" },
@@ -129,7 +140,7 @@ export const reportData: ReportData = {
           type: "image",
           src: "/images/sewing.jpg",
           alt: "Women sewing uniforms",
-          caption: "Figure 4: Women from the vocational training program producing school uniforms",
+          caption: "Figure 5: Women from the vocational training program producing school uniforms",
           layout: "split"
         },
         { type: "paragraph", text: "This community-led enterprise addresses multiple needs at once. By producing affordable, locally-made uniforms, we are easing the financial burden on families and improving school attendance. More importantly, we are providing graduates of our training program with immediate, meaningful employment. The income generated not only strengthens household resilience but is also channeled back into our scholarship fund, creating a virtuous, sustainable cycle." },
@@ -139,7 +150,7 @@ export const reportData: ReportData = {
           type: "image",
           src: "/images/lab.jpg",
           alt: "Science laboratory",
-          caption: "Figure 5: New science lab at Zvimhonja Secondary School",
+          caption: "Figure 6: New science lab at Zvimhonja Secondary School",
           layout: "full"
         },
         { type: "paragraph", text: "A science lab levels the playing field, giving rural students the same opportunities as their urban peers. It ignites dreams of becoming doctors, engineers, and innovators. The impact was immediate: Chivakanenyama Secondary has been upgraded to a High School and is now offering Advanced Level science classes. A donation of a microscope and other lab equipment from visiting OSU students has already enabled the first practical science lessons, marking a new era of education in Matau." },
@@ -149,7 +160,7 @@ export const reportData: ReportData = {
           type: "image",
           src: "/images/solar.jpg",
           alt: "Solar-powered irrigation",
-          caption: "Figure 6: Solar-powered garden at Denderedzi Primary School",
+          caption: "Figure 7: Solar-powered garden at Denderedzi Primary School",
           layout: "split"
         },
         { type: "paragraph", text: "Building on this, we established two one-hectare, solar-powered, drip-irrigated garden plots at Zvimhonja and Denderedzi Primary Schools. In the first quarter of 2025, a total of 7,512 tomato plants were planted, with the first harvest in June expected to generate over $6,000 USD. These business models, along with other crop projects, are creating a vital income stream for the schools, fostering entrepreneurship, and ensuring the long-term sustainability of our projects." }
@@ -163,7 +174,7 @@ export const reportData: ReportData = {
           type: "image",
           src: "/images/driller.jpg",
           alt: "Leadership tour",
-          caption: "Figure 7: OSU students visiting TTI projects in Zimbabwe",
+          caption: "Figure 8: OSU students visiting TTI projects in Zimbabwe",
           layout: "split"
         },
         { type: "paragraph", text: "Partnerships are the lifeblood of our work. This reporting period, we were honored to host 20 students from Oklahoma State University, in partnership with Awakened Woman. These tours are invaluable. They allow our sponsors to see their impact firsthand, deepen their emotional connection to our mission, and witness the real-life stories of transformation. The visit fostered incredible learning on both sides and left our team and community feeling inspired and hopeful for future collaborations." },
@@ -224,7 +235,7 @@ export const reportData: ReportData = {
   closingImage: {
     src: "/images/endowment.jpg",
     alt: "TTI team and partners",
-    caption: "Figure 8: TTI team members with community partners and donors"
+    caption: "Figure 9: TTI team members with community partners and donors"
   },
   highlightsTitle: ''
 };

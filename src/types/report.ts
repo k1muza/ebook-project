@@ -66,6 +66,10 @@ export interface ReportData {
   period: string;
   guidingPrinciple: string;
   mission: string;
+  logoImage?: {
+    src: string;
+    alt: string;
+  };
   coverImage?: {
     src: string;
     alt: string;
