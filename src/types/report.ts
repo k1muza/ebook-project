@@ -115,7 +115,6 @@ export interface ReportData {
   financialAllocationHeading?: string;
   financialAllocationText?: string;
   sections: Section[];
-  timelineTitle: string;
   futureGoals: string[];
   futureGoalsTitle: string;
   futureVisionImage?: {

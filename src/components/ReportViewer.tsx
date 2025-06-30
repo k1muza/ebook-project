@@ -7,7 +7,6 @@ import TableOfContents from './TableOfContents';
 import MessageSection from './MessageSection';
 import ImpactSection from './ImpactSection';
 // import HighlightsSection from './HighlightsSection';
-import TimelineSection from './TimelineSection';
 import StrategicVisionSection from './StrategicVisionSection';
 import Sections from './Sections';
 import FinancialsSection from './FinancialsSection';
@@ -47,7 +46,6 @@ const ReportViewer = () => {
   const tocItems = [
     { id: 'message', title: reportData.message.title },
     { id: 'impact', title: reportData.impactTitle },
-    { id: 'timeline', title: reportData.timelineTitle },
     { id: 'vision', title: reportData.strategicVisionTitle },
     ...reportData.sections.map((section, i) => ({
       id: `section-${i + 1}`,
@@ -75,7 +73,6 @@ const ReportViewer = () => {
         />
         <MessageSection number={sectionNumbers['message']} />
         <ImpactSection number={sectionNumbers['impact']} />
-        <TimelineSection number={sectionNumbers['timeline']} />
         <StrategicVisionSection number={sectionNumbers['vision']} />
         <Sections startNumber={sectionNumbers['section-1']} />
         <FinancialsSection number={sectionNumbers['financials']} />
