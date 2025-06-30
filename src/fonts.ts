@@ -1,4 +1,4 @@
-import { Inter, Merriweather, MedievalSharp } from 'next/font/google'
+import { Inter, Merriweather, Uncial_Antiqua } from 'next/font/google'
 
 export const inter = Inter({ subsets: ['latin'] })
 export const merriweather = Merriweather({
@@ -7,7 +7,7 @@ export const merriweather = Merriweather({
   style: ['normal']
 })
 
-export const medievalSharp = MedievalSharp({
+export const uncialAntiqua = Uncial_Antiqua({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-medieval'

@@ -61,11 +61,12 @@ const Section = ({ title, icon: Icon, color, children }: SectionProps) => {
   return (
     <div className="p-6 print:p-4">
       <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-baseline">
+        <Icon className={`h-8 w-8 mr-2 ${colorClasses[color]}`} />
         {title}
       </h2>
       {children}
     </div>
-  );
+  )
 };
 
 

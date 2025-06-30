@@ -72,7 +72,7 @@ body {
   }
 }
 
-/* Apply medieval font to drop caps */
+/* Apply curly medieval-style font to drop caps */
 .medieval-first-letter::first-letter {
   font-family: var(--font-medieval);
 }
