@@ -133,7 +133,7 @@ export const reportData: ReportData = {
           type: "image",
           src: "/images/potatoes.jpg",
           alt: "School supplies donation",
-          caption: "Figure 5: Distribution of exercise books to students in need",
+          caption: "Figure 5: Potato field ",
           layout: "full"
         },
         { type: "subheading", text: "Gender Equity: Addressing Critical Needs" },
