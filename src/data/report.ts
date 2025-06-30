@@ -70,7 +70,6 @@ export const reportData: ReportData = {
       description: "including a fuel-saver vehicle for local travel, two significant stationery donations, and laboratory equipment from OSU."
     }
   ],
-  timelineTitle: 'Progress Timeline',
   strategicVision: {
     intro: "TTI's common goal is to provide universal access to quality education and develop an educational system that is sustainable and not solely reliant on external funding. To accomplish this, our work is guided by six core goals:",
     educationHeading: 'Education-Driven Goals',
