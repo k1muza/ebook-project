@@ -76,7 +76,6 @@ const TableOfContents = ({ items, active, setActive }: Props) => {
             }
           : {})}
       >
-        <BookOpen className="mr-3 text-emerald-600" size={32} />
         {data.tocTitle}
       </h2>
       <ul className="space-y-3">

@@ -17,7 +17,7 @@ export const reportData: ReportData = {
     src: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1',
     alt: 'African students learning',
   },
-  tocTitle: 'Table of Contents',
+  tocTitle: 'i. Table of Contents',
   message: {
     title: "A Message of Gratitude and Progress",
     content: [

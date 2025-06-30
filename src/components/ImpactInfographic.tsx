@@ -23,7 +23,7 @@ import {
 const infographicData = {
   sections: {
     impact: {
-      title: "Impact Overview",
+      title: "ii. Impact Overview",
       icon: HeartIcon,
       color: 'purple',
       stats: [
@@ -61,7 +61,6 @@ const Section = ({ title, icon: Icon, color, children }) => {
   return (
     <div className="p-6 print:p-4">
       <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-baseline">
-        <Icon className={`h-6 w-6 mr-4 ${colorClasses[color]}`} />
         {title}
       </h2>
       {children}
@@ -132,7 +131,7 @@ const ConnectionNode = ({ icon: Icon, label, angle, color }) => {
       }}
     >
       <div
-        className="mx-auto w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md border-2"
+        className="mx-auto w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md border-2"
         style={{ borderColor: color, color }}
       >
         <Icon size={24} />

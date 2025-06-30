@@ -17,7 +17,7 @@ const CoverPage = () => {
           <img
             src={data.logoImage.src}
             alt={data.logoImage.alt}
-            className="w-full h-full object-contain"
+            className="w-full h-auto object-contain rounded-2xl"
           />
           {editing && (
             <div className="text-xs text-gray-500 text-center mt-1">
