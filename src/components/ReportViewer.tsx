@@ -6,7 +6,6 @@ import CoverPage from './CoverPage';
 import TableOfContents from './TableOfContents';
 import MessageSection from './MessageSection';
 import ImpactSection from './ImpactSection';
-// import HighlightsSection from './HighlightsSection';
 import StrategicVisionSection from './StrategicVisionSection';
 import Sections from './Sections';
 import FinancialsSection from './FinancialsSection';
