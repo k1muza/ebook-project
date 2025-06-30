@@ -1,44 +1,27 @@
 // components/TTIInfographic.jsx
 import React from 'react';
 import {
-  ChartBarIcon, HeartIcon, FlagIcon, BookOpenIcon, BeakerIcon,
-  PencilIcon, GlobeAltIcon, SunIcon, ShoppingBagIcon, SparklesIcon, UserGroupIcon,
-  ComputerDesktopIcon, BanknotesIcon, BuildingLibraryIcon, WifiIcon,
-  AcademicCapIcon, LightBulbIcon, ArrowTrendingUpIcon, MapPinIcon
+  HeartIcon,
+  PencilIcon,
+  GlobeAltIcon,
+  UserGroupIcon,
+  ComputerDesktopIcon,
+  AcademicCapIcon,
+  BeakerIcon,
 } from '@heroicons/react/24/solid';
+import {
+  HiBookOpen,
+  HiGlobeAlt,
+  HiBeaker,
+  HiSun,
+  HiShoppingBag,
+  HiUserGroup,
+  HiWifi,
+  HiSparkles,
+} from 'react-icons/hi2';
 
 const infographicData = {
-  mainTitle: "H1 2025 Impact Report",
-  mainSubtitle: "Tererai Trent International Foundation",
-  mission: "Empowering rural communities through education, innovation, and sustainable development",
   sections: {
-    achievements: {
-      title: "Strategic Goals Progress",
-      icon: ChartBarIcon,
-      color: 'blue',
-      cards: [
-        {
-          title: "Education Initiatives",
-          tag: "+10 Girls Supported",
-          color: 'blue',
-          items: [
-            { label: "Scholarship Program", value: 100, icon: AcademicCapIcon },
-            { label: "Science Lab Setup", value: 100, icon: BeakerIcon },
-            { label: "Stationery Distribution", value: 25, icon: PencilIcon },
-          ]
-        },
-        {
-          title: "Sustainability Projects",
-          tag: "$7K+ Revenue",
-          color: 'green',
-          items: [
-            { label: "Irrigation Gardens", value: 100, icon: GlobeAltIcon },
-            { label: "Solar Boreholes", value: 75, icon: SunIcon },
-            { label: "Textile Business", value: 80, icon: ShoppingBagIcon },
-          ]
-        }
-      ]
-    },
     impact: {
       title: "Community Impact",
       icon: HeartIcon,
@@ -54,27 +37,16 @@ const infographicData = {
       connections: {
         centerLabel: "TTI",
         nodes: [
-          { label: "Scholarships", icon: BookOpenIcon, angle: 0 },
-          { label: "Agriculture", icon: GlobeAltIcon, angle: 45 },
-          { label: "Science", icon: BeakerIcon, angle: 90 },
-          { label: "Water Access", icon: SunIcon, angle: 135 },
-          { label: "Textiles", icon: ShoppingBagIcon, angle: 180 },
-          { label: "Partnerships", icon: UserGroupIcon, angle: 225 },
-          { label: "Technology", icon: WifiIcon, angle: 270 },
-          { label: "Empowerment", icon: SparklesIcon, angle: 315 },
+          { label: "Scholarships", icon: HiBookOpen, angle: 0, color: '#2563eb' },
+          { label: "Agriculture", icon: HiGlobeAlt, angle: 45, color: '#16a34a' },
+          { label: "Science", icon: HiBeaker, angle: 90, color: '#a855f7' },
+          { label: "Water Access", icon: HiSun, angle: 135, color: '#0ea5e9' },
+          { label: "Textiles", icon: HiShoppingBag, angle: 180, color: '#f97316' },
+          { label: "Partnerships", icon: HiUserGroup, angle: 225, color: '#10b981' },
+          { label: "Technology", icon: HiWifi, angle: 270, color: '#7c3aed' },
+          { label: "Empowerment", icon: HiSparkles, angle: 315, color: '#db2777' },
         ]
       }
-    },
-    goals: {
-      title: "H2 2025 Strategic Goals",
-      icon: FlagIcon,
-      color: 'yellow',
-      items: [
-        { title: "Infrastructure Development", description: "Borehole and fence installation at Chiroti Primary", icon: MapPinIcon, color: 'blue' },
-        { title: "Agricultural Expansion", description: "Procurement of goats at Denderedzi Secondary", icon: GlobeAltIcon, color: 'green' },
-        { title: "Education Enhancement", description: "Library and computer lab at Musukwi Secondary", icon: BuildingLibraryIcon, color: 'purple' },
-        { title: "Financial Sustainability", description: "Review of H1 projects for improved efficiency", icon: BanknotesIcon, color: 'yellow' },
-      ]
     }
   }
 };
@@ -97,76 +69,6 @@ const Section = ({ title, icon: Icon, color, children }) => {
   );
 };
 
-const ProgressBar = ({ label, value, color, icon: Icon }) => {
-  const colorClasses = {
-    bg: { 
-      blue: 'bg-blue-600', 
-      green: 'bg-green-600',
-      purple: 'bg-purple-600',
-      yellow: 'bg-yellow-600',
-      pink: 'bg-pink-600',
-      teal: 'bg-teal-600'
-    },
-    bgLight: { 
-      blue: 'bg-blue-100', 
-      green: 'bg-green-100',
-      purple: 'bg-purple-100',
-      yellow: 'bg-yellow-100',
-      pink: 'bg-pink-100',
-      teal: 'bg-teal-100'
-    },
-    text: {
-      blue: 'text-blue-700', 
-      green: 'text-green-700',
-      purple: 'text-purple-700',
-      yellow: 'text-yellow-700',
-      pink: 'text-pink-700',
-      teal: 'text-teal-700'
-    }
-  };
-  return (
-    <div className="flex items-center space-x-3 mb-4">
-      <div className={`p-2 rounded-lg ${colorClasses.bgLight[color]} flex-shrink-0`}>
-        <Icon className={`h-5 w-5 ${colorClasses.text[color]}`} />
-      </div>
-      <div className="flex-1">
-        <div className="flex justify-between text-sm mb-1 text-gray-700">
-          <span className="font-medium">{label}</span>
-          <span className="font-bold">{value}%</span>
-        </div>
-        <div className={`h-2 ${colorClasses.bgLight[color]} rounded-full overflow-hidden`}>
-          <div className={`${colorClasses.bg[color]} h-full rounded-full`} style={{ width: `${value}%` }}></div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const ProgressCard = ({ title, tag, color, items }) => {
-  const colorClasses = {
-    text: { blue: 'text-blue-800', green: 'text-green-800', purple: 'text-purple-800', yellow: 'text-yellow-800' },
-    bg: { blue: 'bg-blue-100', green: 'bg-green-100', purple: 'bg-purple-100', yellow: 'bg-yellow-100' },
-    gradient: { 
-      blue: 'from-blue-50 to-blue-100', 
-      green: 'from-green-50 to-green-100',
-      purple: 'from-purple-50 to-purple-100',
-      yellow: 'from-yellow-50 to-yellow-100'
-    }
-  };
-  return (
-    <div className={`bg-gradient-to-br ${colorClasses.gradient[color]} p-5 rounded-xl border border-gray-200 shadow-sm`}>
-      <div className="flex justify-between items-center mb-4">
-        <h3 className={`font-bold ${colorClasses.text[color]}`}>{title}</h3>
-        <div className={`${colorClasses.bg[color]} ${colorClasses.text[color]} px-3 py-1 rounded-full text-xs font-semibold`}>
-          {tag}
-        </div>
-      </div>
-      <div>
-        {items.map(item => <ProgressBar key={item.label} {...item} />)}
-      </div>
-    </div>
-  );
-};
 
 const StatCard = ({ value, label, icon: Icon, color }) => {
   const colorClasses = {
@@ -200,7 +102,7 @@ const StatCard = ({ value, label, icon: Icon, color }) => {
   );
 };
 
-const ConnectionNode = ({ icon: Icon, label, angle }) => {
+const ConnectionNode = ({ icon: Icon, label, angle, color }) => {
   // Adjust the angle to start from top (0° = top)
   const adjustedAngle = angle - 90;
   const rad = adjustedAngle * (Math.PI / 180);
@@ -210,51 +112,22 @@ const ConnectionNode = ({ icon: Icon, label, angle }) => {
   const y = 50 + 40 * Math.sin(rad);
 
   return (
-    <div 
-      className="absolute w-16 text-center z-20"
-      style={{ 
-        top: `${y}%`, 
-        left: `${x}%`, 
+    <div
+      className="absolute w-20 text-center z-20"
+      style={{
+        top: `${y}%`,
+        left: `${x}%`,
         transform: 'translate(-50%, -50%)',
         animation: `pulse 2s infinite ${angle * 50}ms`
       }}
     >
-      <div className="mx-auto w-10 h-10 bg-white border-2 border-blue-200 rounded-full flex items-center justify-center text-blue-600 shadow-md">
-        <Icon className="h-5 w-5" />
+      <div
+        className="mx-auto w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md border-2"
+        style={{ borderColor: color, color }}
+      >
+        <Icon size={24} />
       </div>
       <p className="text-xs mt-1 font-medium text-gray-700">{label}</p>
-    </div>
-  );
-};
-
-const GoalItem = ({ title, description, icon: Icon, color }) => {
-  const colorClasses = {
-    bg: { 
-      blue: 'bg-blue-100', 
-      green: 'bg-green-100', 
-      purple: 'bg-purple-100', 
-      yellow: 'bg-yellow-100',
-      teal: 'bg-teal-100',
-      pink: 'bg-pink-100'
-    },
-    text: { 
-      blue: 'text-blue-700', 
-      green: 'text-green-700', 
-      purple: 'text-purple-700', 
-      yellow: 'text-yellow-700',
-      teal: 'text-teal-700',
-      pink: 'text-pink-700'
-    },
-  };
-  return (
-    <div className="flex items-start p-4 rounded-lg bg-white border border-gray-200 shadow-sm">
-      <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center mr-4 ${colorClasses.bg[color]}`}>
-        <Icon className={`h-5 w-5 ${colorClasses.text[color]}`} />
-      </div>
-      <div>
-        <h3 className="font-semibold text-gray-800">{title}</h3>
-        <p className="text-sm text-gray-600 mt-1">{description}</p>
-      </div>
     </div>
   );
 };
@@ -273,33 +146,8 @@ const TTIInfographic = () => {
           }
         `}</style>
 
-        {/* Header */}
-        {/* <div className="bg-gradient-to-r from-blue-800 to-blue-600 text-white p-8 relative">
-          <div className="absolute top-4 right-4 bg-yellow-400 text-blue-900 px-3 py-1 rounded-full text-xs font-bold">
-            H1 2025 REPORT
-          </div>
-          <div className="flex flex-col md:flex-row items-start md:items-center">
-            <div className="bg-white/20 backdrop-blur-sm w-16 h-16 rounded-xl flex items-center justify-center mr-6 mb-4 md:mb-0">
-              <AcademicCapIcon className="h-8 w-8 text-white" />
-            </div>
-            <div>
-              <h1 className="text-2xl md:text-3xl font-bold">{data.mainTitle}</h1>
-              <p className="text-blue-200 mt-1">{data.mainSubtitle}</p>
-              <p className="text-blue-100 mt-3 max-w-2xl">{data.mission}</p>
-            </div>
-          </div>
-        </div> */}
 
         <main>
-          {/* Achievements Section */}
-          {/* <Section {...data.sections.achievements}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {data.sections.achievements.cards.map(card => 
-                <ProgressCard key={card.title} {...card} />
-              )}
-            </div>
-          </Section> */}
-
           {/* Impact Section */}
           <Section {...data.sections.impact}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -353,30 +201,7 @@ const TTIInfographic = () => {
               </div>
             </div>
           </Section>
-
-          {/* Goals Section */}
-          {/* <Section {...data.sections.goals}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {data.sections.goals.items.map(goal => 
-                <GoalItem key={goal.title} {...goal} />
-              )}
-            </div>
-          </Section> */}
         </main>
-
-        {/* Footer */}
-        {/* <div className="bg-gray-800 text-gray-300 p-6 text-sm">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <div className="font-medium">Tererai Trent International Foundation</div>
-              <div>Registered as 501(C)(3) in USA & PVO in Zimbabwe</div>
-            </div>
-            <div className="text-center md:text-right">
-              <div className="font-medium">Impact Report: January - June 2025</div>
-              <div>Generated: July 1, 2025</div>
-            </div>
-          </div>
-        </div> */}
       </div>
     </div>
   );
