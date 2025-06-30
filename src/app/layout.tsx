@@ -1,6 +1,6 @@
 import "./globals.css";
 import SettingsFloat from "@/components/SettingsFloat";
-import { inter } from "@/fonts";
+import { inter, medievalSharp } from "@/fonts";
 import { ReportProvider } from "@/contexts/ReportContext";
 import { reportData } from "@/data/report";
 
@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} ${medievalSharp.variable}`}>
         <ReportProvider>
           {children}
           <SettingsFloat />

@@ -48,7 +48,7 @@ const ClosingSection = ({ number }: Props) => {
           {/* Letter content */}
           <div className="">
             <div className="text-gray-700 text-lg leading-relaxed print:text-base print:leading-snug space-y-4">
-              <p className="first-letter:text-3xl first-letter:font-bold first-letter:text-gray-800 first-letter:float-left first-letter:mr-2 first-letter:mt-1 print:first-letter:text-2xl">
+              <p className="medieval-first-letter first-letter:text-3xl first-letter:font-bold first-letter:text-gray-800 first-letter:float-left first-letter:mr-2 first-letter:mt-1 print:first-letter:text-2xl">
                 <span
                   {...(editing
                     ? {
