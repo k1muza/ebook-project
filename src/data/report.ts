@@ -172,11 +172,20 @@ export const reportData: ReportData = {
       content: [
         { type: "subheading", text: "Leadership Tours: Building Bridges and Trust" },
         {
-          type: "image",
-          src: "/images/driller.jpg",
-          alt: "Leadership tour",
-          caption: "Figure 8: OSU students visiting TTI projects in Zimbabwe",
-          layout: "split"
+          type: "imagePair",
+          layout: "split",
+          images: [
+            {
+              src: "/images/driller.jpg",
+              alt: "Leadership tour",
+              caption: "Figure 8: OSU students visiting TTI projects in Zimbabwe"
+            },
+            {
+              src: "/images/osu.jpg",
+              alt: "OSU students group",
+              caption: "Figure 9: OSU students visiting TTI projects in Zimbabwe"
+            }
+          ]
         },
         { type: "paragraph", text: "Partnerships are the lifeblood of our work. This reporting period, we were honored to host 20 students from Oklahoma State University, in partnership with Awakened Woman. These tours are invaluable. They allow our sponsors to see their impact firsthand, deepen their emotional connection to our mission, and witness the real-life stories of transformation. The visit fostered incredible learning on both sides and left our team and community feeling inspired and hopeful for future collaborations." },
         { type: "subheading", text: "The Endowment Fund: Securing Our Future" },
@@ -241,7 +250,7 @@ export const reportData: ReportData = {
     src: "/images/endowment.jpg",
     classes: "object-top",
     alt: "TTI team and partners",
-    caption: "Figure 9: TTI team members with community partners and donors"
+    caption: "Figure 10: TTI team members with community partners and donors"
   },
   highlightsTitle: ''
 };
