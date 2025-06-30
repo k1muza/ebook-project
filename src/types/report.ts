@@ -67,6 +67,37 @@ export interface FinancialMetric {
   description?: string
 }
 
+export interface InfographicStat {
+  value: string
+  label: string
+  icon: string
+  color: string
+}
+
+export interface InfographicConnectionNode {
+  label: string
+  icon: string
+  angle: number
+  color: string
+}
+
+export interface InfographicSection {
+  title: string
+  icon: string
+  color: string
+  stats: InfographicStat[]
+  connections: {
+    centerLabel: string
+    nodes: InfographicConnectionNode[]
+  }
+}
+
+export interface InfographicData {
+  sections: {
+    impact: InfographicSection
+  }
+}
+
 export interface ReportData {
   pageTitle: string;
   pageDescription: string;
@@ -84,6 +115,7 @@ export interface ReportData {
     alt: string;
   };
   tocTitle: string;
+  infographic: InfographicData;
   message: {
     title: string;
     content: (string | ContentItem)[]; // Allow mixed content types

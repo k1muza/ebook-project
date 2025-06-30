@@ -1,5 +1,6 @@
 // components/TTIInfographic.jsx
-import React from 'react';
+import React from 'react'
+import { useReport } from '@/contexts/ReportContext'
 import {
   HeartIcon,
   PencilIcon,
@@ -8,7 +9,7 @@ import {
   ComputerDesktopIcon,
   AcademicCapIcon,
   BeakerIcon,
-} from '@heroicons/react/24/solid';
+} from '@heroicons/react/24/solid'
 import {
   HiBookOpen,
   HiGlobeAlt,
@@ -18,46 +19,45 @@ import {
   HiUserGroup,
   HiWifi,
   HiSparkles,
-} from 'react-icons/hi2';
+} from 'react-icons/hi2'
 
-const infographicData = {
-  sections: {
-    impact: {
-      title: "ii. Impact Overview",
-      icon: HeartIcon,
-      color: 'purple',
-      stats: [
-        { value: "28", label: "Scholarship Recipients", icon: AcademicCapIcon, color: 'blue' },
-        { value: "461", label: "Students received stationery", icon: PencilIcon, color: 'purple' },
-        { value: "2", label: "Science Labs Built", icon: BeakerIcon, color: 'yellow' },
-        { value: "7,512", label: "Tomato plants cultivated", icon: GlobeAltIcon, color: 'green' },
-        { value: "2", label: "First female software engineers", icon: ComputerDesktopIcon, color: 'pink' },
-        { value: "23", label: "Leadership tour participants", icon: UserGroupIcon, color: 'teal' },
-      ],
-      connections: {
-        centerLabel: "TTI",
-        nodes: [
-          { label: "Scholarships", icon: HiBookOpen, angle: 0, color: '#2563eb' },
-          { label: "Agriculture", icon: HiGlobeAlt, angle: 45, color: '#16a34a' },
-          { label: "Science", icon: HiBeaker, angle: 90, color: '#a855f7' },
-          { label: "Water Access", icon: HiSun, angle: 135, color: '#0ea5e9' },
-          { label: "Textiles", icon: HiShoppingBag, angle: 180, color: '#f97316' },
-          { label: "Partnerships", icon: HiUserGroup, angle: 225, color: '#10b981' },
-          { label: "Technology", icon: HiWifi, angle: 270, color: '#7c3aed' },
-          { label: "Empowerment", icon: HiSparkles, angle: 315, color: '#db2777' },
-        ]
-      }
-    }
-  }
-};
+type IconComponent = React.ComponentType<{ className?: string; size?: number }>
+type Color = 'blue' | 'green' | 'purple' | 'yellow' | 'pink' | 'teal'
 
-const Section = ({ title, icon: Icon, color, children }) => {
-  const colorClasses = {
+const iconMap: Record<string, IconComponent> = {
+  HeartIcon,
+  PencilIcon,
+  GlobeAltIcon,
+  UserGroupIcon,
+  ComputerDesktopIcon,
+  AcademicCapIcon,
+  BeakerIcon,
+  HiBookOpen,
+  HiGlobeAlt,
+  HiBeaker,
+  HiSun,
+  HiShoppingBag,
+  HiUserGroup,
+  HiWifi,
+  HiSparkles,
+}
+
+interface SectionProps {
+  title: string
+  icon: IconComponent
+  color: Color
+  children: React.ReactNode
+}
+
+const Section = ({ title, icon: Icon, color, children }: SectionProps) => {
+  const colorClasses: Record<Color, string> = {
     blue: 'text-blue-600',
     green: 'text-green-600',
     purple: 'text-purple-600',
     yellow: 'text-yellow-600',
-  };
+    pink: 'text-pink-600',
+    teal: 'text-teal-600',
+  }
   return (
     <div className="p-6 print:p-4">
       <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-baseline">
@@ -69,15 +69,26 @@ const Section = ({ title, icon: Icon, color, children }) => {
 };
 
 
-const StatCard = ({ value, label, icon: Icon, color }) => {
-  const colorClasses = {
+interface StatCardProps {
+  value: string
+  label: string
+  icon: IconComponent
+  color: Color
+}
+
+const StatCard = ({ value, label, icon: Icon, color }: StatCardProps) => {
+  const colorClasses: {
+    text: Record<Color, string>
+    bg: Record<Color, string>
+    gradient: Record<Color, string>
+  } = {
     text: {
       blue: 'text-blue-700',
       green: 'text-green-600',
       purple: 'text-purple-600',
       yellow: 'text-yellow-600',
       pink: 'text-pink-600',
-      teal: 'text-teal-600'
+      teal: 'text-teal-600',
     },
     bg: {
       blue: 'bg-blue-50',
@@ -85,7 +96,7 @@ const StatCard = ({ value, label, icon: Icon, color }) => {
       purple: 'bg-purple-50',
       yellow: 'bg-yellow-50',
       pink: 'bg-pink-50',
-      teal: 'bg-teal-50'
+      teal: 'bg-teal-50',
     },
     gradient: {
       blue: 'from-blue-100 via-white to-blue-50',
@@ -93,9 +104,9 @@ const StatCard = ({ value, label, icon: Icon, color }) => {
       purple: 'from-purple-100 via-white to-purple-50',
       yellow: 'from-yellow-100 via-white to-yellow-50',
       pink: 'from-pink-100 via-white to-pink-50',
-      teal: 'from-teal-100 via-white to-teal-50'
-    }
-  };
+      teal: 'from-teal-100 via-white to-teal-50',
+    },
+  }
   return (
     <div
       className={`p-4 rounded-xl border border-gray-200 flex items-start space-x-3 shadow-sm hover:shadow-md transition-shadow bg-gradient-to-br ${colorClasses.gradient[color]}`}
@@ -111,7 +122,14 @@ const StatCard = ({ value, label, icon: Icon, color }) => {
   );
 };
 
-const ConnectionNode = ({ icon: Icon, label, angle, color }) => {
+interface ConnectionNodeProps {
+  icon: IconComponent
+  label: string
+  angle: number
+  color: Color
+}
+
+const ConnectionNode = ({ icon: Icon, label, angle, color }: ConnectionNodeProps) => {
   // Adjust the angle to start from top (0° = top)
   const adjustedAngle = angle - 90;
   const rad = adjustedAngle * (Math.PI / 180);
@@ -142,7 +160,9 @@ const ConnectionNode = ({ icon: Icon, label, angle, color }) => {
 };
 
 const TTIInfographic = () => {
-  const data = infographicData;
+  const { data } = useReport()
+  if (!data || !data.infographic) return null
+  const impact = data.infographic.sections.impact
 
   return (
     <div className="bg-gradient-to-br from-gray-50 to-blue-50 flex items-center justify-center p-4 rounded-2xl">
@@ -158,13 +178,13 @@ const TTIInfographic = () => {
 
         <main>
           {/* Impact Section */}
-          <Section {...data.sections.impact}>
+          <Section title={impact.title} icon={iconMap[impact.icon]} color={impact.color as Color}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Stats */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {data.sections.impact.stats.map(stat => 
-                  <StatCard key={stat.label} {...stat} />
-                )}
+                {impact.stats.map(stat => (
+                  <StatCard key={stat.label} {...stat} icon={iconMap[stat.icon]} color={stat.color as Color} />
+                ))}
               </div>
               
               {/* Connection Diagram */}
@@ -172,7 +192,7 @@ const TTIInfographic = () => {
                 <div className="relative w-full max-w-md aspect-square">
                   {/* Connection lines - placed first to be behind everything */}
                   <svg className="absolute inset-0 w-full h-full z-10" viewBox="0 0 100 100">
-                    {data.sections.impact.connections.nodes.map((node, index) => {
+                    {impact.connections.nodes.map((node, index) => {
                       // Adjust angle to start from top
                       const adjustedAngle = node.angle - 90;
                       const rad = adjustedAngle * (Math.PI / 180);
@@ -199,13 +219,13 @@ const TTIInfographic = () => {
                   
                   {/* Center circle */}
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg z-20">
-                    {data.sections.impact.connections.centerLabel}
+                    {impact.connections.centerLabel}
                   </div>
-                  
+
                   {/* Connection nodes */}
-                  {data.sections.impact.connections.nodes.map(node => 
-                    <ConnectionNode key={node.label} {...node} />
-                  )}
+                  {impact.connections.nodes.map(node => (
+                    <ConnectionNode key={node.label} {...node} icon={iconMap[node.icon]} color={node.color as Color} />
+                  ))}
                 </div>
               </div>
             </div>

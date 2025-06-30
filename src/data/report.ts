@@ -18,6 +18,36 @@ export const reportData: ReportData = {
     alt: 'African students learning',
   },
   tocTitle: 'i. Table of Contents',
+  infographic: {
+    sections: {
+      impact: {
+        title: 'Impact Overview',
+        icon: 'HeartIcon',
+        color: 'purple',
+        stats: [
+          { value: '28', label: 'Scholarship Recipients', icon: 'AcademicCapIcon', color: 'blue' },
+          { value: '461', label: 'Students received stationery', icon: 'PencilIcon', color: 'purple' },
+          { value: '2', label: 'Science Labs Built', icon: 'BeakerIcon', color: 'yellow' },
+          { value: '7,512', label: 'Tomato plants cultivated', icon: 'GlobeAltIcon', color: 'green' },
+          { value: '2', label: 'First female software engineers', icon: 'ComputerDesktopIcon', color: 'pink' },
+          { value: '23', label: 'Leadership tour participants', icon: 'UserGroupIcon', color: 'teal' },
+        ],
+        connections: {
+          centerLabel: 'TTI',
+          nodes: [
+            { label: 'Scholarships', icon: 'HiBookOpen', angle: 0, color: '#2563eb' },
+            { label: 'Agriculture', icon: 'HiGlobeAlt', angle: 45, color: '#16a34a' },
+            { label: 'Science', icon: 'HiBeaker', angle: 90, color: '#a855f7' },
+            { label: 'Water Access', icon: 'HiSun', angle: 135, color: '#0ea5e9' },
+            { label: 'Textiles', icon: 'HiShoppingBag', angle: 180, color: '#f97316' },
+            { label: 'Partnerships', icon: 'HiUserGroup', angle: 225, color: '#10b981' },
+            { label: 'Technology', icon: 'HiWifi', angle: 270, color: '#7c3aed' },
+            { label: 'Empowerment', icon: 'HiSparkles', angle: 315, color: '#db2777' },
+          ],
+        },
+      },
+    },
+  },
   message: {
     title: "A Message of Gratitude and Progress",
     content: [
