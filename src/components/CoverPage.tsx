@@ -13,7 +13,7 @@ const CoverPage = () => {
     <div className="absolute top-1/3 right-20 w-16 h-16 rounded-full bg-purple-200 opacity-50"></div>
     <div className="relative z-10 px-8 py-12 max-w-3xl mx-auto bg-transparent shadow-none">
       {data.logoImage && (
-        <div className="absolute top-0 right-0 w-20 h-20">
+        <div className="absolute bottom-0 right-0 w-40 h-40 hidden">
           <img
             src={data.logoImage.src}
             alt={data.logoImage.alt}
