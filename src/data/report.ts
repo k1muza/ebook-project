@@ -10,7 +10,7 @@ export const reportData: ReportData = {
   guidingPrinciple: "Providing universal access to quality education",
   mission: "We envision empowered rural communities where all children have access to quality education, regardless of their gender or socio-economic backgrounds.",
   coverImage: {
-    src: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1',
+    src: '/images/classroom.jpg',
     alt: 'African students learning',
   },
   tocTitle: 'Table of Contents',
@@ -21,7 +21,7 @@ export const reportData: ReportData = {
       "This report celebrates the milestones we have achieved together. It tells the story of how three key initiatives—our scholarship program, an income-generating sewing project, and school-based irrigation systems—are not just changing lives but are building a foundation for a self-sustaining future. We are thrilled to share our progress, acknowledge the challenges we've faced, and look ahead with renewed purpose to the work that still needs to be done.",
       {
         type: "image",
-        src: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d",
+        src: "/images/celebration.jpg",
         alt: "Community gathering",
         caption: "Figure 1: Community members and TTI staff celebrating progress in education initiatives",
         layout: "full"
@@ -100,7 +100,7 @@ export const reportData: ReportData = {
         { type: "paragraph", text: "A landmark achievement this period was celebrating Tryness Nyauvanga and Christabel Dura, the first TTI-supported students to pursue a degree in Software Engineering. Their courage in entering a male-dominated field is a powerful testament to our efforts in promoting STEM education for girls. To support their journey, TTI provided each with a new laptop, removing a critical barrier to their success." },
         {
           type: "image",
-          src: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc",
+          src: "/images/books.jpg",
           alt: "Students receiving scholarships",
           caption: "Figure 2: Scholarship recipients at the January 2025 orientation",
           layout: "split"
@@ -110,7 +110,7 @@ export const reportData: ReportData = {
         { type: "quote", text: "Before the orientation, I was nervous and unsure about what to expect. But after hearing stories and guidance, I felt confident and ready to focus on my goals. I now understand that this scholarship is not just about school fees; it's about shaping my future.", author: "Christabel Dura" },
         {
           type: "image",
-          src: "https://images.unsplash.com/photo-1584697964358-3e14ca57658b",
+          src: "/images/potatoes.jpg",
           alt: "School supplies donation",
           caption: "Figure 3: Distribution of exercise books to students in need",
           layout: "full"
@@ -127,7 +127,7 @@ export const reportData: ReportData = {
         { type: "paragraph", text: "The Skills and Business Center, established in late 2024, is already bearing fruit. This reporting period, we successfully integrated 80% of the women trained in fashion and tailoring into a new school uniform production initiative." },
         {
           type: "image",
-          src: "https://images.unsplash.com/photo-1600267165477-6d4cc741b379",
+          src: "/images/sewing.jpg",
           alt: "Women sewing uniforms",
           caption: "Figure 4: Women from the vocational training program producing school uniforms",
           layout: "split"
@@ -137,7 +137,7 @@ export const reportData: ReportData = {
         { type: "paragraph", text: "In the past, over 88% of students in the Matau cluster graduated with an Arts focus, largely due to a lack of science facilities. This year, we shattered that barrier by introducing and completing two modern science laboratories at Chivakanenyama and Zvimhonja Secondary Schools." },
         {
           type: "image",
-          src: "https://images.unsplash.com/photo-1532094349884-543bc11b234d",
+          src: "/images/lab.jpg",
           alt: "Science laboratory",
           caption: "Figure 5: New science lab at Zvimhonja Secondary School",
           layout: "full"
@@ -147,7 +147,7 @@ export const reportData: ReportData = {
         { type: "paragraph", text: "Access to water is fundamental to health, hygiene, and economic prosperity. We are proud to report the successful drilling of 3 boreholes at Chiroti Primary, Zvimhinja Primary, and Denderedzi Secondary." },
         {
           type: "image",
-          src: "https://images.unsplash.com/photo-1560785496-3c9d27877182",
+          src: "/images/solar.jpg",
           alt: "Solar-powered irrigation",
           caption: "Figure 6: Solar-powered garden at Denderedzi Primary School",
           layout: "split"
@@ -161,7 +161,7 @@ export const reportData: ReportData = {
         { type: "subheading", text: "Leadership Tours: Building Bridges and Trust" },
         {
           type: "image",
-          src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4",
+          src: "/images/driller.jpg",
           alt: "Leadership tour",
           caption: "Figure 7: OSU students visiting TTI projects in Zimbabwe",
           layout: "split"
@@ -222,7 +222,7 @@ export const reportData: ReportData = {
   closingTitle: 'A Heartfelt Thank You',
   closing: "None of this would be possible without you—our dedicated partners, donors, and the resilient communities we serve. Your belief in our mission fuels our work and turns dreams into reality for thousands of children. Together, we are not just providing education; we are building a legacy of empowerment, sustainability, and hope. Thank you for being a part of this incredible journey.",
   closingImage: {
-    src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c",
+    src: "/images/endowment.jpg",
     alt: "TTI team and partners",
     caption: "Figure 8: TTI team members with community partners and donors"
   },
