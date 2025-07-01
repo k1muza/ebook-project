@@ -227,6 +227,13 @@ export const reportData: ReportData = {
     {
       title: "Strengthening Our Roots Through Partnership",
       content: [
+        {
+          type: "image",
+          src: "/images/endowment.jpg",
+          alt: "TTI team and partners",
+          caption: "Figure 13: TTI team members with community partners and donors",
+          layout: "full"
+        },
         { type: "subheading", text: "Leadership Tours: Building Bridges and Trust" },
         {
           type: "imagePair",
