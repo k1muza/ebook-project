@@ -1,5 +1,6 @@
 'use client'
 import React, { createContext, useContext, useEffect, useState } from 'react'
+import { toast } from 'react-hot-toast'
 import { ReportData } from '@/types/report'
 import {
   fetchReportData,
@@ -40,6 +41,7 @@ export const ReportProvider = ({ children }: { children: React.ReactNode }) => {
     const toSave = newData ?? data
     if (!toSave) return
     await saveReportData(toSave as ReportData)
+    toast.success('Saved changes')
   }
 
   const reset = async () => {
