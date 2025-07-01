@@ -14,7 +14,7 @@ import DataTreeEditor from './DataTreeEditor'
 import { useReport } from '@/contexts/ReportContext'
 
 const SettingsFloat = () => {
-  const { editing, toggleEditing, save } = useReport()
+  const { editing, toggleEditing, save, dirty } = useReport()
   const [showTree, setShowTree] = useState(false)
 
   const toggle = () => {
@@ -66,7 +66,12 @@ const SettingsFloat = () => {
           {editing ? <Eye size={20} /> : <Pencil size={20} />}
         </button>
         <button onClick={() => save()} className={btn} title="Save changes">
-          <Save size={20} />
+          <div className="relative">
+            <Save size={20} />
+            {dirty && (
+              <span className="absolute -top-0 -right-0 w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+            )}
+          </div>
         </button>
         <button onClick={reset} className={btn} title="Reset data">
           <RefreshCcw size={20} />

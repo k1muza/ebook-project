@@ -15,23 +15,34 @@ type ReportContextType = {
   reset: () => Promise<void>
   editing: boolean
   toggleEditing: () => void
+  dirty: boolean
 }
 
 const ReportContext = createContext<ReportContextType | undefined>(undefined)
 
 export const ReportProvider = ({ children }: { children: React.ReactNode }) => {
-  const [data, setData] = useState<ReportData | null>(null)
+  const [data, setDataState] = useState<ReportData | null>(null)
+  const [dirty, setDirty] = useState(false)
   const [editing, setEditing] = useState(false)
+
+  const setData: React.Dispatch<React.SetStateAction<ReportData | null>> = (
+    val
+  ) => {
+    setDirty(true)
+    setDataState(val)
+  }
 
   useEffect(() => {
     const load = async () => {
       try {
         const existing = await fetchReportData()
-        setData(existing)
+        setDataState(existing)
+        setDirty(false)
       } catch (err) {
         console.error('Failed to load report from Firebase', err)
         const fresh = await resetReportData()
-        setData(fresh)
+        setDataState(fresh)
+        setDirty(false)
       }
     }
     load()
@@ -42,18 +53,20 @@ export const ReportProvider = ({ children }: { children: React.ReactNode }) => {
     if (!toSave) return
     await saveReportData(toSave as ReportData)
     toast.success('Saved changes')
+    setDirty(false)
   }
 
   const reset = async () => {
     const fresh = await resetReportData()
-    setData(fresh)
+    setDataState(fresh)
+    setDirty(false)
   }
 
   const toggleEditing = () => setEditing((e) => !e)
 
   return (
     <ReportContext.Provider
-      value={{ data, setData, save, reset, editing, toggleEditing }}
+      value={{ data, setData, save, reset, editing, toggleEditing, dirty }}
     >
       {children}
     </ReportContext.Provider>
