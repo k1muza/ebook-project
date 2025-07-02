@@ -1,6 +1,5 @@
 'use client'
 import { Dispatch, SetStateAction } from 'react'
-import { BookOpen } from 'lucide-react'
 import { useReport } from '@/contexts/ReportContext'
 
 interface TocItem {

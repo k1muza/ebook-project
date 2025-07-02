@@ -100,7 +100,7 @@ export interface InfographicData {
 }
 
 export interface ReportData {
-  financialPointsHeading: any;
+  financialPointsHeading?: string;
   pageTitle: string;
   pageDescription: string;
   organization: string;
