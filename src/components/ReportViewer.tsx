@@ -10,8 +10,6 @@ import StrategicVisionSection from './StrategicVisionSection';
 import Sections from './Sections';
 import FinancialsSection from './FinancialsSection';
 import FutureGoalsSection from './FutureGoalsSection';
-import dynamic from 'next/dynamic';
-const MapSection = dynamic(() => import('./MapSection'), { ssr: false });
 import ClosingSection from './ClosingSection';
 import TTIInfographic from './ImpactInfographic';
 

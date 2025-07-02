@@ -44,20 +44,10 @@ const iconMap: Record<string, IconComponent> = {
 
 interface SectionProps {
   title: string
-  icon: IconComponent
-  color: Color
   children: React.ReactNode
 }
 
-const Section = ({ title, icon: Icon, color, children }: SectionProps) => {
-  const colorClasses: Record<Color, string> = {
-    blue: 'text-blue-600',
-    green: 'text-green-600',
-    purple: 'text-purple-600',
-    yellow: 'text-yellow-600',
-    pink: 'text-pink-600',
-    teal: 'text-teal-600',
-  }
+const Section = ({ title, children }: SectionProps) => {
   return (
     <div className="p-6 print:p-4">
       <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-baseline">
@@ -65,8 +55,8 @@ const Section = ({ title, icon: Icon, color, children }: SectionProps) => {
       </h2>
       {children}
     </div>
-  );
-};
+  )
+}
 
 
 interface StatCardProps {
@@ -178,7 +168,7 @@ const TTIInfographic = () => {
 
         <main>
           {/* Impact Section */}
-          <Section title={impact.title} icon={iconMap[impact.icon]} color={impact.color as Color}>
+          <Section title={impact.title}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Stats */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
