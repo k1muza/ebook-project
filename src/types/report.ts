@@ -11,6 +11,7 @@ export type ContentItem =
   | { type: 'subheading'; text: string }
   | { type: 'bold'; text: string }
   | {
+      classes: any;
       type: 'image';
       src: string;
       alt: string;

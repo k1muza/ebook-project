@@ -54,7 +54,7 @@ const FutureGoalsSection = ({ number }: Props) => {
     </div>
     {data.futureVisionImage && (
       <div className="mt-12 print:break-inside-avoid">
-        <div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-xl">
+        <div className="relative w-full h-80 rounded-2xl overflow-hidden">
           <img src={data.futureVisionImage.src} alt={data.futureVisionImage.alt} className="w-full h-full object-cover" />
         </div>
         <p

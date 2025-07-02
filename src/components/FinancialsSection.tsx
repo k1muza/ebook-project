@@ -84,7 +84,7 @@ const FinancialsSection = ({ number }: Props) => {
 
       {/* Financial Highlights Cards */}
       <div className="grid grid-cols-3 gap-6 mb-8">
-        <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 border border-blue-100 shadow-sm">
+        <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 border border-blue-100">
           <div className="flex items-center mb-2">
             <div className="bg-blue-100 p-2 rounded-lg mr-3">
               <FaDollarSign className="text-blue-600" />
@@ -141,7 +141,7 @@ const FinancialsSection = ({ number }: Props) => {
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100 shadow-sm">
+        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100">
           <div className="flex items-center mb-2">
             <div className="bg-green-100 p-2 rounded-lg mr-3">
               <FaDollarSign className="text-green-600" />
@@ -201,7 +201,7 @@ const FinancialsSection = ({ number }: Props) => {
         </div>
 
         <div
-          className={`rounded-xl p-6 border shadow-sm ${net >= 0
+          className={`rounded-xl p-6 border ${net >= 0
               ? 'bg-gradient-to-br from-emerald-50 to-green-50 border-emerald-100'
               : 'bg-gradient-to-br from-rose-50 to-red-50 border-rose-100'
             }`}
@@ -273,7 +273,7 @@ const FinancialsSection = ({ number }: Props) => {
         {financialMetrics.map((metric, index) => {
           const Icon = (Icons as unknown as Record<string, LucideIcon>)[metric.icon || 'ArrowUp']
           return (
-            <div key={index} className="bg-white rounded-lg p-4 border border-slate-200 shadow-xs">
+            <div key={index} className="bg-white rounded-lg p-4 border border-slate-200">
               <div className="flex justify-between items-start">
                 <h4
                   className="font-medium text-slate-700"
@@ -339,10 +339,10 @@ const FinancialsSection = ({ number }: Props) => {
         })}
       </div>
 
-      <div className="bg-gradient-to-br from-blue-50 via-cyan-50 to-sky-100 rounded-2xl p-8 mb-10 border border-white/50 shadow-lg shadow-blue-100/30 hover:shadow-blue-200/40 transition-all duration-300 print:break-inside-avoid backdrop-blur-sm backdrop-opacity-90">
+      <div className="bg-gradient-to-br from-blue-50 via-cyan-50 to-sky-100 rounded-2xl p-8 mb-10 border border-white/50 transition-all duration-300 print:break-inside-avoid backdrop-blur-sm backdrop-opacity-90">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="flex-1">
-            <h3 className="text-2xl font-bold text-slate-900 mb-3 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"
+            <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"
               {...(editing ? {
                 contentEditable: true,
                 suppressContentEditableWarning: true,
@@ -372,14 +372,14 @@ const FinancialsSection = ({ number }: Props) => {
             </p>
           </div>
 
-          <div className="flex-shrink-0 bg-white/80 rounded-xl p-3 shadow-inner border border-white">
+          <div className="flex-shrink-0 bg-white/80 rounded-xl p-3 border border-white">
             <FinancialChart financials={data.financials} />
           </div>
         </div>
       </div>
 
       {/* Enhanced Financial Table */}
-      <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden mb-8 print:break-inside-avoid">
+      <div className="bg-white rounded-xl border border-slate-200 overflow-hidden mb-8 print:break-inside-avoid">
         <div className="border-b border-slate-200 bg-slate-50 px-6 py-4">
           <h3
             className="text-lg font-semibold text-slate-800"

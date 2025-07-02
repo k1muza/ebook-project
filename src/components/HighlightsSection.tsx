@@ -32,7 +32,7 @@ const HighlightsSection = ({ number }: Props) => {
         {data.highlights.map((item, idx) => {
           const Icon = (Icons as unknown as Record<string, LucideIcon>)[item.icon || 'Star']
           return (
-            <div key={idx} className="text-center p-6 bg-gradient-to-br from-emerald-50 to-amber-50 rounded-xl shadow border border-emerald-100">
+            <div key={idx} className="text-center p-6 bg-gradient-to-br from-emerald-50 to-amber-50 rounded-xl border border-emerald-100">
               <div className="flex justify-center mb-4">
                 {Icon && <Icon className="text-emerald-600" size={36} />}
               </div>

@@ -48,7 +48,7 @@ const SettingsFloat = () => {
       )}
       {/* Sliding panel */}
       <aside
-        className={`fixed top-0 right-0 h-full w-full max-w-xl bg-white rounded-l-xl shadow-lg z-50 transform transition-transform duration-300 ease-in-out print:hidden ${showTree ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`fixed top-0 right-0 h-full w-full max-w-xl bg-white rounded-l-xl z-50 transform transition-transform duration-300 ease-in-out print:hidden ${showTree ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <div className="flex items-center justify-between p-3 border-b">
           <h2 className="font-semibold">Edit Report Data</h2>

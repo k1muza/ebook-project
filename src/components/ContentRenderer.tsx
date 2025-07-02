@@ -92,10 +92,10 @@ const ContentRenderer = ({ content, index, subheadingNumber, editable, onChange 
           className={`my-8 print:break-inside-avoid ${content.layout === 'split' ? 'flex flex-col items-center' : ''}`}
         >
           <div
-            className={`relative overflow-hidden rounded-xl shadow-lg ${content.layout === 'split' ? 'md:w-1/2' : ''}`}
+            className={`relative overflow-hidden rounded-xl ${content.layout === 'split' ? 'md:w-1/2' : ''}`}
             style={{ height: content.layout === 'split' ? '300px' : '400px' }}
           >
-            <img src={content.src} alt={content.alt} className="w-full h-full object-cover" />
+            <img src={content.src} alt={content.alt} className={`w-full h-full object-cover ${content.classes}`} />
           </div>
           {editable ? (
             <>
@@ -130,7 +130,7 @@ const ContentRenderer = ({ content, index, subheadingNumber, editable, onChange 
           {content.images.map((img, i) => (
             <figure key={i} className="flex flex-col flex-1/2 items-center md:w-1/2">
               <div
-                className="relative overflow-hidden rounded-xl shadow-lg w-full"
+                className="relative overflow-hidden rounded-xl w-full"
                 style={{ height: content.layout === 'split' ? '300px' : '400px' }}
               >
                 <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />

@@ -21,7 +21,6 @@ const ClosingSection = ({ number }: Props) => {
                 <HeadingNumber number={number} />
               </div>
               <div>
-                <p className="text-gray-600 text-sm print:text-xs">From the desk of</p>
                 <h3
                   className="text-2xl font-bold text-gray-800 print:text-xl"
                   {...(editing

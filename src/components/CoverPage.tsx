@@ -11,7 +11,7 @@ const CoverPage = () => {
     <div className="absolute top-10 left-10 w-24 h-24 rounded-full bg-emerald-200 opacity-50"></div>
     <div className="absolute bottom-20 right-10 w-32 h-32 rounded-full bg-amber-200 opacity-50"></div>
     <div className="absolute top-1/3 right-20 w-16 h-16 rounded-full bg-purple-200 opacity-50"></div>
-    <div className="relative z-10 px-8 py-12 max-w-3xl mx-auto bg-transparent shadow-none">
+    <div className="relative z-10 px-8 py-12 max-w-3xl mx-auto bg-transparent">
       {data.logoImage && (
         <div className="absolute left-1/2 -translate-x-1/2 w-70 h-32 opacity-80 mix-blend-multiply" style={{top: "-90px"}}>
           <img
@@ -104,7 +104,7 @@ const CoverPage = () => {
         {data.period}
       </p>
       {data.coverImage && (
-        <div className="relative w-64 h-64 rounded-full overflow-hidden border-8 border-emerald-100 shadow-xl mx-auto">
+        <div className="relative w-64 h-64 rounded-full overflow-hidden border-8 border-emerald-100 mx-auto">
           <img
             src={data.coverImage.src}
             alt={data.coverImage.alt}

@@ -109,7 +109,7 @@ const StatCard = ({ value, label, icon: Icon, color }: StatCardProps) => {
   }
   return (
     <div
-      className={`p-4 rounded-xl border border-gray-200 flex items-start space-x-3 shadow-sm hover:shadow-md transition-shadow bg-gradient-to-br ${colorClasses.gradient[color]}`}
+      className={`p-4 rounded-xl border border-gray-200 flex items-start space-x-3 bg-gradient-to-br ${colorClasses.gradient[color]}`}
     >
       <div className={`p-3 rounded-lg ${colorClasses.bg[color]}`}> 
         <Icon className={`h-6 w-6 ${colorClasses.text[color]}`} />
@@ -149,7 +149,7 @@ const ConnectionNode = ({ icon: Icon, label, angle, color }: ConnectionNodeProps
       }}
     >
       <div
-        className="mx-auto w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md border-2"
+        className="mx-auto w-16 h-16 bg-white rounded-full flex items-center justify-center border-2"
         style={{ borderColor: color, color }}
       >
         <Icon size={24} />
@@ -166,7 +166,7 @@ const TTIInfographic = () => {
 
   return (
     <div className="bg-gradient-to-br from-gray-50 to-blue-50 flex items-center justify-center p-4 rounded-2xl">
-      <div className="w-full rounded-2xl overflow-hidden print:shadow-none">
+      <div className="w-full rounded-2xl overflow-hidden">
         <style jsx global>{`
           @keyframes pulse {
             0% { transform: translate(-50%, -50%) scale(1); }
@@ -218,7 +218,7 @@ const TTIInfographic = () => {
                   </svg>
                   
                   {/* Center circle */}
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg z-20">
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg z-20">
                     {impact.connections.centerLabel}
                   </div>
 

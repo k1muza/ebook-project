@@ -27,7 +27,7 @@ body {
 
 /* Stylish tables used for financial data */
 .financial-table {
-  @apply w-full text-left border-collapse rounded-xl overflow-hidden shadow;
+  @apply w-full text-left border-collapse rounded-xl overflow-hidden;
 }
 
 .financial-table th {
