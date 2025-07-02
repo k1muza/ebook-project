@@ -1,5 +1,5 @@
 {
-  "closing": "None of this would be possible without you—our dedicated partners, donors, and the resilient communities we serve. Your belief in our mission fuels our work and turns dreams into reality for thousands of children. Together, we are not just providing education; we are building a legacy of empowerment, sustainability, and hope. Thank you for being a part of this incredible journey.",
+  "closing": "None of this would be possible without you\u2014our dedicated partners, donors, and the resilient communities we serve. Your belief in our mission fuels our work and turns dreams into reality for thousands of children. Together, we are not just providing education; we are building a legacy of empowerment, sustainability, and hope. Thank you for being a part of this incredible journey.",
   "closingTitle": "A Heartfelt Thank You",
   "coverImage": {
     "alt": "African students learning",
@@ -34,20 +34,44 @@
   "financials": {
     "expenses": [
       {
-        "amount": "$15,000",
-        "item": "Scholarship Support"
+        "amount": "$47 412.49",
+        "item": "Scholarships"
       },
       {
-        "amount": "$10,000",
-        "item": "Infrastructure Projects"
+        "amount": "$34 885.27",
+        "item": "Irrigation garden project"
       },
       {
-        "amount": "$7,000",
-        "item": "Community Programs"
+        "amount": "$7 456.37",
+        "item": "Sewing dept project"
       },
       {
-        "amount": "$3,000",
-        "item": "Administrative Costs"
+        "amount": "$4 414.33",
+        "item": "Admin, office& Audit"
+      },
+      {
+        "amount": "$950.73",
+        "item": "Monitoring and Evaluation"
+      },
+      {
+        "amount": "$984.46",
+        "item": "Bank Charges"
+      },
+      {
+        "amount": "$11 919",
+        "item": "Staff expenses"
+      },
+      {
+        "amount": "$2 086",
+        "item": "Infrastructure development (Chivakanenyama)"
+      },
+      {
+        "amount": "$230",
+        "item": "Memorandum of Understating"
+      },
+      {
+        "amount": "$8 636",
+        "item": "Motor vehicle"
       }
     ],
     "revenue": [
@@ -201,7 +225,7 @@
   "message": {
     "content": [
       "The first half of 2025 has been a period of incredible growth and transformative impact for the Tererai Trent International (TTI) Foundation. With the unwavering support of our partners, donors, and community members, we have made significant strides in our core focus areas of educational support, sustainable agriculture, and community empowerment.",
-      "This report celebrates the milestones we have achieved together. It tells the story of how three key initiatives—our scholarship program, an income-generating sewing project, and school-based irrigation systems—are not just changing lives but are building a foundation for a self-sustaining future. We are thrilled to share our progress, acknowledge the challenges we've faced, and look ahead with renewed purpose to the work that still needs to be done.",
+      "This report celebrates the milestones we have achieved together. It tells the story of how three key initiatives\u2014our scholarship program, an income-generating sewing project, and school-based irrigation systems\u2014are not just changing lives but are building a foundation for a self-sustaining future. We are thrilled to share our progress, acknowledge the challenges we've faced, and look ahead with renewed purpose to the work that still needs to be done.",
       {
         "images": [
           {
@@ -260,7 +284,7 @@
   "organization": "Tererai Trent International Foundation",
   "pageDescription": "H1 2025 Progress Report: Sowing Seeds of Hope and Opportunity",
   "pageTitle": "Tererai Trent Foundation - Progress Report",
-  "period": "January – June 2025",
+  "period": "January \u2013 June 2025",
   "programInvestmentAmount": "$35,000",
   "programInvestmentHeading": "Program Investment",
   "programInvestmentNote": "92% to education programs",
@@ -288,12 +312,12 @@
           "images": [
             {
               "alt": "Students receiving scholarships",
-              "caption": "Figure 3: Stationery recipients at Chiroti Secondary School ",
+              "caption": "Figure 3: Stationery recipients at Chiroti Secondary School\u00a0",
               "src": "/images/books.jpg"
             },
             {
               "alt": "Students at orientation",
-              "caption": "Figure 4: Tryness and Christabel Dura, our 1st engineering students ",
+              "caption": "Figure 4: Tryness and Christabel Dura, our 1st engineering students\u00a0",
               "src": "/images/students.jpg"
             }
           ],
@@ -305,7 +329,7 @@
           "type": "subheading"
         },
         {
-          "text": "In January 2025, thanks to our generous donors, we held our first-ever orientation for 27 scholarship beneficiaries. This session was more than an introduction; it was a community-building experience. Students learned practical skills like time management and goal setting, connected with peers and mentors, and aligned their personal journeys with TTI's mission to uplift and empower. Old scholarship beneficiaries shared their experiences with new students, preparing them for tertiary education, life changes and expectations. This has played a significant role in preparing our new students for the transition to an urban environment, which is vastly different from the rural setting they were accustomed to. We took this opportunity to share important scholarship guidelines and communication protocols to ensure smooth coordination between the office, students, and institutions. During these engagements, we also reassured our students that the office is fully committed to offering psychosocial support to anyone who may need it.We deeply value our scholarship program, not only as a means of academic support but as a holistic journey. Our goal is to nurture students who are mentally healthy, focused, and equipped with the skills and mindset to thrive in the world of work and beyond. It’s a privilege to walk alongside them as they grow into confident, purpose driven individuals.",
+          "text": "In January 2025, thanks to our generous donors, we held our first-ever orientation for 27 scholarship beneficiaries. This session was more than an introduction; it was a community-building experience. Students learned practical skills like time management and goal setting, connected with peers and mentors, and aligned their personal journeys with TTI's mission to uplift and empower. Old scholarship beneficiaries shared their experiences with new students, preparing them for tertiary education, life changes and expectations. This has played a significant role in preparing our new students for the transition to an urban environment, which is vastly different from the rural setting they were accustomed to. We took this opportunity to share important scholarship guidelines and communication protocols to ensure smooth coordination between the office, students, and institutions. During these engagements, we also reassured our students that the office is fully committed to offering psychosocial support to anyone who may need it.We deeply value our scholarship program, not only as a means of academic support but as a holistic journey. Our goal is to nurture students who are mentally healthy, focused, and equipped with the skills and mindset to thrive in the world of work and beyond. It\u2019s a privilege to walk alongside them as they grow into confident, purpose driven individuals.",
           "type": "paragraph"
         },
         {
