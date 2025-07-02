@@ -31,6 +31,19 @@
       "value": "8.6%"
     }
   ],
+  "financialPoints": [
+    "Scholarship expenditure increased by 49.3%",
+    "Irrigation garden projects increased by 6.8%",
+    "Staff expenses increased by 57.9%",
+    "Bank charges increased by over 100%"
+  ],
+  "expenditureIncreaseSummary": "Overall expenditure increased by 62% from last year and this is due to the following reasons:",
+  "expenditureIncreaseReasons": [
+    "An increase in scholarship beneficiaries",
+    "Motor vehicle purchase",
+    "Bank charges are high because we opened a bank account and its charges are costly",
+    "Adoption of a new school i.e. Chiroti (drilled a borehole and installed fence)"
+  ],
   "financials": {
     "expenses": [
       {

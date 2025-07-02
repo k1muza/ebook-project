@@ -626,19 +626,91 @@ const FinancialsSection = ({ number }: Props) => {
           className="bg-slate-50 px-6 py-3 text-sm text-slate-500 border-t border-slate-200"
           {...(editing
             ? {
-              contentEditable: true,
-              suppressContentEditableWarning: true,
-              onBlur: (e: React.FocusEvent<HTMLElement>) => {
-                const newData = { ...(data as typeof data) }
-                newData.financialAuditNote = e.currentTarget.textContent || ''
-                setData(newData)
-              },
-            }
+                contentEditable: true,
+                suppressContentEditableWarning: true,
+                onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                  const newData = { ...(data as typeof data) }
+                  newData.financialAuditNote = e.currentTarget.textContent || ''
+                  setData(newData)
+                },
+              }
             : {})}
         >
           {data.financialAuditNote}
         </div>
       </div>
+
+      {data.financialPoints && (
+        <ul className="list-disc pl-6 mb-6 space-y-2">
+          {data.financialPoints.map((point, index) => (
+            <li
+              key={index}
+              className="text-lg"
+              {...(editing
+                ? {
+                    contentEditable: true,
+                    suppressContentEditableWarning: true,
+                    onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                      const newData = { ...(data as typeof data) }
+                      if (newData.financialPoints)
+                        newData.financialPoints[index] =
+                          e.currentTarget.textContent || ''
+                      setData(newData)
+                    },
+                  }
+                : {})}
+            >
+              {point}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {data.expenditureIncreaseSummary && (
+        <p
+          className="text-lg text-gray-700 mb-2"
+          {...(editing
+            ? {
+                contentEditable: true,
+                suppressContentEditableWarning: true,
+                onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                  const newData = { ...(data as typeof data) }
+                  newData.expenditureIncreaseSummary =
+                    e.currentTarget.textContent || ''
+                  setData(newData)
+                },
+              }
+            : {})}
+        >
+          {data.expenditureIncreaseSummary}
+        </p>
+      )}
+
+      {data.expenditureIncreaseReasons && (
+        <ul className="list-disc pl-6 mb-8 space-y-2">
+          {data.expenditureIncreaseReasons.map((reason, index) => (
+            <li
+              key={index}
+              className="text-lg"
+              {...(editing
+                ? {
+                    contentEditable: true,
+                    suppressContentEditableWarning: true,
+                    onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                      const newData = { ...(data as typeof data) }
+                      if (newData.expenditureIncreaseReasons)
+                        newData.expenditureIncreaseReasons[index] =
+                          e.currentTarget.textContent || ''
+                      setData(newData)
+                    },
+                  }
+                : {})}
+            >
+              {reason}
+            </li>
+          ))}
+        </ul>
+      )}
 
     </div>
   )

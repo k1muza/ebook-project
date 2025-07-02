@@ -134,6 +134,9 @@ export interface ReportData {
   highlights?: HighlightStat[];
   financialsTitle: string;
   financialMetrics?: FinancialMetric[];
+  financialPoints?: string[];
+  expenditureIncreaseSummary?: string;
+  expenditureIncreaseReasons?: string[];
   financialIntro?: string;
   financials?: IncomeStatement;
   totalRevenueAmount?: string;
