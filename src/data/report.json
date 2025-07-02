@@ -41,7 +41,7 @@
   "financialPoints": [
     "Scholarship expenditure increased by 49.3%",
     "Irrigation garden projects increased by 6.8%",
-    "Staff expenses increased by 57.9%",
+    "Staff expenses increased by 57.9% due to an addition of 3 staff members (field officer, Administration Officer and Security officer ",
     "Bank charges increased by over 100%"
   ],
   "financialPointsHeading": "Financial Highlights",
@@ -350,7 +350,7 @@
           "type": "image"
         },
         {
-          "text": "Gender Equity: Addressing Critical Needs",
+          "text": "Gender Parity: Addressing Critical Needs",
           "type": "subheading"
         },
         {
@@ -365,7 +365,7 @@
           "type": "image"
         }
       ],
-      "title": "Empowering Minds, One Student at a Time"
+      "title": "Improving Education Quality"
     },
     {
       "content": [
@@ -412,7 +412,7 @@
           "type": "paragraph"
         },
         {
-          "text": "Solar-Powered Irrigation: Cultivating a Sustainable Future",
+          "text": "Establishing a Self Sustainable Organization: Solar-Powered Irrigation",
           "type": "subheading"
         },
         {
@@ -456,7 +456,7 @@
           "type": "imagePair"
         }
       ],
-      "title": "Innovation for a Self-Sustaining Community"
+      "title": "Innovation and Technology"
     },
     {
       "content": [
@@ -485,7 +485,7 @@
           "type": "paragraph"
         },
         {
-          "text": "The Endowment Fund: Securing Our Future",
+          "text": "Generating Financial Value: The Endowment Fund",
           "type": "subheading"
         },
         {
@@ -501,7 +501,7 @@
           "type": "image"
         }
       ],
-      "title": "Strengthening Our Roots Through Partnership"
+      "title": "Partnerships"
     }
   ],
   "strategicVision": {
