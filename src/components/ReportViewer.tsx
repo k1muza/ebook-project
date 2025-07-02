@@ -51,7 +51,6 @@ const ReportViewer = () => {
     })),
     { id: 'financials', title: reportData.financialsTitle || 'Financials' },
     { id: 'future', title: reportData.futureGoalsTitle },
-    { id: 'locations', title: reportData.locationsTitle },
     { id: 'thankyou', title: reportData.closingTitle },
   ];
 
