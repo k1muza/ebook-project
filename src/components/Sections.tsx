@@ -19,7 +19,7 @@ const Sections = ({ startNumber }: Props) => {
       let subIndex = 0
       return (
         <div key={sectionIndex} id={sectionId} className="mb-20 scroll-mt-20">
-          <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-baseline">
+          <h2 className="text-3xl font-bold text-slate-800 mb-10 flex items-baseline print:break-before-page">
             <HeadingNumber number={sectionNumber} />
             <span
               {...(editing

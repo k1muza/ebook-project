@@ -46,7 +46,7 @@ const FinancialsSection = ({ number }: Props) => {
   return (
     <div id="financials" className="mb-20 scroll-mt-20">
       <h2
-        className="text-3xl font-bold text-slate-800 mb-6 flex items-baseline"
+        className="text-3xl font-bold text-slate-800 mb-6 flex items-baseline print:break-before-page"
         {...(editing
           ? {
             contentEditable: true,
