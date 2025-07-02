@@ -17,7 +17,7 @@ interface Props {
   financials: IncomeStatement
 }
 
-const parseAmount = (val: string) => parseFloat(val.replace(/[$,]/g, ''))
+const parseAmount = (val: string) => parseFloat(val.replace('$', '').replace(' ', ''))
 
 const FinancialChart = ({ financials }: Props) => {
   const labels = [
