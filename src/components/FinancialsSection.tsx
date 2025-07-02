@@ -1,6 +1,5 @@
 'use client'
 import HeadingNumber from './HeadingNumber'
-import FinancialChart from './FinancialChart'
 import { DollarSign as FaDollarSign } from 'lucide-react'
 import * as Icons from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
@@ -370,10 +369,6 @@ const FinancialsSection = ({ number }: Props) => {
             >
               {data.financialAllocationText}
             </p>
-          </div>
-
-          <div className="flex-shrink-0 bg-white/80 rounded-xl p-3 border border-white">
-            <FinancialChart financials={data.financials} />
           </div>
         </div>
       </div>
