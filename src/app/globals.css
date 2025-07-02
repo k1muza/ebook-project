@@ -71,3 +71,9 @@ body {
     page-break-inside: avoid;
   }
 }
+
+/* Apply curly medieval-style font to drop caps */
+.medieval-first-letter::first-letter {
+  font-family: var(--font-medieval);
+}
+

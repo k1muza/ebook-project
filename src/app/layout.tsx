@@ -1,6 +1,6 @@
 import "./globals.css";
 import SettingsFloat from "@/components/SettingsFloat";
-import { inter } from "@/fonts";
+import { inter, uncialAntiqua } from "@/fonts";
 import { ReportProvider } from "@/contexts/ReportContext";
 import { reportData } from "@/data/report";
 import { Toaster } from "react-hot-toast";
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} ${uncialAntiqua.variable}`}>
         <ReportProvider>
           {children}
           <SettingsFloat />
