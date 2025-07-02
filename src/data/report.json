@@ -90,7 +90,15 @@
     ],
     "revenue": [
       {
-        "amount": "$118,973",
+        "amount": "$3,098",
+        "item": "Sewing Sales"
+      },
+      {
+        "amount": "$124",
+        "item": "Welding Sales"
+      },
+      {
+        "amount": "$120,248.60",
         "item": "Donations and Grants"
       }
     ]
@@ -291,9 +299,9 @@
   ],
   "mission": "We envision empowered rural communities where all children have access to quality education, regardless of their gender or socio-economic backgrounds.",
   "netDeficitText": "Deficit covered by reserves",
-  "netImpactAmount": "$0",
+  "netImpactAmount": "$4,496",
   "netImpactHeading": "Net Impact",
-  "netIncomeAmount": "$0",
+  "netIncomeAmount": "$4,496",
   "netSurplusText": "Surplus reinvested in programs",
   "organization": "Tererai Trent International Foundation",
   "pageDescription": "H1 2025 Progress Report: Sowing Seeds of Hope and Opportunity",
@@ -535,6 +543,6 @@
   },
   "strategicVisionTitle": "Our Strategic Vision: A Blueprint for a Brighter Future",
   "tocTitle": "i. Table of Contents",
-  "totalRevenueAmount": "$118,973",
+  "totalRevenueAmount": "$123,471",
   "totalRevenueHeading": "Total Revenue"
 }
