@@ -1,10 +1,17 @@
 {
-  "closing": "None of this would be possible without you\u2014our dedicated partners, donors, and the resilient communities we serve. Your belief in our mission fuels our work and turns dreams into reality for thousands of children. Together, we are not just providing education; we are building a legacy of empowerment, sustainability, and hope. Thank you for being a part of this incredible journey.",
+  "closing": "None of this would be possible without you—our dedicated partners, donors, and the resilient communities we serve. Your belief in our mission fuels our work and turns dreams into reality for thousands of children. Together, we are not just providing education; we are building a legacy of empowerment, sustainability, and hope. Thank you for being a part of this incredible journey.",
   "closingTitle": "A Heartfelt Thank You",
   "coverImage": {
     "alt": "African students learning",
     "src": "/images/goal.jpg"
   },
+  "expenditureIncreaseReasons": [
+    "An increase in scholarship beneficiaries",
+    "Motor vehicle purchase",
+    "Bank charges increased significantly due to the setup of a new institutional bank account with associated fees",
+    "Adoption of a new school, Chiroti, (drilled a borehole and installed fence)"
+  ],
+  "expenditureIncreaseSummary": "Overall expenditure increased by 62% from last year and this is due to the following reasons:",
   "financialAllocationHeading": "Financial Allocation",
   "financialAllocationText": "Our financial strategy prioritizes direct program impact, with 86% of funds allocated to education initiatives, while maintaining efficient operations below industry standards for administrative costs.",
   "financialAuditNote": "* Financials audited by independent accounting firm",
@@ -31,20 +38,13 @@
       "value": "8.6%"
     }
   ],
-  "financialPointsHeading": "Financial Highlights",
   "financialPoints": [
     "Scholarship expenditure increased by 49.3%",
     "Irrigation garden projects increased by 6.8%",
     "Staff expenses increased by 57.9%",
     "Bank charges increased by over 100%"
   ],
-  "expenditureIncreaseSummary": "Overall expenditure increased by 62% from last year and this is due to the following reasons:",
-  "expenditureIncreaseReasons": [
-    "An increase in scholarship beneficiaries",
-    "Motor vehicle purchase",
-    "Bank charges are high because we opened a bank account and its charges are costly",
-    "Adoption of a new school i.e. Chiroti (drilled a borehole and installed fence)"
-  ],
+  "financialPointsHeading": "Financial Highlights",
   "financials": {
     "expenses": [
       {
@@ -81,7 +81,7 @@
       },
       {
         "amount": "$230",
-        "item": "Memorandum of Understating"
+        "item": "Memorandum of Understanding"
       },
       {
         "amount": "$8 636",
@@ -90,7 +90,7 @@
     ],
     "revenue": [
       {
-        "amount": "$118 975",
+        "amount": "$118,973",
         "item": "Donations and Grants"
       }
     ]
@@ -239,7 +239,7 @@
   "message": {
     "content": [
       "The first half of 2025 has been a period of incredible growth and transformative impact for the Tererai Trent International (TTI) Foundation. With the unwavering support of our partners, donors, and community members, we have made significant strides in our core focus areas of educational support, sustainable agriculture, and community empowerment.",
-      "This report celebrates the milestones we have achieved together. It tells the story of how three key initiatives\u2014our scholarship program, an income-generating sewing project, and school-based irrigation systems\u2014are not just changing lives but are building a foundation for a self-sustaining future. We are thrilled to share our progress, acknowledge the challenges we've faced, and look ahead with renewed purpose to the work that still needs to be done.",
+      "This report celebrates the milestones we have achieved in H1 2025. It tells the story of how three key initiatives—our scholarship program, an income-generating sewing project, and school-based irrigation systems—are not just changing lives but are building a foundation for a self-sustaining future. We are thrilled to share our progress, acknowledge the challenges we've faced, and renew our purpose for the work ahead.",
       {
         "images": [
           {
@@ -298,8 +298,8 @@
   "organization": "Tererai Trent International Foundation",
   "pageDescription": "H1 2025 Progress Report: Sowing Seeds of Hope and Opportunity",
   "pageTitle": "Tererai Trent Foundation - Progress Report",
-  "period": "January \u2013 June 2025",
-  "programInvestmentAmount": "$118 974.65",
+  "period": "January – June 2025",
+  "programInvestmentAmount": "$118,973",
   "programInvestmentHeading": "Program Investment",
   "programInvestmentNote": "86% to education programs",
   "reportTitle": "H1 2025 Progress Report: Sowing Seeds of Hope and Opportunity",
@@ -315,18 +315,18 @@
           "type": "paragraph"
         },
         {
-          "text": "We are thrilled to announce that we welcomed 10 more brilliant young women into the program. Empowering a girl is one of the most profound investments we can make. When girls are educated in safe, encouraging environments, they are more likely to stay in school, avoid early marriage, and make informed choices about their futures. They become leaders who uplift their families and communities, breaking the cycle of poverty for generations to come.",
+          "text": "We are thrilled to announce that we welcomed 10 more brilliant young women into the program. Supporting girls' education is among the most profound investments we can make. When girls are educated in safe, encouraging environments, they are more likely to stay in school, avoid early marriage, and make informed choices about their futures. They become leaders who uplift their families and communities, breaking the cycle of poverty for generations to come.",
           "type": "paragraph"
         },
         {
-          "text": "A landmark achievement this period was celebrating Tryness Nyauvanga and Christabel Dura, the first TTI-supported students to pursue a degree in Software Engineering. Their courage in entering a male-dominated field is a powerful testament to our efforts in promoting STEM education for girls. To support their journey, we provided each with a new laptop, removing a critical barrier to their success.",
+          "text": "A landmark achievement this period was celebrating Tryness Nyauyanga and Christabel Dura, the first TTI-supported students to pursue a degree in Software Engineering. Their courage in entering a male-dominated field is a powerful testament to our efforts in promoting STEM education for girls. To support their journey, we provided each with a new laptop, removing a critical barrier to their success.",
           "type": "paragraph"
         },
         {
           "alt": "Students at orientation",
-          "caption": "Figure 4: Tryness and Christabel Dura, our 1st engineering students\u00a0",
-          "src": "/images/students.jpg",
+          "caption": "Figure 3: Tryness and Christabel Dura, our 1st engineering students ",
           "layout": "full",
+          "src": "/images/students.jpg",
           "type": "image"
         },
         {
@@ -334,20 +334,20 @@
           "type": "subheading"
         },
         {
-          "text": "In January 2025, thanks to our generous donors, we held our first-ever orientation for 27 scholarship beneficiaries. This session was more than an introduction; it was a community-building experience. Students learned practical skills like time management and goal setting, connected with peers and mentors, and aligned their personal journeys with TTI's mission to uplift and empower. Old scholarship beneficiaries shared their experiences with new students, preparing them for tertiary education, life changes and expectations. This has played a significant role in preparing our new students for the transition to an urban environment, which is vastly different from the rural setting they were accustomed to. We took this opportunity to share important scholarship guidelines and communication protocols to ensure smooth coordination between the office, students, and institutions. During these engagements, we also reassured our students that the office is fully committed to offering psychosocial support to anyone who may need it.We deeply value our scholarship program, not only as a means of academic support but as a holistic journey. Our goal is to nurture students who are mentally healthy, focused, and equipped with the skills and mindset to thrive in the world of work and beyond. It\u2019s a privilege to walk alongside them as they grow into confident, purpose driven individuals.",
+          "text": "In January 2025, thanks to our generous donors, we held our first-ever orientation for 28 scholarship beneficiaries. This session was more than an introduction; it was a community-building experience. Students learned practical skills like time management and goal setting, connected with peers and mentors, and aligned their personal journeys with TTI's mission to uplift and empower. Old scholarship beneficiaries shared their experiences with new students, preparing them for tertiary education, life changes and expectations. This has played a significant role in preparing our new students for the transition to an urban environment, which is vastly different from the rural setting they were accustomed to. We used this opportunity to share important scholarship guidelines and communication protocols to ensure smooth coordination between the office, students, and institutions. During these engagements, we also reassured our students that the office is fully committed to offering psychosocial support to anyone who may need it.We deeply value our scholarship program, not only as a means of academic support but as a holistic journey. Our goal is to nurture students who are mentally healthy, focused, and equipped with the skills and mindset to thrive in the world of work and beyond. It’s a privilege to walk alongside them as they grow into confident, purpose-driven individuals.",
           "type": "paragraph"
-        },
-        {
-          "alt": "Students receiving scholarships",
-          "caption": "Figure 3: Students receiving scholarships\u00a0",
-          "src": "/images/orientation.jpg",
-          "layout": "full",
-          "type": "image"
         },
         {
           "author": "Christabel Dura",
           "text": "Before the orientation, I was nervous and unsure about what to expect. But after hearing stories and guidance, I felt confident and ready to focus on my goals. I now understand that this scholarship is not just about school fees; it's about shaping my future.",
           "type": "quote"
+        },
+        {
+          "alt": "Students receiving scholarships",
+          "caption": "Figure 4: Students receiving scholarships ",
+          "layout": "full",
+          "src": "/images/orientation.jpg",
+          "type": "image"
         },
         {
           "text": "Gender Equity: Addressing Critical Needs",
@@ -359,9 +359,9 @@
         },
         {
           "alt": "Books distributed to students",
-          "caption": "Figure 5: Books distributed to students in Chivakanenyama Secondary School\u00a0",
-          "src": "/images/books.jpg",
+          "caption": "Figure 5: Books distributed to students at Chiroti Secondary School ",
           "layout": "full",
+          "src": "/images/books.jpg",
           "type": "image"
         }
       ],
@@ -383,7 +383,7 @@
         },
         {
           "alt": "Women sewing uniforms",
-          "caption": "Figure 7: Women from the vocational training program producing school uniforms",
+          "caption": "Figure 6: Women from the vocational training program producing school uniforms",
           "layout": "split",
           "src": "/images/sewing.jpg",
           "type": "image"
@@ -402,7 +402,7 @@
         },
         {
           "alt": "Science laboratory",
-          "caption": "Figure 8: New science lab at Zvimhonja Secondary School",
+          "caption": "Figure 7: New science lab at Zvimhonja Secondary School",
           "layout": "full",
           "src": "/images/lab.jpg",
           "type": "image"
@@ -423,12 +423,12 @@
           "images": [
             {
               "alt": "Solar-powered irrigation",
-              "caption": "Figure 9: Solar-powered garden at Denderedzi Primary School",
+              "caption": "Figure 8: Solar-powered garden at Denderedzi Primary School",
               "src": "/images/solar.jpg"
             },
             {
               "alt": "Water storage tank",
-              "caption": "Figure 10: Solar-powered garden at Denderedzi Primary School",
+              "caption": "Figure 9: Solar-powered garden at Denderedzi Primary School",
               "src": "/images/tank.jpg"
             }
           ],
@@ -436,19 +436,19 @@
           "type": "imagePair"
         },
         {
-          "text": "Building on this, we established two one-hectare, solar-powered, drip-irrigated garden plots at Zvimhonja and Denderedzi Primary Schools. In the first quarter of 2025, a total of 7,512 tomato plants were planted, with the first harvest in June expected to generate over $6,000 USD. During the 2nd quarter an addition of 6 000 tomato plants and potatoes were planted, expected harvest will be in September. These business models, along with other crop projects, are creating a vital income stream for the schools, fostering entrepreneurship, and ensuring the long-term sustainability of our projects. It is exciting that Chivakanenyama Secondary has started the construction of a new block using the proceeds from the garden irrigation project. We have seen community involvement in the project as they have provided locally available resources. This has marked a groundbreaking achievement and it stands as a motivation to other schools. We expect completion of the block by November 2025.",
+          "text": "Building on this, we established two one-hectare, solar-powered, drip-irrigated garden plots at Zvimhonja and Denderedzi Primary Schools. In the first quarter of 2025, a total of 7,512 tomato plants were planted, with the first harvest in June expected to generate over $6,000 USD. During the 2nd quarter, an additional 6,000 tomato plants and potatoes were planted, expected harvest will be in September. These agricultural initiatives, along with other crop projects, are creating a vital income stream for the schools, fostering entrepreneurship, and ensuring the long-term sustainability of our projects. It is exciting that Chivakanenyama Secondary has started the construction of a new block using the proceeds from the garden irrigation project. We have seen community involvement in the project as they have provided locally available resources. This has marked a groundbreaking achievement and it stands as a motivation to other schools. We expect completion of the block by November 2025.",
           "type": "paragraph"
         },
         {
           "images": [
             {
               "alt": "Potato field",
-              "caption": "Figure 5: Potato field ",
+              "caption": "Figure 10: Potato field ",
               "src": "/images/potatoes.jpg"
             },
             {
               "alt": "Tomato field",
-              "caption": "Figure 6: OSU students harvesting tomatoes",
+              "caption": "Figure 11: OSU students harvesting tomatoes",
               "src": "/images/tomatoes.jpg"
             }
           ],
@@ -468,12 +468,12 @@
           "images": [
             {
               "alt": "Leadership tour",
-              "caption": "Figure 11: Chiroti borehole drilling sponsored by Wishes for Water",
+              "caption": "Figure 12: Chiroti borehole drilling sponsored by Wishes for Water",
               "src": "/images/driller.jpg"
             },
             {
               "alt": "OSU students group",
-              "caption": "Figure 12: OSU students visiting TTI projects in Zimbabwe",
+              "caption": "Figure 13: OSU students visiting TTI projects in Zimbabwe",
               "src": "/images/osu.jpg"
             }
           ],
@@ -494,7 +494,7 @@
         },
         {
           "alt": "TTI team and partners",
-          "caption": "Figure 13: Endowment fundraising team",
+          "caption": "Figure 14: Endowment fundraising team",
           "classes": "object-top",
           "layout": "full",
           "src": "/images/endowment.jpg",
@@ -531,10 +531,10 @@
       }
     ],
     "educationHeading": "Education-Driven Goals",
-    "intro": "TTI's common goal is to provide universal access to quality education and develop an educational system that is sustainable and not solely reliant on external funding. To accomplish this, our work is guided by six core goals:"
+    "intro": "TTI's primary goal is to provide universal access to quality education and develop an educational system that is sustainable and not solely reliant on external funding. To accomplish this, our work is guided by five core goals:"
   },
   "strategicVisionTitle": "Our Strategic Vision: A Blueprint for a Brighter Future",
   "tocTitle": "i. Table of Contents",
-  "totalRevenueAmount": "$118 974.65",
+  "totalRevenueAmount": "$118,973",
   "totalRevenueHeading": "Total Revenue"
 }
