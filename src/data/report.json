@@ -314,22 +314,6 @@
           "type": "quote"
         },
         {
-          "images": [
-            {
-              "alt": "Potato field",
-              "caption": "Figure 5: Potato field ",
-              "src": "/images/potatoes.jpg"
-            },
-            {
-              "alt": "Tomato field",
-              "caption": "Figure 6: OSU students harvesting tomatoes",
-              "src": "/images/tomatoes.jpg"
-            }
-          ],
-          "layout": "split",
-          "type": "imagePair"
-        },
-        {
           "text": "Gender Equity: Addressing Critical Needs",
           "type": "subheading"
         },
@@ -411,6 +395,22 @@
         {
           "text": "Building on this, we established two one-hectare, solar-powered, drip-irrigated garden plots at Zvimhonja and Denderedzi Primary Schools. In the first quarter of 2025, a total of 7,512 tomato plants were planted, with the first harvest in June expected to generate over $6,000 USD. During the 2nd quarter an addition of 6 000 tomato plants and potatoes were planted, expected harvest will be in September. These business models, along with other crop projects, are creating a vital income stream for the schools, fostering entrepreneurship, and ensuring the long-term sustainability of our projects. It is exciting that Chivakanenyama Secondary has started the construction of a new block using the proceeds from the garden irrigation project. We have seen community involvement in the project as they have provided locally available resources. This has marked a groundbreaking achievement and it stands as a motivation to other schools. We expect completion of the block by November 2025.",
           "type": "paragraph"
+        },
+        {
+          "images": [
+            {
+              "alt": "Potato field",
+              "caption": "Figure 5: Potato field ",
+              "src": "/images/potatoes.jpg"
+            },
+            {
+              "alt": "Tomato field",
+              "caption": "Figure 6: OSU students harvesting tomatoes",
+              "src": "/images/tomatoes.jpg"
+            }
+          ],
+          "layout": "split",
+          "type": "imagePair"
         },
         {
           "alt": "TTI team and partners",
