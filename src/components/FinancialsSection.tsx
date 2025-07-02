@@ -640,6 +640,25 @@ const FinancialsSection = ({ number }: Props) => {
         </div>
       </div>
 
+      {data.financialPointsHeading && (
+          <h2
+            className="text-lg text-gray-700 mb-2 font-semibold"
+            {...(editing
+              ? {
+                  contentEditable: true,
+                  suppressContentEditableWarning: true,
+                  onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                    const newData = { ...(data as typeof data) }
+                    newData.financialPointsHeading = e.currentTarget.textContent || ''
+                    setData(newData)
+                  },
+                }
+              : {})}
+          >
+            {data.financialPointsHeading}
+          </h2>
+        )}
+
       {data.financialPoints && (
         <ul className="list-disc pl-6 mb-6 space-y-2">
           {data.financialPoints.map((point, index) => (
