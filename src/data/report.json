@@ -6,7 +6,7 @@
     "src": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1"
   },
   "financialAllocationHeading": "Financial Allocation",
-  "financialAllocationText": "Our financial strategy prioritizes direct program impact, with 92% of funds allocated to education initiatives, while maintaining efficient operations below industry standards for administrative costs.",
+  "financialAllocationText": "Our financial strategy prioritizes direct program impact, with 86% of funds allocated to education initiatives, while maintaining efficient operations below industry standards for administrative costs.",
   "financialAuditNote": "* Financials audited by independent accounting firm",
   "financialIntro": "The income statement below highlights how donations fund our programs and operations during the first half of 2025.",
   "financialMetrics": [
@@ -76,7 +76,7 @@
     ],
     "revenue": [
       {
-        "amount": "$35,000",
+        "amount": "$118 974.65",
         "item": "Donations and Grants"
       }
     ]
@@ -285,9 +285,9 @@
   "pageDescription": "H1 2025 Progress Report: Sowing Seeds of Hope and Opportunity",
   "pageTitle": "Tererai Trent Foundation - Progress Report",
   "period": "January \u2013 June 2025",
-  "programInvestmentAmount": "$35,000",
+  "programInvestmentAmount": "$118 974.65",
   "programInvestmentHeading": "Program Investment",
-  "programInvestmentNote": "92% to education programs",
+  "programInvestmentNote": "86% to education programs",
   "reportTitle": "H1 2025 Progress Report: Sowing Seeds of Hope and Opportunity",
   "sections": [
     {
@@ -516,6 +516,6 @@
   },
   "strategicVisionTitle": "Our Strategic Vision: A Blueprint for a Brighter Future",
   "tocTitle": "i. Table of Contents",
-  "totalRevenueAmount": "$35,000",
+  "totalRevenueAmount": "$118 974.65",
   "totalRevenueHeading": "Total Revenue"
 }
