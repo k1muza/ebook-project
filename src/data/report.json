@@ -309,20 +309,11 @@
           "type": "paragraph"
         },
         {
-          "images": [
-            {
-              "alt": "Students receiving scholarships",
-              "caption": "Figure 3: Stationery recipients at Chiroti Secondary School\u00a0",
-              "src": "/images/books.jpg"
-            },
-            {
-              "alt": "Students at orientation",
-              "caption": "Figure 4: Tryness and Christabel Dura, our 1st engineering students\u00a0",
-              "src": "/images/students.jpg"
-            }
-          ],
-          "layout": "split",
-          "type": "imagePair"
+          "alt": "Students at orientation",
+          "caption": "Figure 4: Tryness and Christabel Dura, our 1st engineering students\u00a0",
+          "src": "/images/students.jpg",
+          "layout": "full",
+          "type": "image"
         },
         {
           "text": "Scholarship Orientation: Building a Community of Leaders",
@@ -331,6 +322,13 @@
         {
           "text": "In January 2025, thanks to our generous donors, we held our first-ever orientation for 27 scholarship beneficiaries. This session was more than an introduction; it was a community-building experience. Students learned practical skills like time management and goal setting, connected with peers and mentors, and aligned their personal journeys with TTI's mission to uplift and empower. Old scholarship beneficiaries shared their experiences with new students, preparing them for tertiary education, life changes and expectations. This has played a significant role in preparing our new students for the transition to an urban environment, which is vastly different from the rural setting they were accustomed to. We took this opportunity to share important scholarship guidelines and communication protocols to ensure smooth coordination between the office, students, and institutions. During these engagements, we also reassured our students that the office is fully committed to offering psychosocial support to anyone who may need it.We deeply value our scholarship program, not only as a means of academic support but as a holistic journey. Our goal is to nurture students who are mentally healthy, focused, and equipped with the skills and mindset to thrive in the world of work and beyond. It\u2019s a privilege to walk alongside them as they grow into confident, purpose driven individuals.",
           "type": "paragraph"
+        },
+        {
+          "alt": "Students receiving scholarships",
+          "caption": "Figure 3: Students receiving scholarships\u00a0",
+          "src": "/images/orientation.jpg",
+          "layout": "full",
+          "type": "image"
         },
         {
           "author": "Christabel Dura",
@@ -344,6 +342,13 @@
         {
           "text": "A needs assessment in our 6 partner secondary schools revealed a dire situation: over half the children lacked basic stationery, and approximately 100 were not attending school due to financial hardship. In response, we secured a donation of 2,500 exercise books and 4,000 counter books from Rank Zimbabwe. The first distribution reached 461 students who had no supplies, with a second planned for August. Our hope is to secure further support to cover tuition fees and ensure no child is left behind.",
           "type": "paragraph"
+        },
+        {
+          "alt": "Books distributed to students",
+          "caption": "Figure 5: Books distributed to students in Chivakanenyama Secondary School\u00a0",
+          "src": "/images/books.jpg",
+          "layout": "full",
+          "type": "image"
         }
       ],
       "title": "Empowering Minds, One Student at a Time"
@@ -435,14 +440,6 @@
           ],
           "layout": "split",
           "type": "imagePair"
-        },
-        {
-          "alt": "TTI team and partners",
-          "caption": "Figure 13: Endowment fundraising team",
-          "classes": "object-top",
-          "layout": "split",
-          "src": "/images/endowment.jpg",
-          "type": "image"
         }
       ],
       "title": "Innovation for a Self-Sustaining Community"
@@ -485,7 +482,7 @@
           "alt": "TTI team and partners",
           "caption": "Figure 13: Endowment fundraising team",
           "classes": "object-top",
-          "layout": "split",
+          "layout": "full",
           "src": "/images/endowment.jpg",
           "type": "image"
         }
