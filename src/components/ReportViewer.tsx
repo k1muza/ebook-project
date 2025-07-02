@@ -78,7 +78,7 @@ const ReportViewer = () => {
         <Sections startNumber={sectionNumbers['section-1']} />
         <FinancialsSection number={sectionNumbers['financials']} />
         <FutureGoalsSection number={sectionNumbers['future']} />
-        <MapSection number={sectionNumbers['locations']} />
+        {/* <MapSection number={sectionNumbers['locations']} /> */}
         <ClosingSection number={sectionNumbers['thankyou']} />
       </div>
     </div>

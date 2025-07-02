@@ -75,7 +75,7 @@ const ClosingSection = ({ number }: Props) => {
                 Dr. Tererai Trent
               </div>
               <div className="text-gray-600 text-sm print:text-xs">
-                Founder & CEO
+                Founder
               </div>
             </div>
           </div>
