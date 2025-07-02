@@ -58,6 +58,10 @@ body {
     print-color-adjust: exact !important;
     background: white !important;
   }
+
+  p {
+    font-size: 10pt;
+  }
   
   .print\:break-before {
     page-break-before: always;
