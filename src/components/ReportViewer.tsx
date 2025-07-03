@@ -40,24 +40,47 @@ const ReportViewer = () => {
   if (!reportData) return null;
 
 
-  // Generate TOC items
-  const tocItems = [
-    { id: 'message', title: reportData.message.title },
-    { id: 'impact', title: reportData.impactTitle },
-    { id: 'vision', title: reportData.strategicVisionTitle },
-    ...reportData.sections.map((section, i) => ({
-      id: `section-${i + 1}`,
-      title: section.title,
-    })),
-    { id: 'financials', title: reportData.financialsTitle || 'Financials' },
-    { id: 'future', title: reportData.futureGoalsTitle },
-    { id: 'thankyou', title: reportData.closingTitle },
-  ];
+  interface TocItem {
+    id: string
+    title: string
+    number: string
+    children?: TocItem[]
+  }
 
-  const sectionNumbers = tocItems.reduce<Record<string, number>>((acc, item, idx) => {
-    acc[item.id] = idx + 1;
-    return acc;
-  }, {});
+  // Generate TOC items with subheadings
+  const tocItems: TocItem[] = []
+
+  const addTopItem = (id: string, title: string, sub: TocItem[] = []) => {
+    const number = `${tocItems.length + 1}`
+    const top: TocItem = { id, title, number, children: sub }
+    tocItems.push(top)
+    top.children?.forEach((child, idx) => {
+      child.number = `${number}.${idx + 1}`
+    })
+  }
+
+  addTopItem('message', reportData.message.title)
+  addTopItem('impact', reportData.impactTitle)
+  addTopItem('vision', reportData.strategicVisionTitle)
+
+  reportData.sections.forEach((section, i) => {
+    const subs: TocItem[] = []
+    section.content.forEach((c) => {
+      if (typeof c !== 'string' && c.type === 'subheading') {
+        subs.push({ id: `section-${i + 1}-sub-${subs.length + 1}`, title: c.text, number: '' })
+      }
+    })
+    addTopItem(`section-${i + 1}`, section.title, subs)
+  })
+
+  addTopItem('financials', reportData.financialsTitle || 'Financials')
+  addTopItem('future', reportData.futureGoalsTitle)
+  addTopItem('thankyou', reportData.closingTitle)
+
+  const sectionNumbers = tocItems.reduce<Record<string, number>>((acc, item) => {
+    acc[item.id] = Number(item.number)
+    return acc
+  }, {})
 
   return (
     <div className="max-w-5xl mx-auto bg-white font-serif text-gray-700 relative">
