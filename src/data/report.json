@@ -510,6 +510,31 @@
         }
       ],
       "title": "Partnerships"
+    },
+    {
+      "title": "Human Resources",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Our dedicated team has grown to support an increasing number of programs. We invested in training and wellness initiatives to ensure staff remain motivated and effective."
+        },
+        {
+          "type": "imagePair",
+          "layout": "split",
+          "images": [
+            {
+              "src": "/images/orientation.jpg",
+              "alt": "Team training session",
+              "caption": "Figure 15: Staff orientation workshop"
+            },
+            {
+              "src": "/images/sewing.jpg",
+              "alt": "Field officers working",
+              "caption": "Figure 16: Team collaborating in the field"
+            }
+          ]
+        }
+      ]
     }
   ],
   "strategicVision": {
