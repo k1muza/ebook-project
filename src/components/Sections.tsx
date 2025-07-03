@@ -41,9 +41,11 @@ const Sections = ({ startNumber }: Props) => {
           <div className="space-y-6">
             {section.content.map((content, contentIndex) => {
               let subNumber: string | undefined
+              let subId: string | undefined
               if ((content as ContentItem).type === 'subheading') {
                 subIndex += 1
                 subNumber = `${sectionNumber}.${subIndex}`
+                subId = `${sectionId}-sub-${subIndex}`
               }
               return (
                 <ContentRenderer
@@ -52,6 +54,7 @@ const Sections = ({ startNumber }: Props) => {
                   index={contentIndex}
                   subheadingNumber={subNumber}
                   editable={editing}
+                  id={subId}
                   onChange={(val) => {
                     const newData = { ...(data as ReportData) }
                     newData.sections[sectionIndex].content[contentIndex] =

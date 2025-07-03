@@ -9,9 +9,10 @@ interface Props {
   subheadingNumber?: string
   editable?: boolean
   onChange?: (content: ContentItem | string) => void
+  id?: string
 }
 
-const ContentRenderer = ({ content, index, subheadingNumber, editable, onChange }: Props) => {
+const ContentRenderer = ({ content, index, subheadingNumber, editable, onChange, id }: Props) => {
   const editableProps = (cb: (val: string) => void) =>
     editable
       ? {
@@ -74,7 +75,11 @@ const ContentRenderer = ({ content, index, subheadingNumber, editable, onChange 
       )
     case 'subheading':
       return (
-        <h3 key={index} className="text-2xl font-bold text-slate-800 mt-8 mb-4 flex items-baseline">
+        <h3
+          key={index}
+          id={id}
+          className="text-2xl font-bold text-slate-800 mt-8 mb-4 flex items-baseline scroll-mt-20"
+        >
           {subheadingNumber && <HeadingNumber number={subheadingNumber} />}
           <span {...editableProps((val) => onChange?.({ ...content, text: val }))}>{content.text}</span>
         </h3>

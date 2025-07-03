@@ -5,6 +5,8 @@ import { useReport } from '@/contexts/ReportContext'
 interface TocItem {
   id: string
   title: string
+  number: string
+  children?: TocItem[]
 }
 
 interface Props {
@@ -22,6 +24,39 @@ const TableOfContents = ({ items, active, setActive }: Props) => {
     const hue = startHue + ((endHue - startHue) * index) / Math.max(items.length - 1, 1)
     return `hsl(${hue}, 70%, 45%)`
   }
+
+  const renderItems = (tocItems: TocItem[], level = 0) => (
+    <ul className={`${level === 0 ? 'space-y-3' : 'space-y-2 ml-8'}`}>
+      {tocItems.map((item, index) => (
+        <li key={item.id}>
+          <a
+            href={`#${item.id}`}
+            onClick={e => {
+              e.preventDefault()
+              document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' })
+              setActive(item.id)
+            }}
+            className={`flex items-center p-3 rounded-lg transition-all ${
+              active === item.id ? 'bg-emerald-100 text-emerald-700 font-bold' : 'hover:bg-emerald-50'
+            }`}
+          >
+            {level === 0 ? (
+              <span
+                className="mr-3 flex items-center justify-center w-8 h-8 rounded-full text-white font-semibold"
+                style={{ backgroundColor: circleColor(index) }}
+              >
+                {item.number}
+              </span>
+            ) : (
+              <span className="mr-3 font-semibold text-slate-700">{item.number}</span>
+            )}
+            <span>{item.title}</span>
+          </a>
+          {item.children && renderItems(item.children, level + 1)}
+        </li>
+      ))}
+    </ul>
+  )
 
   return (
     <div className="mb-20 px-8 print:px-0 mx-8 print:mx-0 print:break-before print:break-after relative">
@@ -77,31 +112,7 @@ const TableOfContents = ({ items, active, setActive }: Props) => {
       >
         {data.tocTitle}
       </h2>
-      <ul className="space-y-3">
-        {items.map((item, index) => (
-          <li key={item.id}>
-            <a
-              href={`#${item.id}`}
-              onClick={e => {
-                e.preventDefault()
-                document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' })
-                setActive(item.id)
-              }}
-              className={`flex items-center p-3 rounded-lg transition-all ${
-                active === item.id ? 'bg-emerald-100 text-emerald-700 font-bold' : 'hover:bg-emerald-50'
-              }`}
-            >
-              <span
-                className="mr-3 flex items-center justify-center w-8 h-8 rounded-full text-white font-semibold"
-                style={{ backgroundColor: circleColor(index) }}
-              >
-                {index + 1}
-              </span>
-              <span>{item.title}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
+      {renderItems(items)}
     </div>
   )
 }
