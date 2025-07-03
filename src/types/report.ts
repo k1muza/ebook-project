@@ -172,6 +172,8 @@ export interface ReportData {
   locationsTitle: string;
   closing: string;
   closingTitle: string;
+  closingName: string;
+  closingRole: string;
   closingImage?: { // Optional closing image
     src: string;
     alt: string;

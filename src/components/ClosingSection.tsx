@@ -39,8 +39,21 @@ const ClosingSection = ({ number }: Props) => {
                 </h3>
               </div>
             </div>
-            <p className="text-gray-600 text-sm print:text-xs">
-              Founder, Tererai Trent International Foundation
+            <p
+              className="text-gray-600 text-sm print:text-xs"
+              {...(editing
+                ? {
+                    contentEditable: true,
+                    suppressContentEditableWarning: true,
+                    onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                      const newData = { ...data }
+                      newData.closingRole = e.currentTarget.textContent || ''
+                      setData(newData)
+                    },
+                  }
+                : {})}
+            >
+              {data.closingRole}
             </p>
           </div>
           
@@ -70,11 +83,37 @@ const ClosingSection = ({ number }: Props) => {
             <div className="mt-16 flex flex-col items-end print:mt-12">
               <div className="text-gray-800 font-bold print:text-sm mb-20">With gratitude,</div>
               
-              <div className="text-gray-800 font-medium print:text-sm">
-                Dr. Tererai Trent
+              <div
+                className="text-gray-800 font-medium print:text-sm"
+                {...(editing
+                  ? {
+                      contentEditable: true,
+                      suppressContentEditableWarning: true,
+                      onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                        const newData = { ...data }
+                        newData.closingName = e.currentTarget.textContent || ''
+                        setData(newData)
+                      },
+                    }
+                  : {})}
+              >
+                {data.closingName}
               </div>
-              <div className="text-gray-600 text-sm print:text-xs">
-                Founder
+              <div
+                className="text-gray-600 text-sm print:text-xs"
+                {...(editing
+                  ? {
+                      contentEditable: true,
+                      suppressContentEditableWarning: true,
+                      onBlur: (e: React.FocusEvent<HTMLElement>) => {
+                        const newData = { ...data }
+                        newData.closingRole = e.currentTarget.textContent || ''
+                        setData(newData)
+                      },
+                    }
+                  : {})}
+              >
+                {data.closingRole}
               </div>
             </div>
           </div>
