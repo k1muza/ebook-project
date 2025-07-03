@@ -637,7 +637,7 @@ const FinancialsSection = ({ number }: Props) => {
 
       {data.financialPointsHeading && (
           <h2
-            className="text-lg text-gray-700 mb-2 font-semibold"
+            className="text-lg text-gray-700 mb-2 font-semibold print:break-before-page"
             {...(editing
               ? {
                   contentEditable: true,

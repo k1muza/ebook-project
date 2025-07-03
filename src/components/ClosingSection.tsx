@@ -68,7 +68,7 @@ const ClosingSection = ({ number }: Props) => {
             
             {/* Signature section */}
             <div className="mt-16 flex flex-col items-end print:mt-12">
-              <div className="text-gray-800 font-bold print:text-sm mb-30">With gratitude,</div>
+              <div className="text-gray-800 font-bold print:text-sm mb-20">With gratitude,</div>
               
               <div className="text-gray-800 font-medium print:text-sm">
                 Dr. Tererai Trent
