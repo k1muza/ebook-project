@@ -132,7 +132,7 @@ const ContentRenderer = ({ content, index, subheadingNumber, editable, onChange,
           key={index}
           className="my-8 flex gap-4 flex-row print:break-inside-avoid"
         >
-          {content.images.map((img, i) => (
+          {content.images?.map((img, i) => (
             <figure key={i} className="flex flex-col flex-1/2 items-center md:w-1/2">
               <div
                 className="relative overflow-hidden rounded-xl w-full"
